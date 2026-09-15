@@ -1,5 +1,9 @@
 # Pop Art
 
-Planned family; no production variants yet. This directory reserves a place in the library and is intentionally excluded from the visual browser.
+Bold outlines and bright flat emphasis with an unmistakable hierarchy and clear practical controls.
 
-Propose a coherent interpretation using [the contribution guide](../../CONTRIBUTING.md). Explain its philosophical distinction before adding a complete variant-level DESIGN.md and preview treatment. There is no required number of variants.
+## Available design
+
+- [Graphic Impact Pop Art](graphic-impact/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+
+This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.

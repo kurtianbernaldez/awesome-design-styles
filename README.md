@@ -8,11 +8,48 @@ A style family is a starting point, not one definitive appearance. Minimalism ca
 
 ## The library
 
-| Family | Available interpretations |
+**38 families · 44 complete design systems.** Every family below has a DESIGN.md and a matching preview.
+
+| Family | Complete variants |
 |---|---|
-| [Minimalism](styles/minimalism) | [Clean Product](styles/minimalism/clean-product/DESIGN.md) · [Editorial](styles/minimalism/editorial/DESIGN.md) · [Monochrome](styles/minimalism/monochrome/DESIGN.md) |
-| [Brutalism](styles/brutalism) | [Raw Web](styles/brutalism/raw-web/DESIGN.md) · [Editorial](styles/brutalism/editorial/DESIGN.md) · [Colorful](styles/brutalism/colorful/DESIGN.md) |
-| [Glassmorphism](styles/glassmorphism) | [Dark Glass](styles/glassmorphism/dark-glass/DESIGN.md) · [Light Glass](styles/glassmorphism/light-glass/DESIGN.md) · [Vibrant Glass](styles/glassmorphism/vibrant-glass/DESIGN.md) |
+| Minimalism | [Clean Product](styles/minimalism/clean-product/DESIGN.md) · [Editorial](styles/minimalism/editorial/DESIGN.md) · [Monochrome](styles/minimalism/monochrome/DESIGN.md) |
+| Brutalism | [Raw Web](styles/brutalism/raw-web/DESIGN.md) · [Editorial](styles/brutalism/editorial/DESIGN.md) · [Colorful](styles/brutalism/colorful/DESIGN.md) |
+| Glassmorphism | [Dark Glass](styles/glassmorphism/dark-glass/DESIGN.md) · [Light Glass](styles/glassmorphism/light-glass/DESIGN.md) · [Vibrant Glass](styles/glassmorphism/vibrant-glass/DESIGN.md) |
+| Anti Design | [Intentional Disruption Anti-Design](styles/anti-design/intentional-disruption/DESIGN.md) |
+| Art Deco | [Geometric Elegance Art Deco](styles/art-deco/geometric-elegance/DESIGN.md) |
+| Art Nouveau | [Botanical Lines Art Nouveau](styles/art-nouveau/botanical-lines/DESIGN.md) |
+| Bauhaus | [Functional Geometry Bauhaus](styles/bauhaus/functional-geometry/DESIGN.md) |
+| Claymorphism | [Soft Play Claymorphism](styles/claymorphism/soft-play/DESIGN.md) |
+| Constructivism | [Graphic Assembly Constructivism](styles/constructivism/graphic-assembly/DESIGN.md) |
+| Corporate Memphis | [Friendly Explainer Corporate Memphis](styles/corporate-memphis/friendly-explainer/DESIGN.md) |
+| Cyberpunk | [Night Terminal Cyberpunk](styles/cyberpunk/night-terminal/DESIGN.md) |
+| Dark Academia | [Reading Room Dark Academia](styles/dark-academia/reading-room/DESIGN.md) |
+| De Stijl | [Orthogonal Fields De Stijl](styles/de-stijl/orthogonal-fields/DESIGN.md) |
+| Frutiger Aero | [Clear Horizon Frutiger Aero](styles/frutiger-aero/clear-horizon/DESIGN.md) |
+| Frutiger Metro | [Flat Rhythm Frutiger Metro](styles/frutiger-metro/flat-rhythm/DESIGN.md) |
+| Futurism | [Precision Futurism](styles/futurism/precision-interface/DESIGN.md) |
+| Grunge | [Weathered Print Grunge](styles/grunge/weathered-print/DESIGN.md) |
+| Industrial | [Workshop Industrial](styles/industrial/workshop-panel/DESIGN.md) |
+| Japandi | [Warm Order Japandi](styles/japandi/warm-order/DESIGN.md) |
+| Maximalism | [Curated Maximalism](styles/maximalism/curated-abundance/DESIGN.md) |
+| Memphis | [Pattern Play Memphis](styles/memphis/pattern-play/DESIGN.md) |
+| Mid-Century Modern | [Warm Modular Mid-Century Modern](styles/mid-century-modern/warm-modular/DESIGN.md) |
+| Neo-Brutalism | [Playful Neo-Brutalism](styles/neo-brutalism/playful-utility/DESIGN.md) |
+| Neumorphism | [Soft Relief Neumorphism](styles/neumorphism/soft-relief/DESIGN.md) |
+| Pixel Art | [Grid Adventure Pixel Art](styles/pixel-art/grid-adventure/DESIGN.md) |
+| Pop Art | [Graphic Impact Pop Art](styles/pop-art/graphic-impact/DESIGN.md) |
+| Psychedelic | [Fluid Poster Psychedelic](styles/psychedelic/fluid-poster/DESIGN.md) |
+| Retro Computing | [Desktop Workbench Retro-Computing](styles/retro-computing/desktop-workbench/DESIGN.md) |
+| Retro Futurism | [Orbital Console Retro-Futurism](styles/retro-futurism/orbital-console/DESIGN.md) |
+| Skeuomorphism | [Instrument Panel Skeuomorphism](styles/skeuomorphism/instrument-panel/DESIGN.md) |
+| Solarpunk | [Organic Solarpunk](styles/solarpunk/organic/DESIGN.md) |
+| Swiss | [International Grid Swiss](styles/swiss/international-grid/DESIGN.md) |
+| Synthwave | [Neon Horizon Synthwave](styles/synthwave/neon-horizon/DESIGN.md) |
+| Vaporwave | [Dream Archive Vaporwave](styles/vaporwave/dream-archive/DESIGN.md) |
+| Wabi-Sabi | [Quiet Imperfection Wabi-Sabi](styles/wabi-sabi/quiet-imperfection/DESIGN.md) |
+| Web 1.0 | [Document Web 1.0](styles/web-1.0/document-web/DESIGN.md) |
+| Web 2.0 | [Glossy Community Web 2.0](styles/web-2.0/glossy-community/DESIGN.md) |
+| Y2K | [Chrome Pop Y2K](styles/y2k/chrome-pop/DESIGN.md) |
 
 ```text
 styles/
@@ -32,7 +69,7 @@ styles/
 
 Every variant independently specifies philosophy, visual character, colors, typography, spacing, layout, grid, surfaces, borders, depth, components, imagery, motion, interaction states, responsive behavior, accessibility, and implementation guidance. No separate typography, button, material, or layout libraries are needed.
 
-Additional family directories reserve space for future contributions. Their READMEs explicitly mark them as planned. They have no invented variants and do not appear in the production browser. A family can have two, three, five, or more meaningful interpretations.
+All listed families are implemented. The original three families have three variants each; each of the other 35 families starts with one coherent interpretation. More variants can be added when they express a meaningful distinction. [Browse the file index](styles/README.md) to open any DESIGN.md directly.
 
 ## Use one design
 
@@ -50,7 +87,7 @@ The path must exist in the agent's workspace. Copy the file into your project, p
 
 Run the browser and open `/styles/minimalism`. Switch between Clean Product, Editorial, and Monochrome in the **same preview area**. The same fictional workspace contains navigation, hero, heading hierarchy, prose, buttons, cards, features, statistics, form controls, badges, tabs, menus, a dialog, testimonial, pricing, and footer.
 
-The content stays the same; typography, composition, density, surfaces, and component treatments change. The preview is a representative implementation, while DESIGN.md is the complete specification.
+All 38 families appear on the landing page with a representative thumbnail, description, and accurate variant count. The content stays the same; typography, composition, density, surfaces, and component treatments change. The preview is a representative implementation, while DESIGN.md is the complete specification.
 
 Select **DESIGN.md** to read the full source. Copy the file, download it, copy its repository path, or copy either agent instruction. Direct links such as `/styles/minimalism/editorial` restore the selected variant. Desktop and Mobile controls change the width of the same embedded showcase. Sample forms and pricing controls operate locally; they create no accounts, purchases, or network submissions.
 
@@ -60,11 +97,11 @@ Mixing is done through AI instructions, not an automatic composition engine:
 
 > Use Editorial Minimalism overall and Dark Glass for overlays. Keep each overlay's text and controls on its documented opaque surfaces. Recheck contrast and focus at the boundary.
 
-A future combination could say:
+A combination using the expanded library:
 
-> Use Editorial Minimalism overall, Dark Glass for overlays, and Solarpunk for interactive controls. Use Grunge for the hero section.
+> Use `styles/minimalism/editorial/DESIGN.md` overall, `styles/glassmorphism/dark-glass/DESIGN.md` for overlays, and `styles/solarpunk/organic/DESIGN.md` for interactive controls. Use `styles/grunge/weathered-print/DESIGN.md` for the hero section.
 
-**Solarpunk and Grunge are planned families, not implemented systems.** “Solarpunk / Organic” is a possible future interpretation, not a file you can use today. Supply your own complete rules for those regions until suitable variants exist. Name exactly which system owns each region and resolve conflicting tokens explicitly; each DESIGN.md remains independently coherent.
+All four files exist. Name exactly which system owns each region and resolve conflicting tokens explicitly; each DESIGN.md remains independently coherent.
 
 ## Run locally
 
@@ -90,7 +127,8 @@ npm start       # serve an already built dist directory
 - A family README supplies its display title and short introductory paragraph.
 - `dist/index.html`, `app.js`, and `app.css` implement the library shell.
 - `dist/preview.html` and `preview.js` implement **one** reusable showcase. `themes.css` gives each variant its own scoped tokens and visual rules.
-- `scripts/build.mjs` generates `dist/catalog.json` and `dist/styles/` from the source documents. These generated files are ignored by Git and must not be hand-edited.
+- `scripts/build.mjs` generates `dist/catalog.json`, `dist/thumbnails.css`, and `dist/styles/` from the source documents. These generated files are ignored by Git and must not be hand-edited.
+- `scripts/thumbnails.mjs` derives landing-card colors, typography, geometry, and depth from each family’s first live theme.
 - A variant without a matching preview theme fails the build. Empty family directories are excluded. Unknown routes return a useful 404.
 
 Deploy the built `dist/` directory to any static host supporting directory index pages. No database, backend, or external font service is required. Run the build before deployment; deep routes are real generated HTML entrypoints. `.openai/hosting.json` configures the optional Sites deployment. Root-relative asset URLs assume the site is hosted at an origin root, not a repository subpath.

@@ -1,5 +1,9 @@
-# Mid Century Modern
+# Mid-Century Modern
 
-Planned family; no production variants yet. This directory reserves a place in the library and is intentionally excluded from the visual browser.
+Warm color blocks, balanced proportions, and understated editorial detail in a practical modular system.
 
-Propose a coherent interpretation using [the contribution guide](../../CONTRIBUTING.md). Explain its philosophical distinction before adding a complete variant-level DESIGN.md and preview treatment. There is no required number of variants.
+## Available design
+
+- [Warm Modular Mid-Century Modern](warm-modular/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+
+This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.

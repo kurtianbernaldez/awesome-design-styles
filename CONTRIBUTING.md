@@ -9,7 +9,7 @@ Help people choose a coherent visual language they can actually use.
 - More precise, usable guidance in an existing DESIGN.md.
 - A more faithful or accessible shared preview implementation.
 
-Planned family directories reserve names; they are not complete design systems. There is no quota of variants per family.
+Every current family has at least one complete variant. There is no quota of variants per family; a new interpretation must earn its place through meaningful design differences.
 
 ## Explain the distinction first
 
@@ -79,6 +79,6 @@ Run `npm run check`. Preview with `npm run dev` and check:
 - Mobile and desktop layout, 200% text enlargement, long labels, and reduced motion.
 - Contrast for text and controls in default, hover, focus, and selected states; for glass, test final composites and opaque fallbacks.
 
-Include a concise before/after explanation, representative screenshots when practical, and what you actually tested. Do not claim accessibility certification from token checks alone. Keep generated `dist/catalog.json` and `dist/styles/` out of the PR; the build recreates them.
+Include a concise before/after explanation, representative screenshots when practical, and what you actually tested. Do not claim accessibility certification from token checks alone. Keep generated `dist/catalog.json`, `dist/thumbnails.css`, and `dist/styles/` out of the PR; the build recreates them.
 
 Preserve the existing MIT LICENSE and its copyright notice. Contributions are provided under those terms.

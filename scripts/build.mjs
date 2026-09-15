@@ -2,6 +2,7 @@ import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { discover } from './catalog.mjs';
+import { buildThumbnails } from './thumbnails.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const families = await discover(root);
 if (!families.length) throw new Error('No complete variants found');
@@ -21,4 +22,5 @@ for (const family of families) {
   }
 }
 await writeFile(path.join(root, 'dist/catalog.json'), JSON.stringify(families));
+await writeFile(path.join(root, 'dist/thumbnails.css'), buildThumbnails(await readFile(path.join(root, 'dist/themes.css'), 'utf8'), families));
 console.log(`Built ${families.length} families, ${families.flatMap(f=>f.variants).length} variants, and all direct routes.`);

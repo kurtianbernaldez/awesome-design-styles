@@ -1,5 +1,9 @@
 # Frutiger Metro
 
-Planned family; no production variants yet. This directory reserves a place in the library and is intentionally excluded from the visual browser.
+Flat graphic fields, strong silhouettes, and rhythmic modular sections with no simulated depth.
 
-Propose a coherent interpretation using [the contribution guide](../../CONTRIBUTING.md). Explain its philosophical distinction before adding a complete variant-level DESIGN.md and preview treatment. There is no required number of variants.
+## Available design
+
+- [Flat Rhythm Frutiger Metro](flat-rhythm/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+
+This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.

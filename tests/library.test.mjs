@@ -8,10 +8,11 @@ const root=fileURLToPath(new URL('../',import.meta.url));
 const families=await discover(root);
 const designs=families.flatMap(f=>f.variants);
 const expected=['minimalism/clean-product','minimalism/editorial','minimalism/monochrome','brutalism/raw-web','brutalism/editorial','brutalism/colorful','glassmorphism/dark-glass','glassmorphism/light-glass','glassmorphism/vibrant-glass'];
-test('initial complete variants are discoverable; planned families stay hidden',()=>{
-  assert.equal(families.length,3);assert.equal(designs.length,9);
-  assert.deepEqual(designs.map(v=>`${v.family}/${v.slug}`),expected);
-  assert(!families.some(f=>f.slug==='solarpunk'));
+test('all requested families have complete discoverable variants',()=>{
+  assert.equal(families.length,38);assert.equal(designs.length,44);
+  assert.deepEqual(designs.slice(0,9).map(v=>`${v.family}/${v.slug}`),expected);
+  assert(families.some(f=>f.slug==='solarpunk' && f.variants.some(v=>v.slug==='organic')));
+  assert(families.every(f=>f.variants.length>0));
 });
 test('metadata parser rejects malformed, duplicate, and path-mismatched files',()=>{
   const sample=designs[0];
@@ -72,8 +73,17 @@ test('server returns root, every family and variant, Markdown, assets, and real 
   for(const route of ['/', '/app.js','/preview.html','/themes.css',...families.map(f=>`/styles/${f.slug}`),...designs.flatMap(v=>[`/styles/${v.family}/${v.slug}`,`/${v.path}`])]){
     const response=await request(route);assert.equal(response.status,200,route);assert(response.body.length>0,route);
   }
-  assert.equal((await request('/styles/solarpunk')).status,404);
+  assert.equal((await request('/styles/unknown-family')).status,404);
   assert.equal((await request('/styles/minimalism/missing')).status,404);
   assert.equal((await request('/..%2fLICENSE')).status,403);
   assert.equal((await request('/%zz')).status,400);
+});
+test('every style directory has a complete file and every landing card has a real theme',async()=>{
+  const directories=(await readdir(path.join(root,'styles'),{withFileTypes:true})).filter(d=>d.isDirectory());
+  const thumbs=await readFile(path.join(root,'dist/thumbnails.css'),'utf8');
+  for(const dir of directories){
+    const family=families.find(f=>f.slug===dir.name);assert(family,`${dir.name}: unfinished family`);
+    assert(thumbs.includes(`[data-card-theme="${family.slug}/${family.variants[0].slug}"]`),`${dir.name}: missing thumbnail`);
+    assert(!(await readFile(path.join(root,'styles',dir.name,'README.md'),'utf8')).includes('Planned family'));
+  }
 });

@@ -4,7 +4,7 @@ const themes=new Set();
 for(const sheet of document.styleSheets) {
   try { for(const rule of sheet.cssRules) { const match=rule.selectorText?.match(/^\[data-theme="([a-z0-9./-]+)"\]$/); if(match) themes.add(match[1]); } } catch {}
 }
-function setTheme(theme) { if(themes.has(theme)) { root.dataset.theme=theme; root.style.colorScheme=theme==='glassmorphism/dark-glass'||theme==='glassmorphism/vibrant-glass'?'dark':'light'; } }
+function setTheme(theme) { if(themes.has(theme)) { root.dataset.theme=theme; const canvas=getComputedStyle(root).getPropertyValue('--canvas').trim(); const rgb=canvas.match(/^#([0-9a-f]{6})$/i); const brightness=rgb ? [.2126,.7152,.0722].reduce((sum,w,i)=>sum+w*parseInt(rgb[1].slice(i*2,i*2+2),16),0) : 255; root.style.colorScheme=brightness<128?'dark':'light'; } }
 setTheme(new URLSearchParams(location.search).get('theme'));
 window.addEventListener('message',event=> { if(event.origin===location.origin && event.source===parent && event.data?.type==='set-theme') setTheme(event.data.theme); });
 const dialog=document.querySelector('#demo-dialog'); let opener, toastTimer;
