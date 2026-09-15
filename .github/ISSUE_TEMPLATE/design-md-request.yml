@@ -1,0 +1,32 @@
+name: Propose a design interpretation
+description: Suggest an original style family or meaningful complete variant
+title: "Design proposal: "
+body:
+  - type: input
+    id: family
+    attributes:
+      label: Style family and proposed variant
+      placeholder: Minimalism / a distinct interpretation
+    validations:
+      required: true
+  - type: textarea
+    id: philosophy
+    attributes:
+      label: Why should this variant exist separately?
+      description: Explain its philosophy, intended uses, and differences from the closest existing system. A palette swap is not enough.
+    validations:
+      required: true
+  - type: textarea
+    id: system
+    attributes:
+      label: How does it change the complete system?
+      description: Describe typography, hierarchy, composition, surfaces, controls, interactions, responsive behavior, and accessibility.
+    validations:
+      required: true
+  - type: checkboxes
+    id: originality
+    attributes:
+      label: Originality
+      options:
+        - label: This proposes a general aesthetic rather than copying a brand, proprietary assets, or distinctive branded components.
+          required: true
