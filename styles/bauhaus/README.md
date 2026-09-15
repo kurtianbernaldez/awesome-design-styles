@@ -1,9 +1,11 @@
 # Bauhaus
 
-Geometric composition and economical type arranged around clear functional relationships.
+Functional geometric composition where circles, bars, and primary color organize the interface.
 
-## Available design
+## Available variants
 
-- [Functional Geometry Bauhaus](functional-geometry/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Functional Geometry Bauhaus](functional-geometry/DESIGN.md)
+- [Typographic Workshop Bauhaus](typographic-workshop/DESIGN.md)
+- [Modular Exhibition Bauhaus](modular-exhibition/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

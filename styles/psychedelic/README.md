@@ -1,9 +1,11 @@
 # Psychedelic
 
-Expressive flowing frames and saturated accents balanced by calm, opaque reading areas.
+Optical rhythm and swelling display forms organized into a readable fluid poster.
 
-## Available design
+## Available variants
 
-- [Fluid Poster Psychedelic](fluid-poster/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Fluid Poster Psychedelic](fluid-poster/DESIGN.md)
+- [Op Art Psychedelic](op-art/DESIGN.md)
+- [Flower Power Psychedelic](flower-power/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

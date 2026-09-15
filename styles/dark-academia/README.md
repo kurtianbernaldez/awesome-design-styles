@@ -1,9 +1,11 @@
 # Dark Academia
 
-Deep warm surfaces and literary hierarchy organized like a well-kept reading collection.
+A bookish, atmospheric reading room with cloth-dark framing, parchment inserts, and literary serif hierarchy.
 
-## Available design
+## Available variants
 
-- [Reading Room Dark Academia](reading-room/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Reading Room Dark Academia](reading-room/DESIGN.md)
+- [Annotated Manuscript Dark Academia](annotated-manuscript/DESIGN.md)
+- [Scholarly Journal Dark Academia](scholarly-journal/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

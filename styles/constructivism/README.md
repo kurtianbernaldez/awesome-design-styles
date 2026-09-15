@@ -1,9 +1,11 @@
 # Constructivism
 
-Forceful type and assembled blocks with diagonal accents kept outside the reading plane.
+Directional graphic assembly: condensed type, red and black wedges, and a forceful poster reading sequence.
 
-## Available design
+## Available variants
 
-- [Graphic Assembly Constructivism](graphic-assembly/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Graphic Assembly Constructivism](graphic-assembly/DESIGN.md)
+- [Diagonal Poster Constructivism](diagonal-poster/DESIGN.md)
+- [Production Bulletin Constructivism](production-bulletin/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

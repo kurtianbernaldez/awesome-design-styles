@@ -1,9 +1,11 @@
 # Maximalism
 
-Richly layered editorial blocks, contrasting type, and abundant detail organized around a clear focal point.
+Abundant but curated layering: patterns, varied frames, rich typography, and several complementary visual rhythms.
 
-## Available design
+## Available variants
 
-- [Curated Maximalism](curated-abundance/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Curated Maximalism](curated-abundance/DESIGN.md)
+- [Festival Poster Maximalism](festival-poster/DESIGN.md)
+- [Cabinet of Curiosities](cabinet-of-curiosities/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

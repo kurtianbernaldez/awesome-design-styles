@@ -2,7 +2,7 @@
 name: Vibrant Glass
 slug: vibrant-glass
 family: glassmorphism
-description: Expressive gradient environments with substantial translucent panes and confident, readable controls.
+description: "Expressive translucent glass in a saturated violet, magenta, and teal environment."
 tags:
   - glass
   - vibrant
@@ -14,16 +14,19 @@ tags:
 
 ## Overview and Design Philosophy
 
-Make a saturated environment part of the composition while sheltering content on stable dark panes. Suitable for creative tools, audio communities, and expressive personal workspaces. Unlike Dark Glass, the background is a visible part of the identity; unlike Light Glass, the palette deliberately creates energy. Content planes remain dark so changing scenery does not change reading contrast.
+Expressive translucent glass in a saturated violet, magenta, and teal environment.
 
-Visual character: immersive, chromatic, substantial, and controlled. The system is not a collection of transparent stickers. It is inappropriate for uncontrolled user-uploaded backgrounds without opaque surfaces.
+Use equal columns, large 80px display type, and an asymmetrical 36px/12px corner rhythm on the workspace. Reserve the largest saturated fields for the environment, allowing them to cross behind several panes.
+
+This is an original, independently usable interpretation of the family. Its defining relationships must remain visible across landing pages, working screens, forms, and overlays; changing the palette alone does not establish this design language.
 
 ## Core Principles
 
-1. Separate expressive scenery from the reading plane.
-2. Spend saturation on the environment and the main action.
-3. Make glass panes substantial enough to protect typography.
-4. Prefer static atmosphere and responsive performance to spectacle.
+- Preserve the defining composition and material together.
+- Use a #241443 environment with #913468, #4935a4, and #206f82 fields.
+- Let the control construction explain state and hierarchy.
+- Do not put 90%-opaque cards on a flat background, fake glass with a gray fill, blur foreground text, or remove translucency merely because the viewport is narrow.
+- Keep text, reading order, keyboard access, and error recovery clear even when decoration is expressive.
 
 ## Color System
 
@@ -32,7 +35,7 @@ Visual character: immersive, chromatic, substantial, and controlled. The system 
 | `canvas` | `#241c43` | Environment base |
 | `surface` | `#342747` | Opaque fallback and controls |
 | `ink` | `#faf0ff` | Primary text on dark panes |
-| `muted` | `#d5c5e0` | Secondary text |
+| `muted` | `#f0dfef` | Secondary text |
 | `accent` | `#f2c37d` | Primary action fill |
 | `on-accent` | `#35243f` | Action label |
 | `line` | `#a38cac` | Panel boundaries |
@@ -44,11 +47,28 @@ Visual character: immersive, chromatic, substantial, and controlled. The system 
 | `berry` | `#94486b` | Environment only |
 | `teal` | `#246879` | Environment only |
 
-Use ink and muted on canvas/surface, and on-accent on accent. Semantic text colors belong on the documented reading surface. These pairs are the starting contract; validate final rendered states. Do not infer a second color mode by inversion. Text selection uses accent with on-accent text.
+Use ink and muted text on their documented reading surfaces. Body links use ink with a persistent underline; bright filled-action colors must not be reused as low-contrast link text. Accent/on-accent is the tested filled-action pair; a raised neutral button instead uses ink or accent text on surface. Status colors always have words or icons as a second cue. Additional field colors are specified in the construction rules below; do not infer arbitrary color substitutions.
+
+Use a #241443 environment with #913468, #4935a4, and #206f82 fields. Pane fill is rgb(30 17 63 / .30), 24px backdrop blur, a 1px #f4ceff6b rim, and inset edge light. Do not convert the pane to an opaque gradient.
+
+The opaque surface token is the no-blur and reduced-transparency fallback. The live pane uses the separate glass recipe above. Check text against the composite of pane and every permitted environment endpoint; never test transparent glass against the opaque fallback alone.
 
 ## Typography
 
-Use `system-ui, sans-serif`. H1: clamp(40px, 6vw, 68px)/1.05, 750, -0.04em. H2: 34px/1.15, 700. H3: 23px/1.25, 650. Body: 17px/1.65. Lead: 20px/1.55. Labels: 15px/1.4, 650. Captions: 13px/1.5. Stats: 42px/1.1, 700, tabular figures. Use 60ch body measure and 15ch display measure. Keep all text opaque and single-color. Gradient text, outlined letterforms, and ultralight headings are excluded.
+Use equal columns, large 80px display type, and an asymmetrical 36px/12px corner rhythm on the workspace. Reserve the largest saturated fields for the environment, allowing them to cross behind several panes.
+
+| Role | Font stack | Size and rhythm |
+|---|---|---|
+| Display | `system-ui,sans-serif` | Use the display scale and weight described above; 34–40px on phones unless specified below |
+| Section heading | `system-ui,sans-serif` | 32px / 1.2; 28px on small screens |
+| Card heading | `system-ui,sans-serif` | 22px / 1.3; wrap naturally |
+| Body | `system-ui,sans-serif` | 17px / 1.6–1.7; regular weight |
+| Lead | body stack | 18px / 1.6; no more than 44ch |
+| Control label | body stack | 14px / 1.4; 600 weight |
+| Caption and index | body or monospace stack | 12–13px / 1.5; secondary information only |
+| Statistics | display stack | 30–48px / 1.1; tabular figures where supported |
+
+Keep paragraphs below 65ch. Never use display tracking or condensed letterforms for lengthy error messages. Preserve live text, browser zoom, and fallback fonts. Barlow Condensed and Silkscreen, when specified, are open-license fonts; retain their OFL notices if distributed. The preview bundles them locally. Other stacks use system fallbacks and require no remote font service.
 
 ## Spacing
 
@@ -56,38 +76,53 @@ Scale: 4, 8, 12, 20, 28, 40, 64, 96px. Panels use 32px padding; contents use 20p
 
 ## Layout and Grid
 
-Use a 1200px container, 36px gutters, and a 12-column grid with 28px gaps. Hero is 7/5; repeated cards use thirds. One continuous gradient spans the showcase. Panels remain aligned and nonoverlapping; use larger composition and color contrast instead of rotating cards. Pricing stays equal-width and data-heavy sections use one opaque pane.
+Use equal columns, large 80px display type, and an asymmetrical 36px/12px corner rhythm on the workspace. Reserve the largest saturated fields for the environment, allowing them to cross behind several panes.
+
+Use a container no wider than 1200px unless this interpretation explicitly uses the full page. The default gutter is 36px. Set flexible grid tracks with minmax(0, 1fr), allow action rows to wrap, and keep cards content-sized. Hero, workspace, statistics, features, quotation, pricing, contact form, and footer remain in that source order. Change visual arrangement without assigning a contradictory keyboard order.
 
 ## Surfaces, Borders, Radius, Shadows, and Depth
 
-Environment uses static radial gradients of violet at the upper left, berry at the upper right, and teal below, over canvas. Text-bearing panes use `rgb(52 39 71 / 0.90)`, 20px backdrop blur, 1px line border, 24px corners, and `0 16px 40px #170e343d`. Inputs and menus use opaque surface. Controls use 12px corners. Only outer panels blur, no more than six visible panes. Dialogs are opaque with 24px corners. Layers: environment 0, content 1, navigation 10, menu 20, backdrop 40, dialog 50.
+Use a #241443 environment with #913468, #4935a4, and #206f82 fields. Pane fill is rgb(30 17 63 / .30), 24px backdrop blur, a 1px #f4ceff6b rim, and inset edge light. Do not convert the pane to an opaque gradient.
+
+Use the construction example below for precise borders, radius, backgrounds, and shadow recipes. Decoration belongs to the containing region; text and hit targets remain clear. Keep ordinary content at layer 0, menus around 20, the modal backdrop at 40, dialogs at 50, and feedback above that. Native dialog belongs in the top layer; do not trap it inside a transformed card. Avoid clipping focus rings with overflow hidden. A passive surface does not gain interactive elevation simply because the pointer crosses it.
 
 ## Components
 
+Glass toolbar buttons, badges, and tabs repeat the pane material. Primary buttons have an opaque, contrast-tested fill and a small specular top edge. Inputs and menus use the opaque surface token for predictable text contrast. Dialogs can use the same glass within this bounded environment, with opaque fields and an explicit close action. A selected tab uses an opaque inset segment.
+
 ### Buttons
-Primary is opaque accent with on-accent text, 48px minimum height, 12px corners, and 24px horizontal padding. Secondary is opaque surface with control-line border and ink label. No gradient-filled controls. Destructive confirmation uses error fill with on-accent text, after contrast validation. Loading reserves width, disables duplicate submission, and includes a readable progress label.
+
+Use the variant’s button material above for primary, secondary, and icon actions. Keep at least 44×44px targets; use 48px for principal actions. Each task has one clearly identifiable primary action and a verb label. Icon controls need an accessible name; toggle buttons expose aria-pressed and a persistent filled icon or inset state. Loading keeps the label or a written progress state and prevents duplicate submission without changing width. Disabled controls retain readable labels, use native disabled behavior, remove movement, and explain any prerequisite nearby.
 
 ### Forms
-Use opaque surface inputs with 1px control-line borders, 12px corners, 14px padding, and 48px minimum height. Labels and values use ink. Native checkbox/radio accents use accent. Errors add a 2px error border and a written explanation; successful submission produces a persistent inline message. Do not let background colors become input validation colors.
+
+Carry the specified surface into editable wells without putting texture or decorative imagery behind text. Use visible persistent labels, 16px or larger editable text, and a minimum 44px control height. Give multiline fields at least 112px initial height. Group radio and checkbox sets with fieldset and legend. Native checkboxes or switches retain their checked state, keyboard access, and accessible name; sliders expose a label and current value. Validate after blur or submission, retain entered values, connect errors with aria-describedby, and explain recovery. Placeholder text is an example rather than a label. Provide a linked error summary for long forms.
 
 ### Cards
-A pane contains an icon, strong H3, readable prose, and one main action with 20px gaps. Feature cards share one surface treatment rather than adopting random gradients. Pricing recommendation uses an accent border and explicit badge. Stats are opaque ink numerals; avoid animated counters. Empty states use an original small icon and a concrete next step. Loading uses static placeholders on the protected surface.
+
+Use the surface and region construction above. A card is a content group, not necessarily a raised rectangle. Keep a heading, explanation, optional status, and action in a predictable order with 16–24px internal spacing. Passive regions have no misleading hover lift. Do not wrap multiple nested links in a second card link. Pricing compares the same criteria in the same order and states recommendations in words. Empty and loading states remain inside the intended content space without inventing decorative activity.
 
 ### Navigation and Menus
-Navigation is a 76px high-opacity surface strip with a line edge and 16px corners when inset. Current links have an accent underline. Menus are opaque surface with a control-line border, 12px corners, 8px padding, and 48px rows. No gradient or blur inside menus. Escape dismisses, focus enters on opening, and returns to the trigger on closing.
+
+Navigation adopts the framing and density described above while keeping recognizable links. Mark the current destination with aria-current and a persistent underline or structural rail. Allow wrapping rather than shrinking labels. Menus use an opaque reading surface, 8px surrounding padding, and at least 44px link rows; preserve the variant’s border and corner language. Use ordinary link lists for navigation menus. Escape and outside click dismiss; return focus to the trigger when dismissal is keyboard-driven. Do not add application-menu roles without their full keyboard behavior.
 
 ### Tabs
-A solid segmented rail has 12px corners and 48px targets. Selected tab is accent with dark text; inactive labels use ink. Arrow keys and Home/End navigate a properly associated tab/panel structure. Do not color each tab according to a different gradient region.
+
+The tab strip is glass with a fine rim; the selected tab is an opaque inset segment. Selection persists when blur is unavailable. Use a labeled tablist with one selected tab, aria-selected, aria-controls, and a named tabpanel. Arrow keys move within the set; Home/End move to its ends. Only the selected tab is in the sequential tab order. Keep labels legible at narrow widths with an internally scrollable strip or wrapping supported by the implementation. Switching does not reset unrelated input.
 
 ### Modals and Overlays
-Dialog is opaque surface, 24px corners, 32px padding, 580px maximum width, 85dvh maximum height. A 1px control-line edge and shadow distinguish it from the #160f2c 76% backdrop. Keep scenery outside the dialog. Provide visible close/cancel actions, a clear title, and safe focus restoration. Do not make the modal itself a transparent spectacle.
+
+Use the same translucent pane in the bounded environment defined above; inputs remain opaque. Without backdrop-filter or with reduced transparency, switch the entire dialog to the opaque surface token. A dialog has a concise heading, supporting text, close action, and one clear primary task. Use 24–32px interior padding, maximum width 580px, maximum height 85dvh, and internal scrolling. Keep at least 16px viewport clearance. Use a native dialog where available to trap focus, support Escape, and restore the opener. Backdrop dims the environment without making the dialog’s text translucent. Menus never trap focus.
 
 ### Badges and Feedback
-Badges use opaque surface, line border, capsule corners, 5px by 12px padding, and explicit status text. Accent may mark a recommended plan but does not mean success. Feedback remains on opaque panels with icon-plus-text semantic cues. Critical failures stay next to the task and offer recovery.
+
+Follow the badge construction specified above, using 13px readable text and 4–8px vertical padding. State is written explicitly: status color alone is insufficient. A passive badge must not resemble an actionable tool. Keep errors inline until resolved; announce completed actions through a polite status region. Noncritical toasts may dismiss after enough reading time, but cannot hold the only route to a required action.
 
 ## Icons, Imagery, and Illustration
 
-Use 24px icons with 1.75px strokes and opaque ink. Media can be expressive original photography or illustration, in 16:10 crops with 16px corners. Keep informative imagery separate from ambient scenery. Illustrations may use the gradient environment colors, but functional diagrams need solid strokes and labels. No embedded brand marks, glossy text, or copied album art.
+The backdrop is part of the material: keep visible, static color fields behind the glass. Include one crisp static environmental ring or band that crosses behind a pane, so the softening of its edge visibly demonstrates backdrop blur. Use only a color from the bounded environment palette. Do not place an unrelated photo behind reading text without testing the composite. Blur the backdrop, never the content. Prefer sparse, crisp line icons.
+
+Use a consistent 20–24px icon box and roughly 1.8–2px line weight, adjusted for the variant’s visual density. Decorative imagery has empty alt text or is hidden from the accessibility tree; meaningful images have useful alt text and captions outside the crop. All assets must be original or appropriately licensed. Do not copy proprietary fonts, logos, recognizable branded layouts, or distinctive commercial components.
 
 ## Data Visualization
 
@@ -95,15 +130,28 @@ Place charts on opaque surface with ink labels. Use accent plus distinguishable 
 
 ## Motion and Animation
 
-Controls use 160ms ease-out color changes. Menus fade in 140ms; dialogs fade and translate at most 8px in 200ms cubic-bezier(.2,.8,.2,1). Gradients and blur are static. No cursor-following light, parallax, flashing scenery, or endless floating objects. Reduced motion removes transforms and fades and replaces spinners with a static status label.
+Use 140–180ms color feedback and immediate material changes. Do not continuously animate blur, gradients, or floating panes. Reduced transparency replaces every glass plane with the opaque surface; lack of blur support does the same.
+
+Animation must explain an actual state change. Do not delay content until an entrance completes. Unknown-duration tasks use written progress rather than fabricated percentages. Honor prefers-reduced-motion with immediate state changes and static loading feedback.
 
 ## Interaction States
 
-Hover primary uses #ffdaa1; secondary uses #443452. Focus-visible is a 3px accent outline with a 3px dark surface gap. Active primary uses #dfad64. Disabled controls stay opaque with muted text and a dashed control-line border; remove interactive shadows. Selected rows carry a check mark and accent edge. Never use background hue shifts as the only state signal.
+- **Hover:** use a small brightness or underline change on interactive controls, with their material intact. Do not reveal essential content only on hover.
+- **Focus-visible:** use a 3px accent or ink outline separated from the surrounding material by 3–5px. Keep it visible over all local surfaces; decorative clipping must not hide it.
+- **Active / pressed:** Use 140–180ms color feedback and immediate material changes. Do not continuously animate blur, gradients, or floating panes. Reduced transparency replaces every glass plane with the opaque surface; lack of blur support does the same.
+- **Selected:** use the variant’s inset, filled, beveled, or ruled state; expose aria-selected, aria-pressed, or aria-current as appropriate.
+- **Disabled:** retain readable muted labels and native disabled semantics; remove interactive shadow travel. Use a written prerequisite or unavailable label where necessary.
+- **Error / success:** use words and a semantic color or icon, preserve user input, and provide a clear next step.
 
 ## Responsive Behavior
 
-Below 940px, hero stacks and feature panes become two columns. Below 640px, use 20px gutters, 56px section gaps, single-column panes, 20px panel padding, and 40px H1. Turn blur off and use opaque surface on mobile; keep the static gradient outside panels. Dialog uses 20px padding and 16px viewport margins. Navigation wraps and all controls retain 48px targets.
+At 760px and below, stack the hero in source order, switch feature/pricing/contact groups to one column, and let navigation wrap into a second row. Remove decorative tilts and staggered margins, but keep the material, border language, palette, and typographic hierarchy. Use 24px gutters and 56px section intervals.
+
+At 480px and below, use 20px gutters, 24px panel interiors, a 34–40px headline, and 28px section headings. Keep 16px+ editable text and normal body size. Allow toolbar controls to wrap; give a slider its own row when needed. Reduce ornamental frames without eliminating the style. Tables may scroll within a labeled region; the entire page must not scroll sideways.
+
+Test at 320px, 390px, a narrow comparison iframe, and desktop widths. Also check 200% text enlargement and 400% zoom. Dialogs scroll internally with an always-reachable close action.
+
+Do not disable glass on phones. Keep the same pane recipe and fewer, smaller blurred surfaces if performance requires it. Reduced transparency is a user preference, not a viewport breakpoint.
 
 ## Accessibility
 
@@ -117,61 +165,123 @@ For glass, test the composited surface over every allowed gradient endpoint, not
 
 ## Implementation Guidance
 
-Start by defining these tokens on a scoped root, then implement the component and layout rules above. This is a complete system: do not import missing rules from a sibling variant. The typography stacks use installed system fonts and require no proprietary font download. If an openly licensed substitute is introduced, verify its license, fallback metrics, and line wrapping.
+Apply a `.design` scope to the interface root. Start with the composition and reading hierarchy, then the material and controls. The class names below describe roles: `.hero` is the opening region, `.project-card` the representative workspace, `.panel` a grouped surface, `.feature-card` a repeated explanatory region, and `.primary` an action. Map those roles to your application’s semantic components; the demo copy is not required.
+
+The following tokens and construction rules are included here so this file remains independently useful. They are not a replacement for the responsive, keyboard, form, and accessibility requirements above. Use semantic HTML and preserve normal layout flow around the decorative frames.
 
 ```css
-.design-glassmorphism-vibrant-glass {
+.design {
   --canvas: #241c43;
   --surface: #342747;
   --ink: #faf0ff;
-  --muted: #d5c5e0;
+  --muted: #f0dfef;
   --accent: #f2c37d;
   --on-accent: #35243f;
   --line: #a38cac;
   --control-line: #bba4c4;
   --error: #ffc0cf;
-  --success: #b6ecc9;
-  --warning: #ffe0a8;
-  --violet: #6745a1;
-  --berry: #94486b;
-  --teal: #246879;
-  color: var(--ink);
-  background: var(--canvas);
+  --hover: #ffdaa1;
+  --pressed: #dfad64;
+  --font: system-ui,sans-serif;
+  --heading: system-ui,sans-serif;
+  --display: 68px;
+  --display-weight: 750;
+  --body: 17px;
+  --leading: 1.65;
+  --radius: 24px;
+  --control-radius: 12px;
+  --border: 1px;
+  --panel-padding: 32px;
+  --gap: 28px;
+  --section: 96px;
+  --gutter: 36px;
+  --max: 1200px;
+  --shadow: 0 16px 40px #170e343d;
+  --duration: 160ms;
+  --hero-columns: 7fr 5fr;
+  --button-height: 48px;
+  --dialog-radius: 24px;
+  --dialog-width: 580px;
+  --dialog-padding: 32px;
+  --backdrop: rgb(22 15 44 / .76);
+  --dialog-shadow: 0 20px 60px #170e3480;
+  --stat: 42px;
+  --glass: rgb(30 17 63 / .30);
+  --blur: 24px;
+  --environment: radial-gradient(ellipse 45% 34% at 86% 20%,#913468 0,transparent 100%),radial-gradient(ellipse 40% 28% at 8% 20%,#4935a4 0,transparent 100%),radial-gradient(ellipse 50% 24% at 55% 65%,#206f82 0,transparent 100%),#241443;
+  --rim: #f4ceff6b;
 }
-.design-glassmorphism-vibrant-glass *,
-.design-glassmorphism-vibrant-glass *::before,
-.design-glassmorphism-vibrant-glass *::after { box-sizing: border-box; }
+
+.design body{ background:var(--environment); background-attachment:fixed; }
+
+.design .hero{ padding:64px 0; gap:48px; }
+
+.design .panel,
+.design .demo-nav,
+.design .stats,
+.design dialog{
+ background:var(--surface); border:1px solid var(--rim); border-radius:24px;
+ box-shadow:inset 0 1px 0 #ffffff50,0 24px 50px #00000024;
+}
+
+@supports (backdrop-filter:blur(1px)) {
+ .design :is(.panel,.demo-nav,.stats,dialog) { background:var(--glass); backdrop-filter:blur(var(--blur)); -webkit-backdrop-filter:blur(var(--blur)); }
+}
+
+.design .demo-nav{ margin-top:24px; padding:12px 20px; }
+
+.design .stats{ padding:24px; }
+
+.design .project-card{ box-shadow:inset 0 1px 0 #ffffff70,inset 1px 0 0 #ffffff20,0 32px 60px #0003; }
+
+.design .project-rows>div,
+.design .card-bottom{ border-color:var(--rim); }
+
+.design .icon-button{ background:var(--glass); border:1px solid var(--rim); border-radius:14px; box-shadow:inset 0 1px #ffffff40; }
+
+.design .badge{ background:var(--glass); border-color:var(--rim); }
+
+.design .demo-tabs{ border:1px solid var(--rim); padding:5px; border-radius:16px; background:var(--glass); }
+
+.design .demo-tabs button[aria-selected=true]{ background:var(--surface); border:0; border-radius:10px; }
+
+.design .testimonial{ border:0; }
+
+.design .primary{ box-shadow:inset 0 1px #ffffff60,0 4px 14px #0002; }
+
+.design{
+ --environment:radial-gradient(ellipse 45% 34% at 86% 20%,#913468 0,transparent 100%),radial-gradient(ellipse 40% 28% at 8% 20%,#4935a4 0,transparent 100%),radial-gradient(ellipse 50% 24% at 55% 65%,#206f82 0,transparent 100%),#241443;
+ --glass:rgb(30 17 63 / .30);--blur:24px;--rim:#f4ceff6b;--muted:#f0dfef;
+}
+
+.design .hero{ grid-template-columns:1fr 1fr; }
+
+.design h1{ font-size:clamp(42px,6.5vw,80px); line-height:1; }
+
+.design .project-card{ border-radius:36px 12px 36px 12px; }
+
+.design { --glass-object:#913468; }
+.design .hero::before { content:''; position:absolute; width:46%; height:66%; right:-5%; top:16%; border:42px solid var(--glass-object); border-radius:50%; transform:rotate(-18deg); z-index:-1; pointer-events:none; }
+.design .hero::before { border-radius:0; border-width:60px 0; transform:rotate(-24deg); }
 ```
 
-Use rem for text and spacing equivalents with a 16px reference root; do not override the user's root font size. Use CSS grid with `minmax(0, 1fr)`, fluid headings, and `overflow-wrap: anywhere` for untrusted long strings. Preserve native form behavior. Scope this system to its container when embedding it, including portal/dialog surfaces; do not leak its tokens into surrounding application chrome.
-
-Implementation order: establish the canvas and type hierarchy; build the responsive grid; apply component surfaces and geometry; implement all interactive states; then add only the permitted depth and motion. Verify a navigation, hero, feature set, statistics, form, tabs, pricing, testimonial, and dialog together. Test empty content, long labels, validation errors, disabled controls, keyboard navigation, and reduced-motion presentation. Confirm all assets are original or appropriately licensed.
-
-The family identity and this variant's philosophy are invariant. Content length and grid collapse can adapt. When mixing manually, name the exact region and its chosen document, keep one owner for each component, and recheck contrast, focus, and stacking at the boundary. Do not automatically average tokens across systems.
-
-Progressive enhancement example (apply the panel opacity and blur values specified above):
-
-```css
-.glass-panel { background: var(--surface); }
-@supports (backdrop-filter: blur(1px)) {
-  .glass-panel { background: rgb(52 39 71 / 0.90); backdrop-filter: blur(20px); }
-}
-@media (prefers-reduced-transparency: reduce), (forced-colors: active) {
-  .glass-panel { background: var(--surface); backdrop-filter: none; }
-}
-```
-
-The opaque declaration must exist outside @supports. Keep animation on opacity or small transforms only, never backdrop-filter. Use the system's mobile opaque rule even when the browser lacks the reduced-transparency media feature.
+Use a labeled shared control set when checking implementation: primary and secondary buttons, an icon toggle, a checkbox/switch, a range input, text fields, navigation, tabs, and a modal. Check the neutral and selected states, not just the hero screenshot. A 1px brightness change on hover is not a substitute for the material-specific pressed state. On narrow screens, apply the responsive rules above after the construction rules.
 
 ## Do
 
-- Bound the scenery and protect every text plane.
-- Use saturation to establish environment, not status.
-- Check low-performance and opaque-fallback presentations.
+- Expressive translucent glass in a saturated violet, magenta, and teal environment.
+- Carry the construction through navigation, inputs, cards, tabs, and overlays.
+- Preserve readable text and stable hit areas when adding decoration.
+- Compare the same interface content at desktop and phone widths.
+- Verify actual composited backgrounds, focus rings, selected states, and unavailable controls.
 
 ## Don't
 
-- Do not put white text directly over bright gradients.
-- Do not nest backdrop filters or animate the scenery.
-- Do not use transparency to hide weak information hierarchy.
+- Do not put 90%-opaque cards on a flat background, fake glass with a gray fill, blur foreground text, or remove translucency merely because the viewport is narrow.
+- Replace these rules with the same card grid and a different palette.
+- Copy a particular brand, its fonts, assets, terminology, or exact components.
+- Hide missing behavior behind a beautiful static screenshot.
 
+## Research Context
+
+Background reference: [NN/g: glassmorphism](https://www.nngroup.com/articles/glassmorphism/). The rules in this document are an original interface interpretation, not a reproduction of a source artifact or a claim that this variant exhausts the family.

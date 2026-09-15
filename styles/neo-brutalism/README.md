@@ -1,9 +1,11 @@
 # Neo-Brutalism
 
-Friendly utility with thick outlines, small hard shadows, and clear modular cards.
+Friendly functional modules with thick ink boundaries, flat color, and unmistakable hard offset shadows.
 
-## Available design
+## Available variants
 
-- [Playful Neo-Brutalism](playful-utility/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Playful Neo-Brutalism](playful-utility/DESIGN.md)
+- [Block Editorial Neo-Brutalism](block-editorial/DESIGN.md)
+- [Utility Board Neo-Brutalism](utility-board/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

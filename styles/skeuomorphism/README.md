@@ -1,9 +1,11 @@
 # Skeuomorphism
 
-Tactile panels and inset controls that use physical affordances to clarify digital actions.
+A tactile instrument chassis: physical fabrication explains which parts press, which parts contain information, and which parts are recessed.
 
-## Available design
+## Available variants
 
-- [Instrument Panel Skeuomorphism](instrument-panel/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Instrument Panel Skeuomorphism](instrument-panel/DESIGN.md)
+- [Leather Organizer Skeuomorphism](leather-organizer/DESIGN.md)
+- [Paper Workbench Skeuomorphism](paper-workbench/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

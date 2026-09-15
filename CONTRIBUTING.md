@@ -9,7 +9,7 @@ Help people choose a coherent visual language they can actually use.
 - More precise, usable guidance in an existing DESIGN.md.
 - A more faithful or accessible shared preview implementation.
 
-Every current family has at least one complete variant. There is no quota of variants per family; a new interpretation must earn its place through meaningful design differences.
+Every current family has at least three complete variants. New families should arrive with three meaningful interpretations and working previews. Further variants must earn their place through differences in philosophy, composition, and behavior.
 
 ## Explain the distinction first
 
@@ -58,11 +58,11 @@ A variant must:
 - Include implementation guidance and specific Do/Don't rules.
 - Remain usable without another design document or a proprietary asset.
 
-Use original or appropriately licensed assets only, and document third-party licenses if introduced. Never reproduce a brand's identity, exact palette, proprietary font, distinctive component, logo, marketing text, or unique layout. Do not copy sentences from the former collection or other design documents. Ordinary aesthetic conventions are welcome; branded reconstruction is not.
+Use original or appropriately licensed assets only, and document third-party licenses if introduced. Never reproduce a brand's identity, exact palette, proprietary font, distinctive component, logo, marketing text, or unique layout. Do not copy sentences from the former brand collection or another author’s design documents. Shared functional accessibility contracts within this original library may be reused; each interpretation still needs its own visual rules. Ordinary aesthetic conventions are welcome; branded reconstruction is not.
 
 ## Implement the comparison
 
-Add a scoped `[data-theme="family/variant"]` treatment in `dist/themes.css`. Use the **existing** `dist/preview.html` and its content. Do not build a separate demo page per variant. Change grid proportions, spacing, type, surfaces, and component styling as the design requires, while retaining the same content, component set, reading order, and working controls.
+Add scoped `[data-theme="family/variant"]` tokens in `dist/themes.css` and the visual construction in `dist/identities.css` or `dist/variants.css`. Shared family construction uses `[data-family="family"]`; interpretation-specific overrides use the full theme selector. Use the **existing** `dist/preview.html` and its content. Do not build a separate demo page per variant. Change grid proportions, spacing, type, surfaces, and component styling as the design requires, while retaining the same content, component set, reading order, and working controls.
 
 New common components, if necessary, must be added to the shared showcase so every variant can be compared. Keep the outer browser interface neutral. Make the preview agree with the document, including fallback modes, focus indicators, and reduced motion. Avoid dependencies unless native platform features cannot reasonably handle the need.
 
@@ -82,3 +82,9 @@ Run `npm run check`. Preview with `npm run dev` and check:
 Include a concise before/after explanation, representative screenshots when practical, and what you actually tested. Do not claim accessibility certification from token checks alone. Keep generated `dist/catalog.json`, `dist/thumbnails.css`, and `dist/styles/` out of the PR; the build recreates them.
 
 Preserve the existing MIT LICENSE and its copyright notice. Contributions are provided under those terms.
+
+## Prove the visual distinction
+
+Describe the family’s defining relationships and cite useful context in the visual review. A new palette on the same components is insufficient. Compare the same hero, workspace, tool controls, feature regions, pricing, and form at desktop and phone widths. Keep material-specific behavior on small screens; reduced-transparency and reduced-motion preferences are separate from responsive layout.
+
+Update the complete DESIGN.md alongside the preview rules in `dist/identities.css`. Regenerate the real landing captures with `node scripts/browser-audit.mjs thumbnails`; do not hand-draw an unrelated thumbnail. Run `npm run check` and the local browser audit documented in README. Preserve bundled font license notices and document any original generated artwork in `docs/artwork-prompts.json`.

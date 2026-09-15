@@ -1,9 +1,11 @@
 # Industrial
 
-Durable-looking panels, explicit labels, and restrained safety accents for practical interfaces.
+A fabricated workshop interface with dark metal panels, condensed labels, fastening cues, and disciplined safety accents.
 
-## Available design
+## Available variants
 
-- [Workshop Industrial](workshop-panel/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Workshop Industrial](workshop-panel/DESIGN.md)
+- [Technical Manual Industrial](technical-manual/DESIGN.md)
+- [Assembly Line Industrial](assembly-line/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

@@ -8,48 +8,48 @@ A style family is a starting point, not one definitive appearance. Minimalism ca
 
 ## The library
 
-**38 families · 44 complete design systems.** Every family below has a DESIGN.md and a matching preview.
+**38 families · 114 complete design systems.** Every family below has a DESIGN.md and a matching preview.
 
 | Family | Complete variants |
 |---|---|
-| Minimalism | [Clean Product](styles/minimalism/clean-product/DESIGN.md) · [Editorial](styles/minimalism/editorial/DESIGN.md) · [Monochrome](styles/minimalism/monochrome/DESIGN.md) |
-| Brutalism | [Raw Web](styles/brutalism/raw-web/DESIGN.md) · [Editorial](styles/brutalism/editorial/DESIGN.md) · [Colorful](styles/brutalism/colorful/DESIGN.md) |
+| Minimalism | [Clean Product Minimalism](styles/minimalism/clean-product/DESIGN.md) · [Editorial Minimalism](styles/minimalism/editorial/DESIGN.md) · [Monochrome Minimalism](styles/minimalism/monochrome/DESIGN.md) |
+| Brutalism | [Raw Web Brutalism](styles/brutalism/raw-web/DESIGN.md) · [Editorial Brutalism](styles/brutalism/editorial/DESIGN.md) · [Colorful Brutalism](styles/brutalism/colorful/DESIGN.md) |
 | Glassmorphism | [Dark Glass](styles/glassmorphism/dark-glass/DESIGN.md) · [Light Glass](styles/glassmorphism/light-glass/DESIGN.md) · [Vibrant Glass](styles/glassmorphism/vibrant-glass/DESIGN.md) |
-| Anti Design | [Intentional Disruption Anti-Design](styles/anti-design/intentional-disruption/DESIGN.md) |
-| Art Deco | [Geometric Elegance Art Deco](styles/art-deco/geometric-elegance/DESIGN.md) |
-| Art Nouveau | [Botanical Lines Art Nouveau](styles/art-nouveau/botanical-lines/DESIGN.md) |
-| Bauhaus | [Functional Geometry Bauhaus](styles/bauhaus/functional-geometry/DESIGN.md) |
-| Claymorphism | [Soft Play Claymorphism](styles/claymorphism/soft-play/DESIGN.md) |
-| Constructivism | [Graphic Assembly Constructivism](styles/constructivism/graphic-assembly/DESIGN.md) |
-| Corporate Memphis | [Friendly Explainer Corporate Memphis](styles/corporate-memphis/friendly-explainer/DESIGN.md) |
-| Cyberpunk | [Night Terminal Cyberpunk](styles/cyberpunk/night-terminal/DESIGN.md) |
-| Dark Academia | [Reading Room Dark Academia](styles/dark-academia/reading-room/DESIGN.md) |
-| De Stijl | [Orthogonal Fields De Stijl](styles/de-stijl/orthogonal-fields/DESIGN.md) |
-| Frutiger Aero | [Clear Horizon Frutiger Aero](styles/frutiger-aero/clear-horizon/DESIGN.md) |
-| Frutiger Metro | [Flat Rhythm Frutiger Metro](styles/frutiger-metro/flat-rhythm/DESIGN.md) |
-| Futurism | [Precision Futurism](styles/futurism/precision-interface/DESIGN.md) |
-| Grunge | [Weathered Print Grunge](styles/grunge/weathered-print/DESIGN.md) |
-| Industrial | [Workshop Industrial](styles/industrial/workshop-panel/DESIGN.md) |
-| Japandi | [Warm Order Japandi](styles/japandi/warm-order/DESIGN.md) |
-| Maximalism | [Curated Maximalism](styles/maximalism/curated-abundance/DESIGN.md) |
-| Memphis | [Pattern Play Memphis](styles/memphis/pattern-play/DESIGN.md) |
-| Mid-Century Modern | [Warm Modular Mid-Century Modern](styles/mid-century-modern/warm-modular/DESIGN.md) |
-| Neo-Brutalism | [Playful Neo-Brutalism](styles/neo-brutalism/playful-utility/DESIGN.md) |
-| Neumorphism | [Soft Relief Neumorphism](styles/neumorphism/soft-relief/DESIGN.md) |
-| Pixel Art | [Grid Adventure Pixel Art](styles/pixel-art/grid-adventure/DESIGN.md) |
-| Pop Art | [Graphic Impact Pop Art](styles/pop-art/graphic-impact/DESIGN.md) |
-| Psychedelic | [Fluid Poster Psychedelic](styles/psychedelic/fluid-poster/DESIGN.md) |
-| Retro Computing | [Desktop Workbench Retro-Computing](styles/retro-computing/desktop-workbench/DESIGN.md) |
-| Retro Futurism | [Orbital Console Retro-Futurism](styles/retro-futurism/orbital-console/DESIGN.md) |
-| Skeuomorphism | [Instrument Panel Skeuomorphism](styles/skeuomorphism/instrument-panel/DESIGN.md) |
-| Solarpunk | [Organic Solarpunk](styles/solarpunk/organic/DESIGN.md) |
-| Swiss | [International Grid Swiss](styles/swiss/international-grid/DESIGN.md) |
-| Synthwave | [Neon Horizon Synthwave](styles/synthwave/neon-horizon/DESIGN.md) |
-| Vaporwave | [Dream Archive Vaporwave](styles/vaporwave/dream-archive/DESIGN.md) |
-| Wabi-Sabi | [Quiet Imperfection Wabi-Sabi](styles/wabi-sabi/quiet-imperfection/DESIGN.md) |
-| Web 1.0 | [Document Web 1.0](styles/web-1.0/document-web/DESIGN.md) |
-| Web 2.0 | [Glossy Community Web 2.0](styles/web-2.0/glossy-community/DESIGN.md) |
-| Y2K | [Chrome Pop Y2K](styles/y2k/chrome-pop/DESIGN.md) |
+| Anti Design | [Intentional Disruption Anti-Design](styles/anti-design/intentional-disruption/DESIGN.md) · [Browser Collage Anti-Design](styles/anti-design/browser-collage/DESIGN.md) · [Typographic Rebellion Anti-Design](styles/anti-design/typographic-rebellion/DESIGN.md) |
+| Art Deco | [Geometric Elegance Art Deco](styles/art-deco/geometric-elegance/DESIGN.md) · [Streamline Art Deco](styles/art-deco/streamline/DESIGN.md) · [Ornamental Marquee Art Deco](styles/art-deco/ornamental-marquee/DESIGN.md) |
+| Art Nouveau | [Botanical Lines Art Nouveau](styles/art-nouveau/botanical-lines/DESIGN.md) · [Illustrated Folio Art Nouveau](styles/art-nouveau/illustrated-folio/DESIGN.md) · [Vienna Geometry Art Nouveau](styles/art-nouveau/vienna-geometry/DESIGN.md) |
+| Bauhaus | [Functional Geometry Bauhaus](styles/bauhaus/functional-geometry/DESIGN.md) · [Typographic Workshop Bauhaus](styles/bauhaus/typographic-workshop/DESIGN.md) · [Modular Exhibition Bauhaus](styles/bauhaus/modular-exhibition/DESIGN.md) |
+| Claymorphism | [Soft Play Claymorphism](styles/claymorphism/soft-play/DESIGN.md) · [Toy Workshop Claymorphism](styles/claymorphism/toy-workshop/DESIGN.md) · [Ceramic Studio Claymorphism](styles/claymorphism/ceramic-studio/DESIGN.md) |
+| Constructivism | [Graphic Assembly Constructivism](styles/constructivism/graphic-assembly/DESIGN.md) · [Diagonal Poster Constructivism](styles/constructivism/diagonal-poster/DESIGN.md) · [Production Bulletin Constructivism](styles/constructivism/production-bulletin/DESIGN.md) |
+| Corporate Memphis | [Friendly Explainer Corporate Memphis](styles/corporate-memphis/friendly-explainer/DESIGN.md) · [Community Story Corporate Memphis](styles/corporate-memphis/community-story/DESIGN.md) · [Service Guide Corporate Memphis](styles/corporate-memphis/service-guide/DESIGN.md) |
+| Cyberpunk | [Night Terminal Cyberpunk](styles/cyberpunk/night-terminal/DESIGN.md) · [Street Bulletin Cyberpunk](styles/cyberpunk/street-bulletin/DESIGN.md) · [Diagnostic Console Cyberpunk](styles/cyberpunk/diagnostic-console/DESIGN.md) |
+| Dark Academia | [Reading Room Dark Academia](styles/dark-academia/reading-room/DESIGN.md) · [Annotated Manuscript Dark Academia](styles/dark-academia/annotated-manuscript/DESIGN.md) · [Scholarly Journal Dark Academia](styles/dark-academia/scholarly-journal/DESIGN.md) |
+| De Stijl | [Orthogonal Fields De Stijl](styles/de-stijl/orthogonal-fields/DESIGN.md) · [Architectural Grid De Stijl](styles/de-stijl/architectural-grid/DESIGN.md) · [Typographic Plane De Stijl](styles/de-stijl/typographic-plane/DESIGN.md) |
+| Frutiger Aero | [Clear Horizon Frutiger Aero](styles/frutiger-aero/clear-horizon/DESIGN.md) · [Aquatic Workspace Frutiger Aero](styles/frutiger-aero/aquatic-workspace/DESIGN.md) · [Nature Portal Frutiger Aero](styles/frutiger-aero/nature-portal/DESIGN.md) |
+| Frutiger Metro | [Flat Rhythm Frutiger Metro](styles/frutiger-metro/flat-rhythm/DESIGN.md) · [Urban Poster Frutiger Metro](styles/frutiger-metro/urban-poster/DESIGN.md) · [Wayfinding Tiles Frutiger Metro](styles/frutiger-metro/wayfinding-tiles/DESIGN.md) |
+| Futurism | [Precision Futurism](styles/futurism/precision-interface/DESIGN.md) · [Kinetic Type Futurism](styles/futurism/kinetic-type/DESIGN.md) · [Orbital Data Futurism](styles/futurism/orbital-data/DESIGN.md) |
+| Grunge | [Weathered Print Grunge](styles/grunge/weathered-print/DESIGN.md) · [Xerox Zine Grunge](styles/grunge/xerox-zine/DESIGN.md) · [Layered Poster Grunge](styles/grunge/layered-poster/DESIGN.md) |
+| Industrial | [Workshop Industrial](styles/industrial/workshop-panel/DESIGN.md) · [Technical Manual Industrial](styles/industrial/technical-manual/DESIGN.md) · [Assembly Line Industrial](styles/industrial/assembly-line/DESIGN.md) |
+| Japandi | [Warm Order Japandi](styles/japandi/warm-order/DESIGN.md) · [Gallery Living Japandi](styles/japandi/gallery-living/DESIGN.md) · [Crafted Workspace Japandi](styles/japandi/crafted-workspace/DESIGN.md) |
+| Maximalism | [Curated Maximalism](styles/maximalism/curated-abundance/DESIGN.md) · [Festival Poster Maximalism](styles/maximalism/festival-poster/DESIGN.md) · [Cabinet of Curiosities](styles/maximalism/cabinet-of-curiosities/DESIGN.md) |
+| Memphis | [Pattern Play Memphis](styles/memphis/pattern-play/DESIGN.md) · [Geometric Toybox Memphis](styles/memphis/geometric-toybox/DESIGN.md) · [Editorial Collage Memphis](styles/memphis/editorial-collage/DESIGN.md) |
+| Mid-Century Modern | [Warm Modular Mid-Century Modern](styles/mid-century-modern/warm-modular/DESIGN.md) · [Atomic Graphics Mid-Century](styles/mid-century-modern/atomic-graphics/DESIGN.md) · [Woodland Editorial Mid-Century](styles/mid-century-modern/woodland-editorial/DESIGN.md) |
+| Neo-Brutalism | [Playful Neo-Brutalism](styles/neo-brutalism/playful-utility/DESIGN.md) · [Block Editorial Neo-Brutalism](styles/neo-brutalism/block-editorial/DESIGN.md) · [Utility Board Neo-Brutalism](styles/neo-brutalism/utility-board/DESIGN.md) |
+| Neumorphism | [Soft Relief Neumorphism](styles/neumorphism/soft-relief/DESIGN.md) · [Recessed Console Neumorphism](styles/neumorphism/recessed-console/DESIGN.md) · [Porcelain Dashboard Neumorphism](styles/neumorphism/porcelain-dashboard/DESIGN.md) |
+| Pixel Art | [Grid Adventure Pixel Art](styles/pixel-art/grid-adventure/DESIGN.md) · [Handheld RPG Pixel Art](styles/pixel-art/handheld-rpg/DESIGN.md) · [Arcade Scoreboard Pixel Art](styles/pixel-art/arcade-scoreboard/DESIGN.md) |
+| Pop Art | [Graphic Impact Pop Art](styles/pop-art/graphic-impact/DESIGN.md) · [Comic Strip Pop Art](styles/pop-art/comic-strip/DESIGN.md) · [Screenprint Poster Pop Art](styles/pop-art/screenprint-poster/DESIGN.md) |
+| Psychedelic | [Fluid Poster Psychedelic](styles/psychedelic/fluid-poster/DESIGN.md) · [Op Art Psychedelic](styles/psychedelic/op-art/DESIGN.md) · [Flower Power Psychedelic](styles/psychedelic/flower-power/DESIGN.md) |
+| Retro Computing | [Desktop Workbench Retro-Computing](styles/retro-computing/desktop-workbench/DESIGN.md) · [Phosphor Terminal Retro Computing](styles/retro-computing/phosphor-terminal/DESIGN.md) · [Monochrome Desktop Retro Computing](styles/retro-computing/monochrome-desktop/DESIGN.md) |
+| Retro Futurism | [Orbital Console Retro-Futurism](styles/retro-futurism/orbital-console/DESIGN.md) · [Atomic Lounge Retro-Futurism](styles/retro-futurism/atomic-lounge/DESIGN.md) · [Mission Control Retro-Futurism](styles/retro-futurism/mission-control/DESIGN.md) |
+| Skeuomorphism | [Instrument Panel Skeuomorphism](styles/skeuomorphism/instrument-panel/DESIGN.md) · [Leather Organizer Skeuomorphism](styles/skeuomorphism/leather-organizer/DESIGN.md) · [Paper Workbench Skeuomorphism](styles/skeuomorphism/paper-workbench/DESIGN.md) |
+| Solarpunk | [Organic Solarpunk](styles/solarpunk/organic/DESIGN.md) · [Community Garden Solarpunk](styles/solarpunk/community-garden/DESIGN.md) · [Civic Infrastructure Solarpunk](styles/solarpunk/civic-infrastructure/DESIGN.md) |
+| Swiss | [International Grid Swiss](styles/swiss/international-grid/DESIGN.md) · [Typographic Poster Swiss](styles/swiss/typographic-poster/DESIGN.md) · [Information Desk Swiss](styles/swiss/information-desk/DESIGN.md) |
+| Synthwave | [Neon Horizon Synthwave](styles/synthwave/neon-horizon/DESIGN.md) · [Sunset Radio Synthwave](styles/synthwave/sunset-radio/DESIGN.md) · [Vector Arcade Synthwave](styles/synthwave/vector-arcade/DESIGN.md) |
+| Vaporwave | [Dream Archive Vaporwave](styles/vaporwave/dream-archive/DESIGN.md) · [Pastel Desktop Vaporwave](styles/vaporwave/pastel-desktop/DESIGN.md) · [Mall Directory Vaporwave](styles/vaporwave/mall-directory/DESIGN.md) |
+| Wabi-Sabi | [Quiet Imperfection Wabi-Sabi](styles/wabi-sabi/quiet-imperfection/DESIGN.md) · [Ink and Paper Wabi-Sabi](styles/wabi-sabi/ink-and-paper/DESIGN.md) · [Earthen Ledger Wabi-Sabi](styles/wabi-sabi/earthen-ledger/DESIGN.md) |
+| Web 1.0 | [Document Web 1.0](styles/web-1.0/document-web/DESIGN.md) · [Personal Homepage Web 1.0](styles/web-1.0/personal-homepage/DESIGN.md) · [Hypertext Index Web 1.0](styles/web-1.0/hypertext-index/DESIGN.md) |
+| Web 2.0 | [Glossy Community Web 2.0](styles/web-2.0/glossy-community/DESIGN.md) · [Social Dashboard Web 2.0](styles/web-2.0/social-dashboard/DESIGN.md) · [Blog Magazine Web 2.0](styles/web-2.0/blog-magazine/DESIGN.md) |
+| Y2K | [Chrome Pop Y2K](styles/y2k/chrome-pop/DESIGN.md) · [Translucent Hardware Y2K](styles/y2k/translucent-hardware/DESIGN.md) · [Digital Flyer Y2K](styles/y2k/digital-flyer/DESIGN.md) |
 
 ```text
 styles/
@@ -69,7 +69,9 @@ styles/
 
 Every variant independently specifies philosophy, visual character, colors, typography, spacing, layout, grid, surfaces, borders, depth, components, imagery, motion, interaction states, responsive behavior, accessibility, and implementation guidance. No separate typography, button, material, or layout libraries are needed.
 
-All listed families are implemented. The original three families have three variants each; each of the other 35 families starts with one coherent interpretation. More variants can be added when they express a meaningful distinction. [Browse the file index](styles/README.md) to open any DESIGN.md directly.
+All listed families are implemented. Every family has at least three coherent interpretations. More variants can be added when they express a meaningful distinction. [Browse the file index](styles/README.md) to open any DESIGN.md directly.
+
+The [variant expansion notes](docs/VARIANT-EXPANSION.md) explain the organizing idea behind each of the 70 additional interpretations.
 
 ## Use one design
 
@@ -124,11 +126,11 @@ npm start       # serve an already built dist directory
 - `styles/<family>/<variant>/DESIGN.md` is the source of truth for discovery and copy/download content.
 - `templates/DESIGN.template.md` defines completeness, not shared aesthetics.
 - `scripts/catalog.mjs` reads lightweight frontmatter: `family`, `slug`, `name`, `description`, and `tags`. `slug` identifies the variant within its family.
-- A family README supplies its display title and short introductory paragraph.
+- A family README supplies its display title, short introductory paragraph, and variant ordering through its file links.
 - `dist/index.html`, `app.js`, and `app.css` implement the library shell.
-- `dist/preview.html` and `preview.js` implement **one** reusable showcase. `themes.css` gives each variant its own scoped tokens and visual rules.
+- `dist/preview.html` and `preview.js` implement **one** reusable showcase. `themes.css` supplies scoped tokens; `identities.css` defines the family construction; `variants.css` defines additional interpretations and their responsive behavior.
 - `scripts/build.mjs` generates `dist/catalog.json`, `dist/thumbnails.css`, and `dist/styles/` from the source documents. These generated files are ignored by Git and must not be hand-edited.
-- `scripts/thumbnails.mjs` derives landing-card colors, typography, geometry, and depth from each family’s first live theme.
+- `scripts/browser-audit.mjs` captures the actual showcase into `dist/assets/previews/`; `scripts/thumbnails.mjs` generates the landing-image layout.
 - A variant without a matching preview theme fails the build. Empty family directories are excluded. Unknown routes return a useful 404.
 
 Deploy the built `dist/` directory to any static host supporting directory index pages. No database, backend, or external font service is required. Run the build before deployment; deep routes are real generated HTML entrypoints. `.openai/hosting.json` configures the optional Sites deployment. Root-relative asset URLs assume the site is hosted at an origin root, not a repository subpath.
@@ -139,8 +141,23 @@ Introduce a family, propose a meaningful variant, improve a system, or improve t
 
 ## Originality and license
 
-The design systems, sample content, and preview treatments are original interpretations of general aesthetics, not reconstructions of particular brands. No proprietary fonts, logos, imagery, or branded components are included. System font stacks require no font downloads.
+The design systems, sample content, and preview treatments are original interpretations of general aesthetics, not reconstructions of particular brands. No proprietary fonts, logos, imagery, or branded components are included. Most typography uses system stacks. Barlow Condensed and Silkscreen are bundled locally under their included SIL Open Font Licenses.
 
 The original brand collection was inspected only for document structure and quality expectations, then removed after the replacement was complete. See [the structural review](docs/STRUCTURAL-REVIEW.md).
 
 This project retains the original repository's **MIT License and copyright notice, Copyright (c) 2026 VoltAgent**, unchanged in [LICENSE](LICENSE). Keep that notice and the license with copies or substantial portions of the software. Contributions use the same license.
+
+## Visual identity and local review
+
+All 114 variants have distinct composition and material rules, documented in their complete DESIGN.md. Read the [visual review and research sources](docs/VISUAL-REVIEW.md). The homepage previews are captures of the same working showcase, including its real typography, surfaces, and controls.
+
+For local visual maintenance, start the app with `npm run dev`, then start a separate local Chrome instance:
+
+```sh
+google-chrome --headless --no-sandbox --disable-gpu --remote-debugging-port=9222 --user-data-dir=/tmp/form-atlas-audit about:blank
+node scripts/browser-audit.mjs after
+node scripts/browser-audit.mjs thumbnails
+npm run check
+```
+
+The audit writes review captures to `/tmp/form-atlas-after/`; thumbnail mode updates `dist/assets/previews/`. Chrome is a development-only tool, not an application dependency. No hosting account or backend is required.

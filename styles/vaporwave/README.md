@@ -1,9 +1,11 @@
 # Vaporwave
 
-Pastel digital nostalgia with quiet surreal framing and protected, readable content planes.
+Pastel digital nostalgia: displaced desktop frames, soft synthetic color, and a wistful archival composition.
 
-## Available design
+## Available variants
 
-- [Dream Archive Vaporwave](dream-archive/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Dream Archive Vaporwave](dream-archive/DESIGN.md)
+- [Pastel Desktop Vaporwave](pastel-desktop/DESIGN.md)
+- [Mall Directory Vaporwave](mall-directory/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

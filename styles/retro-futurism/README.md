@@ -1,9 +1,11 @@
 # Retro Futurism
 
-Optimistic instrument-like modules with warm panels, rounded windows, and clear analog cues.
+An optimistic space-age console with capsule framing, soft instrument geometry, and warm analog color.
 
-## Available design
+## Available variants
 
-- [Orbital Console Retro-Futurism](orbital-console/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Orbital Console Retro-Futurism](orbital-console/DESIGN.md)
+- [Atomic Lounge Retro-Futurism](atomic-lounge/DESIGN.md)
+- [Mission Control Retro-Futurism](mission-control/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

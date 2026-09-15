@@ -1,9 +1,11 @@
 # Grunge
 
-Rough-edged editorial framing and forceful type around clean, usable content areas.
+Weathered printed matter: pasted paper, rough edges, uneven overprint, and strong condensed typography.
 
-## Available design
+## Available variants
 
-- [Weathered Print Grunge](weathered-print/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Weathered Print Grunge](weathered-print/DESIGN.md)
+- [Xerox Zine Grunge](xerox-zine/DESIGN.md)
+- [Layered Poster Grunge](layered-poster/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

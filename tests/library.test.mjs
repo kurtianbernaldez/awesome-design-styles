@@ -9,10 +9,10 @@ const families=await discover(root);
 const designs=families.flatMap(f=>f.variants);
 const expected=['minimalism/clean-product','minimalism/editorial','minimalism/monochrome','brutalism/raw-web','brutalism/editorial','brutalism/colorful','glassmorphism/dark-glass','glassmorphism/light-glass','glassmorphism/vibrant-glass'];
 test('all requested families have complete discoverable variants',()=>{
-  assert.equal(families.length,38);assert.equal(designs.length,44);
+  assert.equal(families.length,38);assert.equal(designs.length,114);
   assert.deepEqual(designs.slice(0,9).map(v=>`${v.family}/${v.slug}`),expected);
   assert(families.some(f=>f.slug==='solarpunk' && f.variants.some(v=>v.slug==='organic')));
-  assert(families.every(f=>f.variants.length>0));
+  assert(families.every(f=>f.variants.length>=3));
 });
 test('metadata parser rejects malformed, duplicate, and path-mismatched files',()=>{
   const sample=designs[0];
@@ -47,13 +47,23 @@ test('documented opaque text and control token pairs meet their contrast targets
     assert(contrast(tokens['control-line'],tokens.surface)>=3,`${v.path}: control boundary`);
   }
 });
-test('glass composites preserve readable text over all specified gradient endpoints',()=>{
-  const environments={'dark-glass':['#111e2c','#29465d'],'light-glass':['#e9f0f4','#dce9ee'],'vibrant-glass':['#241c43','#6745a1','#94486b','#246879']};
-  const alpha={'dark-glass':.88,'light-glass':.86,'vibrant-glass':.90};
-  const rgb=hex=>hex.slice(1).match(/../g).map(x=>parseInt(x,16));
+test('actual glass recipes preserve readable text across every bounded environment color',async()=>{
+  const css=await readFile(path.join(root,'dist/identities.css'),'utf8');
   for(const v of designs.filter(v=>v.family==='glassmorphism')){
-    const t=Object.fromEntries([...v.markdown.matchAll(/^\| `([a-z-]+)` \| `(#[0-9a-f]{6})`/gm)].map(m=>[m[1],m[2]]));
-    for(const bg of environments[v.slug]){const base=rgb(bg);const surface=rgb(t.surface);const composite='#'+surface.map((c,i)=>Math.round(c*alpha[v.slug]+base[i]*(1-alpha[v.slug])).toString(16).padStart(2,'0')).join('');for(const fg of ['ink','muted'])assert(contrast(t[fg],composite)>=4.5,`${v.path}: ${fg} over ${bg}`);}
+    const selector=`[data-theme="glassmorphism/${v.slug}"]`;
+    const body=css.slice(css.indexOf(selector+' {')+selector.length).split('}')[0];
+    const match=body.match(/--glass:rgb\((\d+) (\d+) (\d+) \/ ([.\d]+)\)/);
+    assert(match,`${v.path}: no actual transparent recipe`);
+    const alpha=Number(match[4]);assert(alpha<.6 && alpha>.2,`${v.path}: effectively opaque`);
+    const env=body.match(/--environment:([^;]+)/)[1];
+    const endpoints=[...env.matchAll(/#[0-9a-f]{6}/g)].map(m=>m[0]);assert(endpoints.length>=3);
+    const tokens=Object.fromEntries([...v.markdown.matchAll(/^\| `([a-z-]+)` \| `(#[0-9a-f]{6})`/gm)].map(m=>[m[1],m[2]]));
+    for(const bg of endpoints){
+      const base=bg.slice(1).match(/../g).map(x=>parseInt(x,16));
+      const composite='#'+base.map((c,i)=>Math.round(Number(match[i+1])*alpha+c*(1-alpha)).toString(16).padStart(2,'0')).join('');
+      for(const fg of ['ink','muted']) assert(contrast(tokens[fg],composite)>=4.5,`${v.path}: ${fg} on composite over ${bg}`);
+      for(const fg of ['ink','muted']) assert(contrast(tokens[fg],bg)>=4.5,`${v.path}: ${fg} on unpaneled environment ${bg}`);
+    }
   }
 });
 test('showcase anchor targets and ARIA references resolve, and local assets exist',async()=>{
@@ -84,6 +94,8 @@ test('every style directory has a complete file and every landing card has a rea
   for(const dir of directories){
     const family=families.find(f=>f.slug===dir.name);assert(family,`${dir.name}: unfinished family`);
     assert(thumbs.includes(`[data-card-theme="${family.slug}/${family.variants[0].slug}"]`),`${dir.name}: missing thumbnail`);
+    const image=await readFile(path.join(root,'dist/assets/previews',`${family.slug}--${family.variants[0].slug}.webp`));
+    assert.equal(image.toString('ascii',0,4),'RIFF');assert.equal(image.toString('ascii',8,12),'WEBP');assert(image.length>1000);
     assert(!(await readFile(path.join(root,'styles',dir.name,'README.md'),'utf8')).includes('Planned family'));
   }
 });

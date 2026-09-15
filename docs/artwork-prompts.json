@@ -1,0 +1,20 @@
+{
+  "mode": "built-in image_gen",
+  "items": [
+    {
+      "name": "corporate-memphis",
+      "prompt": "Use case: illustration-story\nAsset type: original website feature artwork for fictional Common Ground workspace, viewable around 450x240 pixels\nPrimary request: making room for shared ideas, shown as three abstract people collaboratively arranging oversized blank notes.\nStyle/medium: corporate Memphis flat editorial illustration, completely original composition, economical smooth silhouettes, oversized limbs.\nComposition/framing: wide landscape 3:2, bold clear forms arranged around a shared central workspace, readable when small.\nScene/backdrop: warm ivory background.\nColor palette: cobalt, ochre, coral, with abstract nonrepresentational skin colors.\nConstraints: no gradients, no outlines, no text, no letters, no logos, no watermark.",
+      "path": "dist/assets/corporate-memphis.png"
+    },
+    {
+      "name": "solarpunk",
+      "prompt": "Use case: illustration-story\nAsset type: original website feature artwork for fictional Common Ground workspace, viewable around 450x240 pixels\nPrimary request: making room for shared ideas, an optimistic communal garden workspace on lush planted terraces with a solar canopy and people sharing blank notes.\nStyle/medium: warm hand-painted solarpunk editorial scene.\nComposition/framing: wide landscape 3:2, coherent inviting communal workspace, readable when small.\nLighting/mood: warm sunlight, hopeful and peaceful.\nColor palette: lush greens, ochre and cream.\nMaterials/textures: believable repairable wood furniture, practical green technology, lush plants.\nConstraints: no text, no letters, no logos, no watermark.",
+      "path": "dist/assets/solarpunk.png"
+    },
+    {
+      "name": "frutiger-aero",
+      "prompt": "Use case: stylized-concept\nAsset type: original website feature artwork for fictional Common Ground workspace, viewable around 450x240 pixels\nPrimary request: making room for shared ideas evoked through luminous pristine macro grass and water droplets against blue sky with soft clouds, with translucent iridescent glass spheres.\nStyle/medium: optimistic early 2000s digital nature imagery in Frutiger Aero style, photorealistic grass and bokeh, polished luminous realism.\nComposition/framing: wide landscape 3:2, crisp foreground grass and sparkling droplets, airy blue sky and soft clouds, balanced glass spheres, readable when small.\nConstraints: no text, no letters, no logos, no watermark.",
+      "path": "dist/assets/frutiger-aero.png"
+    }
+  ]
+}

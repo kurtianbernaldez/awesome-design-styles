@@ -1,9 +1,11 @@
 # De Stijl
 
-Strict horizontal and vertical divisions with purposeful colored fields and an ordered reading path.
+A system of unequal orthogonal fields: heavy dark rails connect primary-color planes into one composition.
 
-## Available design
+## Available variants
 
-- [Orthogonal Fields De Stijl](orthogonal-fields/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Orthogonal Fields De Stijl](orthogonal-fields/DESIGN.md)
+- [Architectural Grid De Stijl](architectural-grid/DESIGN.md)
+- [Typographic Plane De Stijl](typographic-plane/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

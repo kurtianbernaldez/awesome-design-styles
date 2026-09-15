@@ -1,9 +1,11 @@
 # Claymorphism
 
-Rounded, substantial surfaces with gentle volume and playful but orderly hierarchy.
+Inflated, separate clay-like pieces with pillowy volume, rounded corners, and softened inner shading.
 
-## Available design
+## Available variants
 
-- [Soft Play Claymorphism](soft-play/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Soft Play Claymorphism](soft-play/DESIGN.md)
+- [Toy Workshop Claymorphism](toy-workshop/DESIGN.md)
+- [Ceramic Studio Claymorphism](ceramic-studio/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

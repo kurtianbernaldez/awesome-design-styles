@@ -1,9 +1,11 @@
 # Web 2.0
 
-Rounded community-oriented panels, clear gradients, and friendly task-focused hierarchy.
+A centered community portal with friendly typography, glossy gel actions, rounded sections, and graded header strips.
 
-## Available design
+## Available variants
 
-- [Glossy Community Web 2.0](glossy-community/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Glossy Community Web 2.0](glossy-community/DESIGN.md)
+- [Social Dashboard Web 2.0](social-dashboard/DESIGN.md)
+- [Blog Magazine Web 2.0](blog-magazine/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

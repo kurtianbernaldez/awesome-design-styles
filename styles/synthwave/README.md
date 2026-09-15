@@ -1,9 +1,11 @@
 # Synthwave
 
-Dark graphic planes with luminous edge accents and a confident, ordered display hierarchy.
+A luminous retro-digital horizon with perspective grids, sunset color, italic display type, and outlined dark panels.
 
-## Available design
+## Available variants
 
-- [Neon Horizon Synthwave](neon-horizon/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Neon Horizon Synthwave](neon-horizon/DESIGN.md)
+- [Sunset Radio Synthwave](sunset-radio/DESIGN.md)
+- [Vector Arcade Synthwave](vector-arcade/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

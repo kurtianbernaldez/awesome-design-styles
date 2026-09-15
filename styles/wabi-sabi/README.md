@@ -1,9 +1,11 @@
 # Wabi-Sabi
 
-Subdued natural surfaces, unforced spacing, and a modest hierarchy with carefully contained irregularity.
+Modest, sparse, and gently irregular composition with warm uncoated surfaces and visible breathing room.
 
-## Available design
+## Available variants
 
-- [Quiet Imperfection Wabi-Sabi](quiet-imperfection/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Quiet Imperfection Wabi-Sabi](quiet-imperfection/DESIGN.md)
+- [Ink and Paper Wabi-Sabi](ink-and-paper/DESIGN.md)
+- [Earthen Ledger Wabi-Sabi](earthen-ledger/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

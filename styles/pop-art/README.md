@@ -1,9 +1,11 @@
 # Pop Art
 
-Bold outlines and bright flat emphasis with an unmistakable hierarchy and clear practical controls.
+Comic-like graphic impact through bold inking, halftone accents, punchy color, and speech-panel framing.
 
-## Available design
+## Available variants
 
-- [Graphic Impact Pop Art](graphic-impact/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Graphic Impact Pop Art](graphic-impact/DESIGN.md)
+- [Comic Strip Pop Art](comic-strip/DESIGN.md)
+- [Screenprint Poster Pop Art](screenprint-poster/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

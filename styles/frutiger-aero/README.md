@@ -1,9 +1,11 @@
 # Frutiger Aero
 
-Bright optimistic surfaces with gentle gloss, clear blues, and approachable rounded controls.
+Optimistic digital nature: luminous sky, water, grass, glossy controls, and clear humanist typography.
 
-## Available design
+## Available variants
 
-- [Clear Horizon Frutiger Aero](clear-horizon/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Clear Horizon Frutiger Aero](clear-horizon/DESIGN.md)
+- [Aquatic Workspace Frutiger Aero](aquatic-workspace/DESIGN.md)
+- [Nature Portal Frutiger Aero](nature-portal/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

@@ -1,9 +1,11 @@
 # Mid-Century Modern
 
-Warm color blocks, balanced proportions, and understated editorial detail in a practical modular system.
+Warm domestic modernism: asymmetrical modular construction, modest serif type, and wood-like structural accents.
 
-## Available design
+## Available variants
 
-- [Warm Modular Mid-Century Modern](warm-modular/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Warm Modular Mid-Century Modern](warm-modular/DESIGN.md)
+- [Atomic Graphics Mid-Century](atomic-graphics/DESIGN.md)
+- [Woodland Editorial Mid-Century](woodland-editorial/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

@@ -1,9 +1,11 @@
 # Art Deco
 
-Stepped geometry, symmetrical framing, and restrained metallic accents around a confident hierarchy.
+Ceremonial geometric elegance through symmetry, stepped frames, widely spaced capitals, and restrained metallic contrast.
 
-## Available design
+## Available variants
 
-- [Geometric Elegance Art Deco](geometric-elegance/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Geometric Elegance Art Deco](geometric-elegance/DESIGN.md)
+- [Streamline Art Deco](streamline/DESIGN.md)
+- [Ornamental Marquee Art Deco](ornamental-marquee/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

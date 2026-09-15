@@ -1,9 +1,11 @@
 # Memphis
 
-Playful geometric accents, contrasting fields, and orderly controls on a cheerful canvas.
+Playful postmodern graphics: patterned edges, contrasting geometric silhouettes, and flat pastel interruptions.
 
-## Available design
+## Available variants
 
-- [Pattern Play Memphis](pattern-play/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Pattern Play Memphis](pattern-play/DESIGN.md)
+- [Geometric Toybox Memphis](geometric-toybox/DESIGN.md)
+- [Editorial Collage Memphis](editorial-collage/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

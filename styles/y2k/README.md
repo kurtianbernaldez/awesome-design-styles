@@ -1,9 +1,11 @@
 # Y2K
 
-Sleek pill geometry, cool metallic accents, and compact expressive panels with readable interiors.
+Future-pop chrome and glossy plastic, with liquid silver surfaces and compressed italic display type.
 
-## Available design
+## Available variants
 
-- [Chrome Pop Y2K](chrome-pop/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Chrome Pop Y2K](chrome-pop/DESIGN.md)
+- [Translucent Hardware Y2K](translucent-hardware/DESIGN.md)
+- [Digital Flyer Y2K](digital-flyer/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

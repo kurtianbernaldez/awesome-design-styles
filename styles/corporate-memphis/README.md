@@ -1,9 +1,11 @@
 # Corporate Memphis
 
-Approachable rounded modules and generous explanatory hierarchy with restrained flat color.
+Illustration-led, approachable communication through abstract people, flat color, and generous plain typography.
 
-## Available design
+## Available variants
 
-- [Friendly Explainer Corporate Memphis](friendly-explainer/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Friendly Explainer Corporate Memphis](friendly-explainer/DESIGN.md)
+- [Community Story Corporate Memphis](community-story/DESIGN.md)
+- [Service Guide Corporate Memphis](service-guide/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

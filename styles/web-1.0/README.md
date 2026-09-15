@@ -1,9 +1,11 @@
 # Web 1.0
 
-A direct link-led document aesthetic with exposed rules and readable native controls.
+A linked document with ordinary browser-like typography, horizontal rules, and minimal visual machinery.
 
-## Available design
+## Available variants
 
-- [Document Web 1.0](document-web/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Document Web 1.0](document-web/DESIGN.md)
+- [Personal Homepage Web 1.0](personal-homepage/DESIGN.md)
+- [Hypertext Index Web 1.0](hypertext-index/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

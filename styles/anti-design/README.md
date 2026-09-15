@@ -1,9 +1,11 @@
 # Anti Design
 
-Unexpected scale and asymmetric emphasis that preserve a clear, accessible route through the interface.
+Intentional disruption of polished conventions through mismatched editorial scale, offbeat alignment, and visible irregular framing.
 
-## Available design
+## Available variants
 
-- [Intentional Disruption Anti-Design](intentional-disruption/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Intentional Disruption Anti-Design](intentional-disruption/DESIGN.md)
+- [Browser Collage Anti-Design](browser-collage/DESIGN.md)
+- [Typographic Rebellion Anti-Design](typographic-rebellion/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

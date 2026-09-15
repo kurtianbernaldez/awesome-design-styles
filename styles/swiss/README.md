@@ -1,9 +1,11 @@
 # Swiss
 
-A disciplined asymmetric grid with precise sans-serif hierarchy and content-led order.
+Asymmetric typographic order: a disciplined grid, strong sans-serif hierarchy, and flat, precise information.
 
-## Available design
+## Available variants
 
-- [International Grid Swiss](international-grid/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [International Grid Swiss](international-grid/DESIGN.md)
+- [Typographic Poster Swiss](typographic-poster/DESIGN.md)
+- [Information Desk Swiss](information-desk/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

@@ -1,9 +1,11 @@
 # Frutiger Metro
 
-Flat graphic fields, strong silhouettes, and rhythmic modular sections with no simulated depth.
+Flat vector-era energy through bold silhouettes, colorful stripes, oversized circles, and rhythmic sans-serif composition.
 
-## Available design
+## Available variants
 
-- [Flat Rhythm Frutiger Metro](flat-rhythm/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Flat Rhythm Frutiger Metro](flat-rhythm/DESIGN.md)
+- [Urban Poster Frutiger Metro](urban-poster/DESIGN.md)
+- [Wayfinding Tiles Frutiger Metro](wayfinding-tiles/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

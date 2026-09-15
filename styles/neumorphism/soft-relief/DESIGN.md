@@ -2,7 +2,7 @@
 name: Soft Relief Neumorphism
 slug: soft-relief
 family: neumorphism
-description: A continuous matte surface with restrained relief, explicit boundaries, and accessible state cues.
+description: "A continuous pale surface where controls appear pressed into or raised from the same material through opposed soft light and shadow."
 tags:
   - neumorphism
   - soft-relief
@@ -13,28 +13,29 @@ tags:
 
 ## Overview and Design Philosophy
 
-A continuous matte surface with restrained relief, explicit boundaries, and accessible state cues. This is one original interpretation of the neumorphism family, not a definitive rulebook for the entire aesthetic. It is intended for complete websites and application surfaces that benefit from this visual character. Its layout, material choices, and control conventions below define why it exists as a separate system.
+A continuous pale surface where controls appear pressed into or raised from the same material through opposed soft light and shadow.
 
-Use equal hero halves and a sparse two-column feature layout. Give the page a continuous field rather than many alternating background colors. Only top-level groups are raised; content inside them stays flat.
+Use a 1:1.1 opening so the relief workspace has room to breathe. Leave a 56px gap and 32–36px panel interiors. Keep the heading medium weight at 54px. Separate controls by at least 12–16px so their shadow pairs do not merge into mud.
 
-Treat the visual character as a way to organize content. Do not invent confusing behavior to make the interface feel more stylistic. For dense operational work, use the same palette and controls with smaller section gaps; do not import another variant's unrelated card language.
+This is an original, independently usable interpretation of the family. Its defining relationships must remain visible across landing pages, working screens, forms, and overlays; changing the palette alone does not establish this design language.
 
 ## Core Principles
 
-- Preserve explicit control outlines.
-- Build hierarchy through the specified type, spacing, and composition together.
-- Keep reading order, meaningful labels, and a recognizable primary action intact.
-- If a decorative treatment conflicts with readability, keyboard access, or accurate data, simplify that treatment first.
+- Preserve the defining composition and material together.
+- Canvas and panel are both #e8ecf4.
+- Let the control construction explain state and hierarchy.
+- Do not put a dark outline around every resting shape, use unrelated card and canvas colors, or mistake a single generic drop shadow for neumorphism. Keep strong focus outlines and provide explicit boundaries in increased-contrast modes.
+- Keep text, reading order, keyboard access, and error recovery clear even when decoration is expressive.
 
 ## Color System
 
 | Token | Value | Role |
 |---|---|---|
-| `canvas` | `#e3e8ed` | Page environment; ink text |
-| `surface` | `#e3e8ed` | Opaque reading and control plane |
-| `ink` | `#2d3c4b` | Main text on canvas or surface |
-| `muted` | `#516477` | Secondary text on surface |
-| `accent` | `#315e79` | Primary action and selected state |
+| `canvas` | `#e8ecf4` | Page environment; ink text |
+| `surface` | `#e8ecf4` | Opaque reading and control plane |
+| `ink` | `#344159` | Main text on canvas or surface |
+| `muted` | `#52617a` | Secondary text on surface |
+| `accent` | `#6950aa` | Primary action and selected state |
 | `on-accent` | `#ffffff` | Text on the accent fill |
 | `line` | `#718294` | Grouping rules |
 | `control-line` | `#718294` | Visible input and control boundaries |
@@ -42,26 +43,26 @@ Treat the visual character as a way to organize content. Do not invent confusing
 | `success` | `#285c3b` | Success text on surface |
 | `warning` | `#735200` | Warning text on surface |
 
-Use `ink` and `muted` on the opaque reading surface; use `on-accent` only on the primary accent fill. Status tokens are text/icon colors on surface, accompanied by explicit wording. Do not use a decorative field to mean success or failure. Selection uses accent with on-accent text. Link text must remain distinguishable through an underline, even when a color also differentiates it.
+Use ink and muted text on their documented reading surfaces. Body links use ink with a persistent underline; bright filled-action colors must not be reused as low-contrast link text. Accent/on-accent is the tested filled-action pair; a raised neutral button instead uses ink or accent text on surface. Status colors always have words or icons as a second cue. Additional field colors are specified in the construction rules below; do not infer arbitrary color substitutions.
 
-The palette defines this presentation only. Do not derive another mode by blindly inverting colors. Any photography, additional field color, gradient, or texture requires a fresh contrast check. Preserve the opaque reading plane when embedding this system into another page.
+Canvas and panel are both #e8ecf4. Raised panels use 12px 12px 26px #bac4d5 and -12px -12px 26px white. Smaller controls use 6px 6px 12px #bdc7d8 and the opposite white highlight. Recesses invert the same pair. Resting panels have no drawn outline. Use 28px panel corners and circular 48px icon controls.
 
 ## Typography
 
-Use medium-weight sans with open counters. Body stays 17px; labels are 14px/600. Do not imitate softness with low contrast or ultralight text.
+Use a 1:1.1 opening so the relief workspace has room to breathe. Leave a 56px gap and 32–36px panel interiors. Keep the heading medium weight at 54px. Separate controls by at least 12–16px so their shadow pairs do not merge into mud.
 
-| Role | Stack | Size / line height | Weight and tracking |
-|---|---|---|---|
-| Display / H1 | `system-ui, sans-serif` | fluid 36–54px / 1.08 | 550; -0.03em |
-| H2 | `system-ui, sans-serif` | 30px / 1.2 | 550; -0.02em |
-| H3 | `system-ui, sans-serif` | 21px / 1.3 | 650; normal |
-| Body | `system-ui, sans-serif` | 17px / 1.65 | 400; normal |
-| Lead | `system-ui, sans-serif` | 19px / 1.6 | 400; normal |
-| Labels and buttons | `system-ui, sans-serif` | 14px / 1.4 | 600; normal |
-| Caption / metadata | `ui-monospace, monospace` where specified, otherwise body stack | 13px / 1.5 | 400; normal |
-| Statistics | display stack | 36px / 1.15 | 650; tabular figures |
+| Role | Font stack | Size and rhythm |
+|---|---|---|
+| Display | `system-ui, sans-serif` | Use the display scale and weight described above; 34–40px on phones unless specified below |
+| Section heading | `system-ui, sans-serif` | 32px / 1.2; 28px on small screens |
+| Card heading | `system-ui, sans-serif` | 22px / 1.3; wrap naturally |
+| Body | `system-ui,sans-serif` | 17px / 1.6–1.7; regular weight |
+| Lead | body stack | 18px / 1.6; no more than 44ch |
+| Control label | body stack | 14px / 1.4; 600 weight |
+| Caption and index | body or monospace stack | 12–13px / 1.5; secondary information only |
+| Statistics | display stack | 30–48px / 1.1; tabular figures where supported |
 
-Use a 60–65ch maximum prose measure, narrower where this interpretation specifies it. Let headings wrap naturally. Use installed system fonts; there are no required font downloads or proprietary font assets. If a fallback changes line lengths, adjust the layout instead of shrinking text until it fits. Keep labels horizontal and translate complete phrases without fixed-width clipping.
+Keep paragraphs below 65ch. Never use display tracking or condensed letterforms for lengthy error messages. Preserve live text, browser zoom, and fallback fonts. Barlow Condensed and Silkscreen, when specified, are open-license fonts; retain their OFL notices if distributed. The preview bundles them locally. Other stacks use system fallbacks and require no remote font service.
 
 ## Spacing
 
@@ -71,53 +72,53 @@ Use 8px from label to field, 4–8px from field to help, 20px between form field
 
 ## Layout and Grid
 
-Use equal hero halves and a sparse two-column feature layout. Give the page a continuous field rather than many alternating background colors. Only top-level groups are raised; content inside them stays flat.
+Use a 1:1.1 opening so the relief workspace has room to breathe. Leave a 56px gap and 32–36px panel interiors. Keep the heading medium weight at 54px. Separate controls by at least 12–16px so their shadow pairs do not merge into mud.
 
-The outer container is at most 1080px wide, with 36px gutters and 32px gaps. Use CSS grid with `minmax(0, 1fr)` tracks so long content cannot enlarge the page. Use flex wrapping for action groups and navigation. Cards grow with content; do not enforce fixed text heights. Comparable pricing keeps the same benefit order and aligned actions even if decorative feature blocks have unequal spans.
+Use a container no wider than 1080px unless this interpretation explicitly uses the full page. The default gutter is 36px. Set flexible grid tracks with minmax(0, 1fr), allow action rows to wrap, and keep cards content-sized. Hero, workspace, statistics, features, quotation, pricing, contact form, and footer remain in that source order. Change visual arrangement without assigning a contradictory keyboard order.
 
 ## Surfaces, Borders, Radius, Shadows, and Depth
 
-Canvas and surface intentionally share one color. Paired highlights and shadows describe shallow relief. Cards use 20px corners; controls use 10px. A visible control-line is mandatory on interactive elements; shadows alone do not establish boundaries.
+Canvas and panel are both #e8ecf4. Raised panels use 12px 12px 26px #bac4d5 and -12px -12px 26px white. Smaller controls use 6px 6px 12px #bdc7d8 and the opposite white highlight. Recesses invert the same pair. Resting panels have no drawn outline. Use 28px panel corners and circular 48px icon controls.
 
-Reference card boundary: 1px where a frame is used; reference corner radius: 20px. Surface shadow: `8px 8px 18px #bcc4ce, -8px -8px 18px #ffffff`. Controls generally use 12px corners unless their component treatment specifies a more precise shape. Content stays at layer 0, navigation at 10 when sticky, menus at 20, backdrop at 40, dialog at 50, and transient feedback at 60. Avoid creating stacking contexts on every card. Overlays must remain above all decorative treatments.
+Use the construction example below for precise borders, radius, backgrounds, and shadow recipes. Decoration belongs to the containing region; text and hit targets remain clear. Keep ordinary content at layer 0, menus around 20, the modal backdrop at 40, dialogs at 50, and feedback above that. Native dialog belongs in the top layer; do not trap it inside a transformed card. Avoid clipping focus rings with overflow hidden. A passive surface does not gain interactive elevation simply because the pointer crosses it.
 
 ## Components
 
-Primary buttons use a solid dark accent to remain unmistakable. Secondary buttons are lightly raised with a visible outline. Inputs are shallow inset wells with a solid border and persistent label. Cards carry the paired relief but nested statistics are flat. Pricing recommendation uses an accent outline and text, not a deeper shadow. Navigation is unboxed text; selected tabs are inset and underlined. Menus and dialogs use opaque surface, a stronger border, and ordinary single shadows to separate them from the page.
+Buttons rise from the shared plane; primary action text is lavender #6950aa rather than a solid painted slab. Pressing changes the shadow pair to inset. Inputs are recessed pill wells. The active icon is recessed and filled. Switches use an inset lavender track and a raised pale thumb; range tracks are inset with a raised circular thumb. Selected tabs press inward. Disabled controls lose relief and retain their labels.
 
 ### Buttons
 
-Use one filled primary action per local task, with a 48px minimum target and explicit verb label. Secondary actions remain visibly bounded; text links are underlined. Destructive actions use an explicit confirmation and error-colored text on surface, or an independently contrast-tested error fill. Loading preserves the button's width, disables duplicate submission, and includes written progress. Icon-only actions need accessible names and the same target size.
+Use the variant’s button material above for primary, secondary, and icon actions. Keep at least 44×44px targets; use 48px for principal actions. Each task has one clearly identifiable primary action and a verb label. Icon controls need an accessible name; toggle buttons expose aria-pressed and a persistent filled icon or inset state. Loading keeps the label or a written progress state and prevents duplicate submission without changing width. Disabled controls retain readable labels, use native disabled behavior, remove movement, and explain any prerequisite nearby.
 
 ### Forms
 
-Use persistent labels, opaque inputs, a visible control-line boundary, and 17px editable text. Textareas start at 112px tall and can grow. Selects, checkboxes, and radio groups retain native semantics; group choices with a fieldset and legend. Placeholder text is an example, never the label. Associate help and errors with aria-describedby. Validate after blur or submission, preserve values, and explain how to fix an error. A long form includes a linked error summary. Never shake or recolor the entire form as its only feedback.
+Carry the specified surface into editable wells without putting texture or decorative imagery behind text. Use visible persistent labels, 16px or larger editable text, and a minimum 44px control height. Give multiline fields at least 112px initial height. Group radio and checkbox sets with fieldset and legend. Native checkboxes or switches retain their checked state, keyboard access, and accessible name; sliders expose a label and current value. Validate after blur or submission, retain entered values, connect errors with aria-describedby, and explain recovery. Placeholder text is an example rather than a label. Provide a linked error summary for long forms.
 
 ### Cards
 
-Arrange a short index or icon, H3, body, then action, using 16–24px internal gaps. Distinguish passive cards from clickable ones; do not give passive cards hover elevation. If a card contains several links, do not wrap it in another link. Statistics show explicit units and tabular numerals. Pricing uses equal comparison criteria and a written recommendation. Empty states explain what is missing and offer one useful next action. Loading states use stable placeholders or a text status rather than endless decorative animation.
+Use the surface and region construction above. A card is a content group, not necessarily a raised rectangle. Keep a heading, explanation, optional status, and action in a predictable order with 16–24px internal spacing. Passive regions have no misleading hover lift. Do not wrap multiple nested links in a second card link. Pricing compares the same criteria in the same order and states recommendations in words. Empty and loading states remain inside the intended content space without inventing decorative activity.
 
 ### Navigation and Menus
 
-Global navigation is a 64–76px row that expands when links wrap. Mark the current location with aria-current and the specified visible underline or rail. Keep menu surfaces opaque with 8px outer padding and 48px rows. Navigation dropdowns can use ordinary lists of links; do not add application-menu roles without implementing their keyboard model. Escape dismisses and restores the trigger. Clicking outside dismisses without losing input elsewhere.
+Navigation adopts the framing and density described above while keeping recognizable links. Mark the current destination with aria-current and a persistent underline or structural rail. Allow wrapping rather than shrinking labels. Menus use an opaque reading surface, 8px surrounding padding, and at least 44px link rows; preserve the variant’s border and corner language. Use ordinary link lists for navigation menus. Escape and outside click dismiss; return focus to the trigger when dismissal is keyboard-driven. Do not add application-menu roles without their full keyboard behavior.
 
 ### Tabs
 
-Use a labeled tablist, one selected tab, and a corresponding named tabpanel. Targets are at least 48px high. Arrow keys move among tabs, Home/End reach the extremes, and only the active tab is in the sequential tab order. Selected styling persists without hover. Long labels wrap or the tab strip scrolls within its own region; the whole page must not overflow. Do not use color as the only selection cue.
+Selected tabs are inset wells on the continuous surface; their accent label remains visible. Unselected tabs stay flat. Use a labeled tablist with one selected tab, aria-selected, aria-controls, and a named tabpanel. Arrow keys move within the set; Home/End move to its ends. Only the selected tab is in the sequential tab order. Keep labels legible at narrow widths with an internally scrollable strip or wrapping supported by the implementation. Switching does not reset unrelated input.
 
 ### Modals and Overlays
 
-Use an opaque surface, visible control-line frame, 32px padding, maximum width 560px, and maximum height 85dvh with internal scrolling. Backdrop uses ink at 60% opacity. Keep a visible close control, a concise title, body, fields if needed, and actions in source order. Native dialog is preferred: trap focus while modal, support Escape, and restore the opener on close. Do not render essential dialog text into a decorative image. Menus do not trap focus.
+Use the shared opaque pale surface, 28px corners, one broad cast shadow for separation, and a soft inset top highlight. Do not add a dark border in ordinary mode; preserve the strong focus ring and increased-contrast fallback. A dialog has a concise heading, supporting text, close action, and one clear primary task. Use 24–32px interior padding, maximum width 560px, maximum height 85dvh, and internal scrolling. Keep at least 16px viewport clearance. Use a native dialog where available to trap focus, support Escape, and restore the opener. Backdrop dims the environment without making the dialog’s text translucent. Menus never trap focus.
 
 ### Badges and Feedback
 
-Badges use explicit short text, 13px type, 4px by 8px padding, and a visible boundary. Passive badges do not resemble buttons. Use words plus optional icons for success, warning, and error. Critical feedback stays inline until resolved. A noncritical toast can disappear after enough reading time, but must not contain the only route to a required action. Announce completion through a polite live region.
+Follow the badge construction specified above, using 13px readable text and 4–8px vertical padding. State is written explicitly: status color alone is insufficient. A passive badge must not resemble an actionable tool. Keep errors inline until resolved; announce completed actions through a polite status region. Noncritical toasts may dismiss after enough reading time, but cannot hold the only route to a required action.
 
 ## Icons, Imagery, and Illustration
 
-Use sparse outline icons with 1.75px strokes. Avoid mixing glass, glossy 3D models, and embossed photographs. Images are simple rectangular crops outside relief controls. Data charts are flat on the shared surface with dark axes and distinguishable solid/dashed lines; no embossed bars.
+Use simple, legible icons with blue-gray ink. Keep photography away from the relief controls. The reference is a physical lighting relationship, not an illustration of a physical object. Charts remain flat for truthful value reading.
 
-Use a consistent 20–24px icon box and readable 1.75–2px strokes unless the visual rule above requires a different weight. Keep meaningful image captions outside the crop. Informative images need useful alt text; decorative images have empty alt text. Every asset must be original or appropriately licensed, with attribution retained when required. Do not copy logos, unique branded layouts, proprietary assets, or recognizable commercial components.
+Use a consistent 20–24px icon box and roughly 1.8–2px line weight, adjusted for the variant’s visual density. Decorative imagery has empty alt text or is hidden from the accessibility tree; meaningful images have useful alt text and captions outside the crop. All assets must be original or appropriately licensed. Do not copy proprietary fonts, logos, recognizable branded layouts, or distinctive commercial components.
 
 ## Data Visualization
 
@@ -127,70 +128,166 @@ Charts must communicate the same conclusion without relying on hue alone: combin
 
 ## Motion and Animation
 
-Use 140ms color changes; switch inset/outset shadows immediately to avoid expensive shadow animation. No drifting panels or morphing dents. Reduced motion removes all transitions.
+Change shadow state immediately on press and use 140ms text-color feedback. Do not animate expensive multi-shadow morphs or make controls drift.
 
-Only animate properties with a clear functional purpose. Do not delay content until an entrance effect completes. An unknown-duration operation uses written progress rather than a fabricated percentage. Honor prefers-reduced-motion with immediate state changes and a static loading label.
+Animation must explain an actual state change. Do not delay content until an entrance completes. Unknown-duration tasks use written progress rather than fabricated percentages. Honor prefers-reduced-motion with immediate state changes and static loading feedback.
 
 ## Interaction States
 
-- **Hover:** change the action fill or underline while preserving contrast and geometry. A text label remains readable throughout. Never reveal essential actions only on hover.
-- **Focus-visible:** use a 3px accent or ink outline with a 3px surface-colored gap. On an accent-filled button, the separated outer ring must remain visible against the surrounding surface. Do not clip outlines with container overflow.
-- **Active / pressed:** use the surface-depth behavior above; where no depth is part of the system, use a stronger boundary or label emphasis. Keep the hit target stationary.
-- **Selected:** retain the specified underline, filled segment, or rail and expose aria-selected or aria-current. A check mark or text cue supports color.
-- **Disabled:** use readable muted text, an opaque surface, a dashed control boundary, and native disabled semantics. Remove interactive shadow/translation and explain prerequisites nearby.
-- **Error / success:** use explicit wording, the semantic text token, and an icon or start rule. Retain user input and make the recovery action available.
+- **Hover:** use a small brightness or underline change on interactive controls, with their material intact. Do not reveal essential content only on hover.
+- **Focus-visible:** use a 3px accent or ink outline separated from the surrounding material by 3–5px. Keep it visible over all local surfaces; decorative clipping must not hide it.
+- **Active / pressed:** Change shadow state immediately on press and use 140ms text-color feedback. Do not animate expensive multi-shadow morphs or make controls drift.
+- **Selected:** use the variant’s inset, filled, beveled, or ruled state; expose aria-selected, aria-pressed, or aria-current as appropriate.
+- **Disabled:** retain readable muted labels and native disabled semantics; remove interactive shadow travel. Use a written prerequisite or unavailable label where necessary.
+- **Error / success:** use words and a semantic color or icon, preserve user input, and provide a clear next step.
 
 ## Responsive Behavior
 
-At 960px, reduce multi-card groups to two columns. At 900px, stack the hero in source order and remove deliberate desktop span asymmetry. At 640px, use 20px gutters, 20px card interiors, 48px section gaps, one-column cards and pricing, and 36px H1 / 28px H2. Keep body text at its normal size. Navigation wraps into a second row rather than hiding every link.
+At 760px and below, stack the hero in source order, switch feature/pricing/contact groups to one column, and let navigation wrap into a second row. Remove decorative tilts and staggered margins, but keep the material, border language, palette, and typographic hierarchy. Use 24px gutters and 56px section intervals.
 
-Reduce large shadows or outer decorative frames on phones so they do not create horizontal overflow. Remove nonessential margin patterns. Dialogs use 20px padding and at least 16px viewport margins. Forms remain one column. Tables scroll only in their labeled container. Test at 320 CSS pixels, 200% text enlargement, and 400% zoom; long words and translated labels wrap without covering another control.
+At 480px and below, use 20px gutters, 24px panel interiors, a 34–40px headline, and 28px section headings. Keep 16px+ editable text and normal body size. Allow toolbar controls to wrap; give a slider its own row when needed. Reduce ornamental frames without eliminating the style. Tables may scroll within a labeled region; the entire page must not scroll sideways.
+
+Test at 320px, 390px, a narrow comparison iframe, and desktop widths. Also check 200% text enlargement and 400% zoom. Dialogs scroll internally with an always-reachable close action.
+
+Keep paired raised and inset shadows on phones. Reduce excessive outer radius if necessary, but do not replace the material with outlined flat boxes.
 
 ## Accessibility
 
-Require 4.5:1 contrast for normal text, 3:1 for large text, and 3:1 for meaningful control boundaries and focus indicators. The documented opaque text and control token pairs are tested; final images, fills, hover treatments, and composites still require verification. Never make opacity reduction the only disabled cue. Keep text as HTML and preserve browser zoom.
+Text and functional icons must meet 4.5:1 and 3:1 respectively against the pale surface. Raised and inset shadows are decorative depth cues, not the only identification of a control. Buttons have explicit readable text or recognizable icons; labels identify inputs and switches. Focus-visible always uses a strong 3px outline, regardless of relief. Increased-contrast mode adds 1px control boundaries. Forced colors removes the shadows and uses system-colored borders and selection indicators.
 
-Use semantic header, nav, main, sections, and footer; provide a skip link and sequential heading levels. Every interaction works with keyboard, touch, and pointer. Standalone targets are at least 44×44px, with 48px preferred here. Keep focus unobscured and restore it after dismissing overlays. Use native form and dialog behavior where possible, accessible names for icons, and associated error messages. Avoid announcements on every keystroke.
-
-Honor reduced motion. In forced-colors mode, remove decorative fills/shadows as needed, allow system Canvas/CanvasText/ButtonText/Highlight colors, and preserve solid control outlines. Do not suppress system color adjustments. If the presentation loses its decoration, it must still retain clear grouping, labels, state, and reading order.
+Use native semantics for buttons, inputs, switches, sliders, and dialogs. Keep targets at least 44px, preserve browser zoom, label every icon, and make active/checked state available to assistive technology. Test low-vision usability with the actual controls; never claim that soft shadows alone satisfy contrast requirements. Forms retain associated error messages and focus returns after a dialog closes.
 
 ## Implementation Guidance
 
-Start with scoped tokens, then implement the type hierarchy and grid before decorative treatment:
+Apply a `.design` scope to the interface root. Start with the composition and reading hierarchy, then the material and controls. The class names below describe roles: `.hero` is the opening region, `.project-card` the representative workspace, `.panel` a grouped surface, `.feature-card` a repeated explanatory region, and `.primary` an action. Map those roles to your application’s semantic components; the demo copy is not required.
+
+The following tokens and construction rules are included here so this file remains independently useful. They are not a replacement for the responsive, keyboard, form, and accessibility requirements above. Use semantic HTML and preserve normal layout flow around the decorative frames.
 
 ```css
-.design-neumorphism-soft-relief {
-  --canvas: #e3e8ed;
-  --surface: #e3e8ed;
-  --ink: #2d3c4b;
-  --muted: #516477;
-  --accent: #315e79;
+.design {
+  --canvas: #e8ecf4;
+  --surface: #e8ecf4;
+  --ink: #344159;
+  --muted: #52617a;
+  --accent: #6950aa;
   --on-accent: #ffffff;
   --line: #718294;
   --control-line: #718294;
   --error: #9a2540;
   --success: #285c3b;
   --warning: #735200;
-  color: var(--ink);
-  background: var(--canvas);
+  --hover: #6950aa;
+  --pressed: #6950aa;
+  --font: system-ui,sans-serif;
+  --heading: system-ui, sans-serif;
+  --display: 54px;
+  --display-weight: 550;
+  --body: 17px;
+  --leading: 1.65;
+  --radius: 28px;
+  --control-radius: 24px;
+  --border: 0px;
+  --panel-padding: 32px;
+  --gap: 32px;
+  --section: 80px;
+  --gutter: 36px;
+  --max: 1080px;
+  --shadow: 12px 12px 26px #bac4d5,-12px -12px 26px #ffffff;
+  --duration: 140ms;
+  --hero-columns: 7fr 5fr;
+  --button-height: 48px;
+  --dialog-radius: 20px;
+  --dialog-width: 560px;
+  --dialog-padding: 32px;
+  --backdrop: #2d3c4b99;
+  --dialog-shadow: 8px 8px 18px #bcc4ce, -8px -8px 18px #ffffff;
+  --stat: 36px;
+  --scheme: light;
+  --raised: 6px 6px 12px #bdc7d8,-6px -6px 12px #ffffff;
+  --inset: inset 5px 5px 10px #bdc7d8,inset -5px -5px 10px #ffffff;
 }
-.design-neumorphism-soft-relief * { box-sizing: border-box; }
+
+.design{ --canvas:#e8ecf4;--surface:#e8ecf4;--ink:#344159;--muted:#52617a;--accent:#6950aa;--on-accent:#ffffff;--radius:28px;--border:0px;--shadow:12px 12px 26px #bac4d5,-12px -12px 26px #ffffff;--control-radius:24px;--raised:6px 6px 12px #bdc7d8,-6px -6px 12px #ffffff;--inset:inset 5px 5px 10px #bdc7d8,inset -5px -5px 10px #ffffff; }
+
+.design body{ background:#e8ecf4; }
+
+.design .demo-shell{ max-width:1180px; }
+
+.design .demo-nav{ border:0; padding:24px 0; }
+
+.design .hero{ grid-template-columns:1fr 1.1fr; gap:56px; padding:56px 0 72px; }
+
+.design h1{ font-weight:500; letter-spacing:-.045em; }
+
+.design .panel{ border:0; background:var(--surface); box-shadow:var(--shadow); border-radius:28px; }
+
+.design .project-card{ padding:36px; }
+
+.design .project-rows>div{ border:0; padding:10px 0; }
+
+.design .row-icon{ border-radius:50%; box-shadow:var(--inset); padding:4px 8px; }
+
+.design :is(.primary,.secondary,.icon-button){ background:var(--surface); color:var(--ink); border:0; box-shadow:var(--raised); border-radius:26px; }
+
+.design .primary{ color:var(--accent); }
+
+.design :is(.primary,.secondary,.icon-button):active,
+.design .icon-button[aria-pressed=true]{ box-shadow:var(--inset); transform:none; color:var(--accent); }
+
+.design .icon-button{ width:48px; height:48px; border-radius:50%; }
+
+.design :is(input:not([type=checkbox]):not([type=range]),select){ border:0; box-shadow:var(--inset); border-radius:24px; padding:16px 20px; background:var(--surface); }
+
+.design .switch-label input{ border:0; width:64px; height:32px; box-shadow:var(--inset); }
+
+.design .switch-label input:checked{ background:#6950aa; box-shadow:inset 3px 3px 7px #45346e,inset -2px -2px 6px #a58ad9; }
+
+.design .switch-label input::after{ width:30px; height:30px; left:1px; top:1px; background:linear-gradient(135deg,#f7faff,#dbe1ec); box-shadow:3px 3px 7px #38435644; }
+
+.design .switch-label input:checked::after{ transform:translateX(32px); }
+
+.design input[type=range]::-webkit-slider-runnable-track{ height:14px; border:0; box-shadow:var(--inset); }
+
+.design input[type=range]::-moz-range-track{ height:14px; border:0; box-shadow:var(--inset); }
+
+.design input[type=range]::-webkit-slider-thumb{ margin-top:-7px; width:28px; height:28px; background:var(--surface); border:0; box-shadow:var(--raised); }
+
+.design .badge{ box-shadow:var(--inset); border:0; padding:8px 12px; color:var(--accent); }
+
+.design :is(.card-bottom,.stats,.stats>div,.testimonial,.demo-footer,.demo-tabs){ border:0; }
+
+.design .stats{ padding:32px; border-radius:24px; box-shadow:var(--inset); }
+
+.design .avatars>span{ border:0; box-shadow:var(--raised); }
+
+.design .demo-tabs{ gap:16px; padding:12px; }
+
+.design .demo-tabs button[aria-selected=true]{ border:0; border-radius:24px; box-shadow:var(--inset); color:var(--accent); }
+
+.design dialog{ border:0; box-shadow:18px 18px 60px #2d365a55,inset 2px 2px 4px #fff; background:var(--surface); }
+
+.design :focus-visible{ outline:3px solid #6950aa; outline-offset:5px; }
+
+.design .primary:hover:not(:disabled){ background:var(--surface); color:var(--accent); }
 ```
 
-Scope tokens and component rules to the design root, including portals and dialog surfaces. Avoid leaking them into the surrounding application. Implement the specified opaque surfaces first, then add only the permitted border, radius, shadow, and motion treatments. The preview uses one shared component set; it is a representative implementation, not a separate source of design rules.
-
-Verify navigation, a hero, features, statistics, cards, pricing, a testimonial, form validation, tabs, menus, and a modal together. Test long content, empty states, loading, disabled actions, keyboard use, mobile stacking, and reduced motion. Check both visual fidelity and practical task completion. Do not reuse another family's unexamined rules to fill gaps.
-
-When mixing manually, name exactly which region this document controls, preserve one owner per component, and retest contrast and focus at boundaries. Never average palettes or merge component rules automatically. Content can adapt; the philosophy, hierarchy, and surface relationships are the invariant parts of this interpretation.
+Use a labeled shared control set when checking implementation: primary and secondary buttons, an icon toggle, a checkbox/switch, a range input, text fields, navigation, tabs, and a modal. Check the neutral and selected states, not just the hero screenshot. A 1px brightness change on hover is not a substitute for the material-specific pressed state. On narrow screens, apply the responsive rules above after the construction rules.
 
 ## Do
 
-- Preserve explicit control outlines.
-- use relief only on outer groups.
-- check grayscale and high contrast.
-- Preserve the readable control and feedback behavior when adapting the visual composition.
+- A continuous pale surface where controls appear pressed into or raised from the same material through opposed soft light and shadow.
+- Carry the construction through navigation, inputs, cards, tabs, and overlays.
+- Preserve readable text and stable hit areas when adding decoration.
+- Compare the same interface content at desktop and phone widths.
+- Verify actual composited backgrounds, focus rings, selected states, and unavailable controls.
 
 ## Don't
 
-- Do not rely on shadows for focus, disabled, selected, or input boundaries.
-- Do not use a color swap as a substitute for the system's composition and component rules.
+- Do not put a dark outline around every resting shape, use unrelated card and canvas colors, or mistake a single generic drop shadow for neumorphism. Keep strong focus outlines and provide explicit boundaries in increased-contrast modes.
+- Replace these rules with the same card grid and a different palette.
+- Copy a particular brand, its fonts, assets, terminology, or exact components.
+- Hide missing behavior behind a beautiful static screenshot.
+
+## Research Context
+
+Background reference: [NN/g: skeuomorphism and neumorphism](https://www.nngroup.com/articles/skeuomorphism/). The rules in this document are an original interface interpretation, not a reproduction of a source artifact or a claim that this variant exhausts the family.

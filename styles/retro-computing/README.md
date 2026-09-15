@@ -1,9 +1,11 @@
 # Retro Computing
 
-Explicit window frames, inset fields, and concise utility labels with modern accessible behavior.
+A desktop workbench expressed through window title strips, raised beveled buttons, and recessed work areas.
 
-## Available design
+## Available variants
 
-- [Desktop Workbench Retro-Computing](desktop-workbench/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Desktop Workbench Retro-Computing](desktop-workbench/DESIGN.md)
+- [Phosphor Terminal Retro Computing](phosphor-terminal/DESIGN.md)
+- [Monochrome Desktop Retro Computing](monochrome-desktop/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

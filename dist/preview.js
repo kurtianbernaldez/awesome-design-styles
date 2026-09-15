@@ -1,10 +1,10 @@
 const root=document.documentElement;
 // Theme membership is discovered from the same stylesheet that implements it.
-const themes=new Set();
+const themes=new Set(), expandedThemes=new Set();
 for(const sheet of document.styleSheets) {
-  try { for(const rule of sheet.cssRules) { const match=rule.selectorText?.match(/^\[data-theme="([a-z0-9./-]+)"\]$/); if(match) themes.add(match[1]); } } catch {}
+  try { for(const rule of sheet.cssRules) { const match=rule.selectorText?.match(/^\[data-theme="([a-z0-9./-]+)"\]$/); if(match) themes.add(match[1]); if(sheet.href?.endsWith("/variants.css")){const expanded=rule.selectorText?.match(/^\[data-theme="([a-z0-9./-]+)"\]/);if(expanded) expandedThemes.add(expanded[1]);} } } catch {}
 }
-function setTheme(theme) { if(themes.has(theme)) { root.dataset.theme=theme; const canvas=getComputedStyle(root).getPropertyValue('--canvas').trim(); const rgb=canvas.match(/^#([0-9a-f]{6})$/i); const brightness=rgb ? [.2126,.7152,.0722].reduce((sum,w,i)=>sum+w*parseInt(rgb[1].slice(i*2,i*2+2),16),0) : 255; root.style.colorScheme=brightness<128?'dark':'light'; } }
+function setTheme(theme) { if(themes.has(theme)) { root.dataset.theme=theme; root.dataset.family=theme.split("/")[0]; root.toggleAttribute("data-expanded",expandedThemes.has(theme)); const canvas=getComputedStyle(root).getPropertyValue('--canvas').trim(); const rgb=canvas.match(/^#([0-9a-f]{6})$/i); const brightness=rgb ? [.2126,.7152,.0722].reduce((sum,w,i)=>sum+w*parseInt(rgb[1].slice(i*2,i*2+2),16),0) : 255; root.style.colorScheme=brightness<128?'dark':'light'; } }
 setTheme(new URLSearchParams(location.search).get('theme'));
 window.addEventListener('message',event=> { if(event.origin===location.origin && event.source===parent && event.data?.type==='set-theme') setTheme(event.data.theme); });
 const dialog=document.querySelector('#demo-dialog'); let opener, toastTimer;
@@ -27,3 +27,6 @@ const menu=document.querySelector('.demo-menu');
 document.addEventListener('click',event=>{if(!menu.contains(event.target))menu.open=false;});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu.open){menu.open=false;menu.querySelector('summary').focus();}});
 menu.querySelectorAll('a').forEach(a=>a.onclick=()=>menu.open=false);
+
+document.querySelectorAll('[data-toggle]').forEach(button=>button.addEventListener('click',()=>button.setAttribute('aria-pressed',String(button.getAttribute('aria-pressed')!=='true'))));
+document.querySelector('#workspace-focus').addEventListener('input',event=>document.querySelector('output[for="workspace-focus"]').textContent=event.target.value+'%');

@@ -1,9 +1,11 @@
 # Art Nouveau
 
-Flowing framed compositions with organic curves, literary typography, and calm readable interiors.
+Flowing line and integrated framing: organic curvature connects typography and surfaces into one ornamental structure.
 
-## Available design
+## Available variants
 
-- [Botanical Lines Art Nouveau](botanical-lines/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Botanical Lines Art Nouveau](botanical-lines/DESIGN.md)
+- [Illustrated Folio Art Nouveau](illustrated-folio/DESIGN.md)
+- [Vienna Geometry Art Nouveau](vienna-geometry/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

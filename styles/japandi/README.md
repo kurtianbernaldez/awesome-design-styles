@@ -1,9 +1,11 @@
 # Japandi
 
-Warm neutral planes, precise alignment, and gently softened practical components.
+Warm, regular order: quiet modular joinery, natural neutrals, and calm contemporary typography.
 
-## Available design
+## Available variants
 
-- [Warm Order Japandi](warm-order/DESIGN.md) — a complete visual system, including components, states, responsive behavior, and accessibility.
+- [Warm Order Japandi](warm-order/DESIGN.md)
+- [Gallery Living Japandi](gallery-living/DESIGN.md)
+- [Crafted Workspace Japandi](crafted-workspace/DESIGN.md)
 
-This family currently has one complete interpretation. Additional variants are welcome when their design philosophy is meaningfully different.
+Compare three complete interpretations using the same showcase. Each file defines a full system, including responsive, interaction, and accessibility rules.

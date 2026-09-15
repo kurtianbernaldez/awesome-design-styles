@@ -40,14 +40,11 @@ export async function discover(root) {
     if (!variants.length) continue;
     const readme = await readFile(path.join(root, 'styles', entry.name, 'README.md'), 'utf8');
     const [title, description] = readme.trim().split(/\n\s*\n/);
+    const variantOrder = [...readme.matchAll(/\]\(([a-z0-9.-]+)\/DESIGN\.md\)/g)].map(m=>m[1]);
+    variants.sort((a,b)=>(variantOrder.indexOf(a.slug)<0?999:variantOrder.indexOf(a.slug))-(variantOrder.indexOf(b.slug)<0?999:variantOrder.indexOf(b.slug)) || a.name.localeCompare(b.name));
     families.push({ slug: entry.name, name: title.replace(/^# /, ''), description, variants });
   }
   const order = ['minimalism', 'brutalism', 'glassmorphism'];
   families.sort((a,b) => (order.indexOf(a.slug) < 0 ? 99 : order.indexOf(a.slug)) - (order.indexOf(b.slug) < 0 ? 99 : order.indexOf(b.slug)) || a.name.localeCompare(b.name));
-  const variants = ['clean-product','editorial','monochrome','raw-web','colorful','dark-glass','light-glass','vibrant-glass'];
-  for (const family of families) family.variants.sort((a,b) => {
-    const rank = s => family.slug === 'brutalism' ? ['raw-web','editorial','colorful'].indexOf(s) : variants.indexOf(s);
-    return rank(a.slug)-rank(b.slug) || a.name.localeCompare(b.name);
-  });
   return families;
 }

@@ -2,7 +2,7 @@
 name: Colorful Brutalism
 slug: colorful
 family: brutalism
-description: Assertive color fields, heavy frames, and large tactile controls with a clear task hierarchy.
+description: "Confrontational brutalism built from large adjoining color planes and uncompromising dark structure."
 tags:
   - brutalist
   - colorful
@@ -14,16 +14,19 @@ tags:
 
 ## Overview and Design Philosophy
 
-Give different content groups the force of independent signs. Use this variant for creative communities, energetic learning tools, and participatory projects. It differs from Raw Web's exposed utility and Editorial's type-dominant paper composition: here color fields and emphatic block boundaries carry the page.
+Confrontational brutalism built from large adjoining color planes and uncompromising dark structure.
 
-Visual character: loud, graphic, immediate, and physical. Color is assigned to stable roles rather than randomized by component. Avoid the system where a quiet reading environment is essential.
+The hero is one edge-to-edge framed assembly. A yellow text plane meets a pink workspace across a 4px dividing rail. Use 80px uppercase display type, compact sections, and a green statistics band. Colored feature panels fill their whole regions.
+
+This is an original, independently usable interpretation of the family. Its defining relationships must remain visible across landing pages, working screens, forms, and overlays; changing the palette alone does not establish this design language.
 
 ## Core Principles
 
-1. Assign color by role and keep that assignment stable.
-2. Use a strong outline to make controls unmistakable.
-3. Keep text on flat, tested fills.
-4. Enthusiasm must not obscure the primary action or validation.
+- Preserve the defining composition and material together.
+- Use flat saturated fills, square corners, and 3–4px ink boundaries.
+- Let the control construction explain state and hierarchy.
+- Do not reduce this to a neutral interface with three bright buttons or soften the boundaries into rounded pastel cards.
+- Keep text, reading order, keyboard access, and error recovery clear even when decoration is expressive.
 
 ## Color System
 
@@ -32,7 +35,7 @@ Visual character: loud, graphic, immediate, and physical. Color is assigned to s
 | `canvas` | `#f5ebd6` | Page field |
 | `surface` | `#fff9ec` | Reading and input field |
 | `ink` | `#302139` | All text on light color fields |
-| `muted` | `#625169` | Supporting text on surface |
+| `muted` | `#534258` | Supporting text on surface |
 | `accent` | `#f7be39` | Primary action fill |
 | `on-accent` | `#302139` | Primary action label |
 | `line` | `#302139` | Heavy frames |
@@ -44,11 +47,26 @@ Visual character: loud, graphic, immediate, and physical. Color is assigned to s
 | `mint` | `#91d7b8` | Statistics field; ink text only |
 | `lilac` | `#c8b2f1` | Supporting feature field; ink text only |
 
-Use ink and muted on canvas/surface, and on-accent on accent. Semantic text colors belong on the documented reading surface. These pairs are the starting contract; validate final rendered states. Do not infer a second color mode by inversion. Text selection uses accent with on-accent text.
+Use ink and muted text on their documented reading surfaces. Body links use ink with a persistent underline; bright filled-action colors must not be reused as low-contrast link text. Accent/on-accent is the tested filled-action pair; a raised neutral button instead uses ink or accent text on surface. Status colors always have words or icons as a second cue. Additional field colors are specified in the construction rules below; do not infer arbitrary color substitutions.
+
+Use flat saturated fills, square corners, and 3–4px ink boundaries. The drama comes from the size of the planes, not layered shadows. Remove gaps where regions form one assembly.
 
 ## Typography
 
-Use `system-ui, sans-serif` with 800–900 weight for headings; `ui-monospace, monospace` may label ordinals. H1: clamp(40px, 6vw, 72px)/1.02, 900, -0.04em. H2: 36px/1.1, 800. H3: 24px/1.2, 800. Body: 17px/1.6, 400. Lead: 20px/1.5. Labels: 15px/1.3, 700. Captions: 13px/1.5. Stats: 48px/1.05, 900. Body measure is 60ch. Use heavy weight rather than outlines or text shadows; never stretch glyphs.
+The hero is one edge-to-edge framed assembly. A yellow text plane meets a pink workspace across a 4px dividing rail. Use 80px uppercase display type, compact sections, and a green statistics band. Colored feature panels fill their whole regions.
+
+| Role | Font stack | Size and rhythm |
+|---|---|---|
+| Display | `system-ui,sans-serif` | Use the display scale and weight described above; 34–40px on phones unless specified below |
+| Section heading | `system-ui,sans-serif` | 32px / 1.2; 28px on small screens |
+| Card heading | `system-ui,sans-serif` | 22px / 1.3; wrap naturally |
+| Body | `system-ui,sans-serif` | 17px / 1.6–1.7; regular weight |
+| Lead | body stack | 18px / 1.6; no more than 44ch |
+| Control label | body stack | 14px / 1.4; 600 weight |
+| Caption and index | body or monospace stack | 12–13px / 1.5; secondary information only |
+| Statistics | display stack | 30–48px / 1.1; tabular figures where supported |
+
+Keep paragraphs below 65ch. Never use display tracking or condensed letterforms for lengthy error messages. Preserve live text, browser zoom, and fallback fonts. Barlow Condensed and Silkscreen, when specified, are open-license fonts; retain their OFL notices if distributed. The preview bundles them locally. Other stacks use system fallbacks and require no remote font service.
 
 ## Spacing
 
@@ -56,38 +74,53 @@ Scale: 4, 8, 12, 20, 28, 40, 64, 88px. Buttons use 14px by 24px padding. Cards u
 
 ## Layout and Grid
 
-Use a centered 1160px container with 32px gutters and 28px gaps. Hero uses a 3:2 split. Features use three equal blocks; each field can carry a different assigned color, but the same component role keeps its color across pages. Pricing and statistics stay aligned. Avoid random rotation and overlapping stickers; the stable grid lets the palette be expressive.
+The hero is one edge-to-edge framed assembly. A yellow text plane meets a pink workspace across a 4px dividing rail. Use 80px uppercase display type, compact sections, and a green statistics band. Colored feature panels fill their whole regions.
+
+Use a container no wider than 1160px unless this interpretation explicitly uses the full page. The default gutter is 32px. Set flexible grid tracks with minmax(0, 1fr), allow action rows to wrap, and keep cards content-sized. Hero, workspace, statistics, features, quotation, pricing, contact form, and footer remain in that source order. Change visual arrangement without assigning a contradictory keyboard order.
 
 ## Surfaces, Borders, Radius, Shadows, and Depth
 
-Frames are 3px ink, corners 0. Primary controls use a 4px by 4px hard ink shadow; feature blocks may use 6px by 6px. Inputs have no shadow. No soft shadows, gradients, or blur. Reading copy stays on surface or a flat light field. Use pink for discovery cards, mint for statistics, lilac for supporting information, and accent only for primary actions or one featured price. Layer order: content 0, menu 20, backdrop 40, dialog 50.
+Use flat saturated fills, square corners, and 3–4px ink boundaries. The drama comes from the size of the planes, not layered shadows. Remove gaps where regions form one assembly.
+
+Use the construction example below for precise borders, radius, backgrounds, and shadow recipes. Decoration belongs to the containing region; text and hit targets remain clear. Keep ordinary content at layer 0, menus around 20, the modal backdrop at 40, dialogs at 50, and feedback above that. Native dialog belongs in the top layer; do not trap it inside a transformed card. Avoid clipping focus rings with overflow hidden. A passive surface does not gain interactive elevation simply because the pointer crosses it.
 
 ## Components
 
+Buttons are strongly bounded flat blocks. Forms use opaque pale interiors. Selection changes both a boundary and label treatment; badge shape stays rectangular.
+
 ### Buttons
-Primary is yellow accent with ink text, 3px frame, 4px hard offset, 48px minimum height. Secondary is surface with ink text and frame, no resting shadow. Text links are underlined with 2px thickness. Destructive actions use surface with error text and an explicit label until confirmation; confirmed destructive fill uses error with white. Loading keeps the shadow stable and writes “Working…”.
+
+Use the variant’s button material above for primary, secondary, and icon actions. Keep at least 44×44px targets; use 48px for principal actions. Each task has one clearly identifiable primary action and a verb label. Icon controls need an accessible name; toggle buttons expose aria-pressed and a persistent filled icon or inset state. Loading keeps the label or a written progress state and prevents duplicate submission without changing width. Disabled controls retain readable labels, use native disabled behavior, remove movement, and explain any prerequisite nearby.
 
 ### Forms
-Fields use surface fill, 3px ink border, 14px padding, and a 48px minimum height. Do not tint input interiors according to validity. Native checkboxes and radios use ink accent-color. Error messages sit in a surface block with an error-colored start rule and “Error:” prefix. Retain values and offer correction. Group labels use 15px bold type; help remains 15px regular.
+
+Carry the specified surface into editable wells without putting texture or decorative imagery behind text. Use visible persistent labels, 16px or larger editable text, and a minimum 44px control height. Give multiline fields at least 112px initial height. Group radio and checkbox sets with fieldset and legend. Native checkboxes or switches retain their checked state, keyboard access, and accessible name; sliders expose a label and current value. Validate after blur or submission, retain entered values, connect errors with aria-describedby, and explain recovery. Placeholder text is an example rather than a label. Provide a linked error summary for long forms.
 
 ### Cards
-A discovery card uses pink, a 3px frame, 28px padding, and optional 6px hard offset. Place title, prose, and action in one column. Supporting cards use lilac; statistics use mint with large ink numbers. Featured pricing uses accent plus a written “Recommended” badge. Do not make noninteractive cards lift on hover. Empty cards keep the same structure but offer a clear creation action.
+
+Use the surface and region construction above. A card is a content group, not necessarily a raised rectangle. Keep a heading, explanation, optional status, and action in a predictable order with 16–24px internal spacing. Passive regions have no misleading hover lift. Do not wrap multiple nested links in a second card link. Pricing compares the same criteria in the same order and states recommendations in words. Empty and loading states remain inside the intended content space without inventing decorative activity.
 
 ### Navigation and Menus
-Navigation is a surface strip with a 3px lower edge and 72px minimum height. Current location has an ink underline and weight 800. Menus are opaque surface with 3px frame and 4px hard shadow, 8px padding, 48px rows. Highlight hovered rows with accent; selected rows also show a check. Escape restores focus to the trigger.
+
+Navigation adopts the framing and density described above while keeping recognizable links. Mark the current destination with aria-current and a persistent underline or structural rail. Allow wrapping rather than shrinking labels. Menus use an opaque reading surface, 8px surrounding padding, and at least 44px link rows; preserve the variant’s border and corner language. Use ordinary link lists for navigation menus. Escape and outside click dismiss; return focus to the trigger when dismissal is keyboard-driven. Do not add application-menu roles without their full keyboard behavior.
 
 ### Tabs
-Tabs are large outlined rectangles, 48px tall. Selected tab has accent fill and an inset 3px lower ink line. Others use surface. Maintain arrow-key navigation, Home/End, and correctly labeled panels. Do not assign a different unrelated color to every tab state.
+
+Use a stable underline or accent rail unless the construction specifies a filled, inset, beveled, or framed selected tab. Use a labeled tablist with one selected tab, aria-selected, aria-controls, and a named tabpanel. Arrow keys move within the set; Home/End move to its ends. Only the selected tab is in the sequential tab order. Keep labels legible at narrow widths with an internally scrollable strip or wrapping supported by the implementation. Switching does not reset unrelated input.
 
 ### Modals and Overlays
-Use an opaque surface dialog, 3px frame, 8px hard shadow, 32px padding, 560px maximum width and 85dvh maximum height. Backdrop is ink at 60%. A short title strip may use lilac, but body and fields stay on surface. Close is a 48px square action within the dialog boundary.
+
+Use the opaque surface token and the variant’s framing around a calm reading area. A dialog has a concise heading, supporting text, close action, and one clear primary task. Use 24–32px interior padding, maximum width 560px, maximum height 85dvh, and internal scrolling. Keep at least 16px viewport clearance. Use a native dialog where available to trap focus, support Escape, and restore the opener. Backdrop dims the environment without making the dialog’s text translucent. Menus never trap focus.
 
 ### Badges and Feedback
-Use squared 2px framed labels with 6px by 10px padding. Status includes words and optionally an icon; palette fields do not encode success or failure. Toasts have surface fill and 3px frame. Keep essential errors inline until fixed. Progress bars are rectangular, ink-outlined, with a written value.
+
+Follow the badge construction specified above, using 13px readable text and 4–8px vertical padding. State is written explicitly: status color alone is insufficient. A passive badge must not resemble an actionable tool. Keep errors inline until resolved; announce completed actions through a polite status region. Noncritical toasts may dismiss after enough reading time, but cannot hold the only route to a required action.
 
 ## Icons, Imagery, and Illustration
 
-Use 24px icons with 2px strokes and simple silhouettes. Images use 4:3 rectangular crops with a 3px frame; avoid mixing many photographic treatments. Illustration can be original flat geometry using the defined field colors and ink outlines. Keep decorations out of controls and text regions. Do not copy mascots or signature brand characters.
+Use flat high-contrast graphic crops or stark photography. Decorative imagery must not replace the large structural color fields.
+
+Use a consistent 20–24px icon box and roughly 1.8–2px line weight, adjusted for the variant’s visual density. Decorative imagery has empty alt text or is hidden from the accessibility tree; meaningful images have useful alt text and captions outside the crop. All assets must be original or appropriately licensed. Do not copy proprietary fonts, logos, recognizable branded layouts, or distinctive commercial components.
 
 ## Data Visualization
 
@@ -95,15 +128,26 @@ Use chunky bars with ink outlines and direct labels. Use pink, mint, and lilac o
 
 ## Motion and Animation
 
-Buttons press toward their shadow by 2px over 90ms ease-out; release restores the offset. Hover does not bounce. Dialogs appear immediately. Do not animate decorative blocks indefinitely. Reduced motion removes translation and changes shadow size alone. Unknown-duration progress uses a written loading message, not a flashing fill.
+Immediate color and 1px press feedback. Large planes stay still.
+
+Animation must explain an actual state change. Do not delay content until an entrance completes. Unknown-duration tasks use written progress rather than fabricated percentages. Honor prefers-reduced-motion with immediate state changes and static loading feedback.
 
 ## Interaction States
 
-Hover primary changes to #edac23, with the same ink label. Secondary gains accent fill. Focus-visible is a 3px ink outline plus 3px surface gap so it survives every field color. Pressed controls reduce shadow to 1px. Disabled controls lose shadows and use surface fill, muted text, dashed borders, and disabled semantics. Selected cards get a checked label, not merely another color.
+- **Hover:** use a small brightness or underline change on interactive controls, with their material intact. Do not reveal essential content only on hover.
+- **Focus-visible:** use a 3px accent or ink outline separated from the surrounding material by 3–5px. Keep it visible over all local surfaces; decorative clipping must not hide it.
+- **Active / pressed:** Immediate color and 1px press feedback. Large planes stay still.
+- **Selected:** use the variant’s inset, filled, beveled, or ruled state; expose aria-selected, aria-pressed, or aria-current as appropriate.
+- **Disabled:** retain readable muted labels and native disabled semantics; remove interactive shadow travel. Use a written prerequisite or unavailable label where necessary.
+- **Error / success:** use words and a semantic color or icon, preserve user input, and provide a clear next step.
 
 ## Responsive Behavior
 
-Below 920px, stack the hero and use two feature columns. Below 640px, use 20px gutters, 48px section gaps, single-column blocks, and 40px H1. Reduce card shadows to 3px and keep room around them. Actions stack when labels wrap. Navigation wraps with 48px targets. Dialogs have 20px padding and 20px viewport margins to accommodate the shadow.
+At 760px and below, stack the hero in source order, switch feature/pricing/contact groups to one column, and let navigation wrap into a second row. Remove decorative tilts and staggered margins, but keep the material, border language, palette, and typographic hierarchy. Use 24px gutters and 56px section intervals.
+
+At 480px and below, use 20px gutters, 24px panel interiors, a 34–40px headline, and 28px section headings. Keep 16px+ editable text and normal body size. Allow toolbar controls to wrap; give a slider its own row when needed. Reduce ornamental frames without eliminating the style. Tables may scroll within a labeled region; the entire page must not scroll sideways.
+
+Test at 320px, 390px, a narrow comparison iframe, and desktop widths. Also check 200% text enlargement and 400% zoom. Dialogs scroll internally with an always-reachable close action.
 
 ## Accessibility
 
@@ -115,47 +159,86 @@ Require at least 4.5:1 contrast for normal text, 3:1 for large text, and 3:1 for
 
 ## Implementation Guidance
 
-Start by defining these tokens on a scoped root, then implement the component and layout rules above. This is a complete system: do not import missing rules from a sibling variant. The typography stacks use installed system fonts and require no proprietary font download. If an openly licensed substitute is introduced, verify its license, fallback metrics, and line wrapping.
+Apply a `.design` scope to the interface root. Start with the composition and reading hierarchy, then the material and controls. The class names below describe roles: `.hero` is the opening region, `.project-card` the representative workspace, `.panel` a grouped surface, `.feature-card` a repeated explanatory region, and `.primary` an action. Map those roles to your application’s semantic components; the demo copy is not required.
+
+The following tokens and construction rules are included here so this file remains independently useful. They are not a replacement for the responsive, keyboard, form, and accessibility requirements above. Use semantic HTML and preserve normal layout flow around the decorative frames.
 
 ```css
-.design-brutalism-colorful {
+.design {
   --canvas: #f5ebd6;
   --surface: #fff9ec;
   --ink: #302139;
-  --muted: #625169;
+  --muted: #534258;
   --accent: #f7be39;
   --on-accent: #302139;
   --line: #302139;
   --control-line: #302139;
   --error: #a01f38;
-  --success: #265b38;
-  --warning: #765000;
-  --pink: #efadd0;
-  --mint: #91d7b8;
-  --lilac: #c8b2f1;
-  color: var(--ink);
-  background: var(--canvas);
+  --hover: #edac23;
+  --pressed: #edac23;
+  --font: system-ui,sans-serif;
+  --heading: system-ui,sans-serif;
+  --display: 72px;
+  --display-weight: 900;
+  --body: 17px;
+  --leading: 1.6;
+  --radius: 0px;
+  --control-radius: 0px;
+  --border: 3px;
+  --panel-padding: 28px;
+  --gap: 28px;
+  --section: 88px;
+  --gutter: 32px;
+  --max: 1160px;
+  --shadow: 6px 6px 0 #302139;
+  --duration: 90ms;
+  --hero-columns: 3fr 2fr;
+  --button-height: 48px;
+  --dialog-radius: 0px;
+  --dialog-width: 560px;
+  --dialog-padding: 32px;
+  --backdrop: rgb(48 33 57 / .6);
+  --dialog-shadow: 8px 8px #302139;
 }
-.design-brutalism-colorful *,
-.design-brutalism-colorful *::before,
-.design-brutalism-colorful *::after { box-sizing: border-box; }
+
+.design .demo-shell{ max-width:none; }
+
+.design .hero{ gap:0; padding:0; border:4px solid var(--ink); margin:24px 0; align-items:stretch; }
+
+.design .hero-copy{ background:#ffd93d; padding:32px; }
+
+.design h1{ font-size:clamp(42px,6.5vw,80px); font-weight:900; text-transform:uppercase; line-height:1; }
+
+.design .project-card{ background:#eca5d3; border:0; border-left:4px solid; border-radius:0; box-shadow:none; }
+
+.design .stats{ background:#bae57e; border:4px solid; padding:24px; }
+
+.design .feature-card:nth-child(1){ background:#c8c2ff; }
+
+.design .feature-card:nth-child(2){ background:#a9e6de; }
+
+.design .feature-card:nth-child(3){ background:#ffd93d; }
+
+.design :is(.panel,button,.badge){ border-radius:0; box-shadow:none; border-width:3px; }
 ```
 
-Use rem for text and spacing equivalents with a 16px reference root; do not override the user's root font size. Use CSS grid with `minmax(0, 1fr)`, fluid headings, and `overflow-wrap: anywhere` for untrusted long strings. Preserve native form behavior. Scope this system to its container when embedding it, including portal/dialog surfaces; do not leak its tokens into surrounding application chrome.
-
-Implementation order: establish the canvas and type hierarchy; build the responsive grid; apply component surfaces and geometry; implement all interactive states; then add only the permitted depth and motion. Verify a navigation, hero, feature set, statistics, form, tabs, pricing, testimonial, and dialog together. Test empty content, long labels, validation errors, disabled controls, keyboard navigation, and reduced-motion presentation. Confirm all assets are original or appropriately licensed.
-
-The family identity and this variant's philosophy are invariant. Content length and grid collapse can adapt. When mixing manually, name the exact region and its chosen document, keep one owner for each component, and recheck contrast, focus, and stacking at the boundary. Do not automatically average tokens across systems.
+Use a labeled shared control set when checking implementation: primary and secondary buttons, an icon toggle, a checkbox/switch, a range input, text fields, navigation, tabs, and a modal. Check the neutral and selected states, not just the hero screenshot. A 1px brightness change on hover is not a substitute for the material-specific pressed state. On narrow screens, apply the responsive rules above after the construction rules.
 
 ## Do
 
-- Keep color roles stable and readable.
-- Make controls visibly bounded and generously sized.
-- Leave physical space for hard shadows.
+- Confrontational brutalism built from large adjoining color planes and uncompromising dark structure.
+- Carry the construction through navigation, inputs, cards, tabs, and overlays.
+- Preserve readable text and stable hit areas when adding decoration.
+- Compare the same interface content at desktop and phone widths.
+- Verify actual composited backgrounds, focus rings, selected states, and unavailable controls.
 
 ## Don't
 
-- Do not randomize colors on every render.
-- Do not place white body text on pastel fields.
-- Do not use bouncing controls, gradients, or exaggerated overlapping stickers.
+- Do not reduce this to a neutral interface with three bright buttons or soften the boundaries into rounded pastel cards.
+- Replace these rules with the same card grid and a different palette.
+- Copy a particular brand, its fonts, assets, terminology, or exact components.
+- Hide missing behavior behind a beautiful static screenshot.
 
+## Research Context
+
+Background reference: [NN/g: brutalism and antidesign](https://www.nngroup.com/articles/brutalism-antidesign/). The rules in this document are an original interface interpretation, not a reproduction of a source artifact or a claim that this variant exhausts the family.
