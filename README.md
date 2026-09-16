@@ -138,7 +138,7 @@ npm start       # serve an already built dist directory
 - `scripts/browser-audit.mjs` captures the actual showcase into `dist/assets/previews/`; `scripts/thumbnails.mjs` generates the landing-image layout.
 - A variant without a matching preview theme fails the build. Empty family directories are excluded. Unknown routes return a useful 404.
 
-Deploy the built `dist/` directory to any static host supporting directory index pages. No database, backend, or external font service is required. Run the build before deployment; deep routes are real generated HTML entrypoints. `.openai/hosting.json` configures the optional Sites deployment. Root-relative asset URLs assume the site is hosted at an origin root, not a repository subpath.
+Deploy the built `dist/` directory to any static host supporting directory index pages. No database, backend, or external font service is required. Run the build before deployment; deep routes are real generated HTML entrypoints. Root-relative asset URLs assume the site is hosted at an origin root, not a repository subpath.
 
 ## Contribute
 
