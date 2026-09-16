@@ -91,7 +91,7 @@ Verification in local Chromium includes:
 - Mouse movement, press deformation, damped settling, stationary text and hit targets, reduced motion, persistent effects-off, and phone layout.
 - Unit checks for curved displacement geometry, bounded maps, spring stability at 60/120Hz, and long-frame recovery.
 
-`node scripts/liquid-audit.mjs` runs the optical checks against local Chrome on port 9223 and writes diagnostic captures to `/tmp/form-atlas-liquid/`. Start that Chrome with `--blink-settings=primaryPointerType=4,availablePointerTypes=4,primaryHoverType=2,availableHoverTypes=2` for a desktop pointer. This remains a browser approximation; SVG backdrop support varies, so ordinary blur and opaque accessibility fallbacks remain part of every design.
+`node scripts/liquid-audit.mjs` runs the optical checks against local Chrome on port 9223 and writes diagnostic captures to `/tmp/design-style-mds-liquid/`. Start that Chrome with `--blink-settings=primaryPointerType=4,availablePointerTypes=4,primaryHoverType=2,availableHoverTypes=2` for a desktop pointer. This remains a browser approximation; SVG backdrop support varies, so ordinary blur and opaque accessibility fallbacks remain part of every design.
 
 ## Pointer motion and curation
 
@@ -107,7 +107,7 @@ Small controls adapt fill, ink, ambient rim, and shadow using nine DOM samples a
 
 This estimates known DOM backgrounds; it does not sample arbitrary media pixels or implement Apple's native renderer. Unbounded imagery needs a scrim or opaque backing. Real optical displacement still comes from the browser's backdrop filter. Accessibility preferences select static or opaque material, and forced colors uses system surfaces.
 
-The local Liquid Glass audit passed actual displacement, press/settle, stable filter caches and targets, adaptive foreground polarity, scroll-edge visibility, growing menus/dialogs, rapid reopen, Escape and focus restoration, reduced motion/transparency, and 320/390px layouts. Captures are in `/tmp/form-atlas-liquid/`. Pure tests cover geometry, springs, velocity, adaptive hysteresis, and sampled text contrast. Cross-browser and assistive-technology certification remain outside this review.
+The local Liquid Glass audit passed actual displacement, press/settle, stable filter caches and targets, adaptive foreground polarity, scroll-edge visibility, growing menus/dialogs, rapid reopen, Escape and focus restoration, reduced motion/transparency, and 320/390px layouts. Captures are in `/tmp/design-style-mds-liquid/`. Pure tests cover geometry, springs, velocity, adaptive hysteresis, and sampled text contrast. Cross-browser and assistive-technology certification remain outside this review.
 
 The supplied interaction sequences also informed the optical profile: a broad convex shoulder bends background detail through the body, while a press swells the material and reduces diffusion before it settles. Small Regular surfaces begin more transparent, increasing backing only for sampled contrast or busy content. Press transparency is bounded by the same contrast check; dense dialogs remain stable. The screenshot reference assets are not included in the repository.
 
@@ -129,4 +129,4 @@ The tab strip now remains in document flow with 32px before its panel. A navigat
 
 Hero and workspace background contours fade at all four paint boundaries, removing the sharp rectangular cutoffs without clipping the optical bodies or controls.
 
-`node scripts/liquid-layout-audit.mjs` passed 108 embedded layouts across outer widths 1440, 1100, 1000, 900, 801, 800, 657, 390 and 320px, all three Liquid Glass variants, Fit width/Mobile modes, and Overview/Recent activity. Checks cover panel separation before and after scrolling, horizontal content bounds, complete iframe containment, and sticky primary navigation. Focused images are saved in `/tmp/form-atlas-liquid-layout/`. The smallest outer width exposes an inner preview under 280px, covering the tab-label overflow missed by standalone 320px checks.
+`node scripts/liquid-layout-audit.mjs` passed 108 embedded layouts across outer widths 1440, 1100, 1000, 900, 801, 800, 657, 390 and 320px, all three Liquid Glass variants, Fit width/Mobile modes, and Overview/Recent activity. Checks cover panel separation before and after scrolling, horizontal content bounds, complete iframe containment, and sticky primary navigation. Focused images are saved in `/tmp/design-style-mds-liquid-layout/`. The smallest outer width exposes an inner preview under 280px, covering the tab-label overflow missed by standalone 320px checks.

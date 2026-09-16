@@ -15,7 +15,7 @@ const send=(method,params={})=>new Promise((resolve,reject)=>{const key=++id;pen
 const evaluate=async expression=>(await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true})).result.value;
 await send('Page.enable');await send('Runtime.enable');await send('Network.enable');
 const navigate=async url=>{await send('Page.navigate',{url});for(let i=0;i<100;i++){if(await evaluate(`document.readyState==='complete' && location.href===${JSON.stringify(url)}`))break;await new Promise(r=>setTimeout(r,30));}await evaluate('document.fonts.ready');await new Promise(r=>setTimeout(r,350));};
-const out=mode==='thumbnails'?new URL('../dist/assets/previews/',import.meta.url).pathname:`/tmp/form-atlas-${mode}/`;
+const out=mode==='thumbnails'?new URL('../dist/assets/previews/',import.meta.url).pathname:`/tmp/design-style-mds-${mode}/`;
 await mkdir(out,{recursive:true});const report=[];
 try{
 for(const v of list){const theme=`${v.family}/${v.slug}`;

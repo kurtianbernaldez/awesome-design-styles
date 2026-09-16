@@ -3,3 +3,6 @@ node_modules/
 dist/catalog.json
 dist/styles/
 dist/thumbnails.css
+
+# Local browser-audit output
+/tmp/design-style-mds-*/

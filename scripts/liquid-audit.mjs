@@ -1,7 +1,7 @@
 // Local optical/interaction regression check. Reuses desktop-pointer Chrome on 9223.
 import assert from 'node:assert/strict';
 import {mkdir,writeFile} from 'node:fs/promises';
-const origin='http://127.0.0.1:4173',out='/tmp/form-atlas-liquid/';
+const origin='http://127.0.0.1:4173',out='/tmp/design-style-mds-liquid/';
 await mkdir(out,{recursive:true});
 const {webSocketDebuggerUrl}=await(await fetch('http://127.0.0.1:9223/json/new?about:blank',{method:'PUT'})).json();
 const socket=new WebSocket(webSocketDebuggerUrl);await new Promise(r=>socket.addEventListener('open',r,{once:true}));
