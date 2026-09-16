@@ -1,4 +1,4 @@
-# Form Atlas
+# design-style-mds
 
 An original visual design library of complete, reusable **DESIGN.md** files for general design languages and aesthetics.
 
@@ -8,7 +8,7 @@ A style family is a starting point, not one definitive appearance. Minimalism ca
 
 ## The library
 
-**38 families · 114 complete design systems.** Every family below has a DESIGN.md and a matching preview.
+**39 families · 117 complete design systems.** Every family below has a DESIGN.md and a matching preview.
 
 | Family | Complete variants |
 |---|---|
@@ -31,6 +31,7 @@ A style family is a starting point, not one definitive appearance. Minimalism ca
 | Grunge | [Weathered Print Grunge](styles/grunge/weathered-print/DESIGN.md) · [Xerox Zine Grunge](styles/grunge/xerox-zine/DESIGN.md) · [Layered Poster Grunge](styles/grunge/layered-poster/DESIGN.md) |
 | Industrial | [Workshop Industrial](styles/industrial/workshop-panel/DESIGN.md) · [Technical Manual Industrial](styles/industrial/technical-manual/DESIGN.md) · [Assembly Line Industrial](styles/industrial/assembly-line/DESIGN.md) |
 | Japandi | [Warm Order Japandi](styles/japandi/warm-order/DESIGN.md) · [Gallery Living Japandi](styles/japandi/gallery-living/DESIGN.md) · [Crafted Workspace Japandi](styles/japandi/crafted-workspace/DESIGN.md) |
+| Liquid Glass | [Clear Lens](styles/liquid-glass/clear-lens/DESIGN.md) · [Frosted Controls](styles/liquid-glass/frosted-controls/DESIGN.md) · [Fluid Dock](styles/liquid-glass/fluid-dock/DESIGN.md) |
 | Maximalism | [Curated Maximalism](styles/maximalism/curated-abundance/DESIGN.md) · [Festival Poster Maximalism](styles/maximalism/festival-poster/DESIGN.md) · [Cabinet of Curiosities](styles/maximalism/cabinet-of-curiosities/DESIGN.md) |
 | Memphis | [Pattern Play Memphis](styles/memphis/pattern-play/DESIGN.md) · [Geometric Toybox Memphis](styles/memphis/geometric-toybox/DESIGN.md) · [Editorial Collage Memphis](styles/memphis/editorial-collage/DESIGN.md) |
 | Mid-Century Modern | [Warm Modular Mid-Century Modern](styles/mid-century-modern/warm-modular/DESIGN.md) · [Atomic Graphics Mid-Century](styles/mid-century-modern/atomic-graphics/DESIGN.md) · [Woodland Editorial Mid-Century](styles/mid-century-modern/woodland-editorial/DESIGN.md) |
@@ -89,7 +90,11 @@ The path must exist in the agent's workspace. Copy the file into your project, p
 
 Run the browser and open `/styles/minimalism`. Switch between Clean Product, Editorial, and Monochrome in the **same preview area**. The same fictional workspace contains navigation, hero, heading hierarchy, prose, buttons, cards, features, statistics, form controls, badges, tabs, menus, a dialog, testimonial, pricing, and footer.
 
-All 38 families appear on the landing page with a representative thumbnail, description, and accurate variant count. The content stays the same; typography, composition, density, surfaces, and component treatments change. The preview is a representative implementation, while DESIGN.md is the complete specification.
+All 39 families appear on the landing page with a representative thumbnail, description, and accurate variant count. The content stays the same; typography, composition, density, surfaces, and component treatments change. The preview is a representative implementation, while DESIGN.md is the complete specification.
+
+Pointer behavior is intentional: Glassmorphism and selected expressive digital styles respond across the whole page, Liquid Glass and tactile materials react on their functional surfaces, and quiet, editorial, and information-focused designs use ordinary control feedback. Glass catches moving reflections, neumorphism shifts local relief lighting, and pixel styles snap to a grid. Each DESIGN.md explains its choice. **Pointer effects: On/Off** saves your preference where an effect exists; touch, reduced-motion, and forced-color modes omit mouse tracking.
+
+The [Liquid Glass family](styles/liquid-glass/README.md) adds Clear Lens, Frosted Controls, and Fluid Dock. The native cursor stays normal; moving or pressing a functional glass control energizes its light, shape, and refraction. Regular material adapts its labels, tint, shadow, and scroll-edge fade to the showcase's DOM surfaces; larger menus and dialogs grow from their triggers and retain a stable reading tone. Clear material stays over the dimmed hero environment, with opaque content controls. **Material motion: On/Off** saves your preference without disabling contrast adaptation. These are browser approximations with blur and opaque fallbacks; each complete DESIGN.md includes the behavior and its limits.
 
 Select **DESIGN.md** to read the full source. Copy the file, download it, copy its repository path, or copy either agent instruction. Direct links such as `/styles/minimalism/editorial` restore the selected variant. Desktop and Mobile controls change the width of the same embedded showcase. Sample forms and pricing controls operate locally; they create no accounts, purchases, or network submissions.
 
@@ -149,7 +154,7 @@ This project retains the original repository's **MIT License and copyright notic
 
 ## Visual identity and local review
 
-All 114 variants have distinct composition and material rules, documented in their complete DESIGN.md. Read the [visual review and research sources](docs/VISUAL-REVIEW.md). The homepage previews are captures of the same working showcase, including its real typography, surfaces, and controls.
+All 117 variants have distinct composition and material rules, documented in their complete DESIGN.md. Read the [visual review and research sources](docs/VISUAL-REVIEW.md). The homepage previews are captures of the same working showcase, including its real typography, surfaces, and controls.
 
 For local visual maintenance, start the app with `npm run dev`, then start a separate local Chrome instance:
 

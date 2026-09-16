@@ -1,4 +1,4 @@
-# Contributing to Form Atlas
+# Contributing to design-style-mds
 
 Help people choose a coherent visual language they can actually use.
 
@@ -64,7 +64,11 @@ Use original or appropriately licensed assets only, and document third-party lic
 
 Add scoped `[data-theme="family/variant"]` tokens in `dist/themes.css` and the visual construction in `dist/identities.css` or `dist/variants.css`. Shared family construction uses `[data-family="family"]`; interpretation-specific overrides use the full theme selector. Use the **existing** `dist/preview.html` and its content. Do not build a separate demo page per variant. Change grid proportions, spacing, type, surfaces, and component styling as the design requires, while retaining the same content, component set, reading order, and working controls.
 
+Liquid Glass’s scoped material construction is in `dist/liquid-glass.css`; `dist/liquid-glass.js` provides optional edge refraction and measures the shared tab marker. Keep its reading surfaces stable and its optical layer confined to functional control groups. `dist/liquid-adaptation.js` estimates backdrop context from DOM colors; `dist/liquid-transitions.js` preserves native semantics during material reveals. Keep Clear separate from Regular, avoid glass inside glass, and test expanded surfaces, contrasting scroll contexts, rapid reopen, keyboard focus, and accessibility preferences. Document browser fallbacks and sampling limits alongside any optical enhancement.
+
 New common components, if necessary, must be added to the shared showcase so every variant can be compared. Keep the outer browser interface neutral. Make the preview agree with the document, including fallback modes, focus indicators, and reduced motion. Avoid dependencies unless native platform features cannot reasonably handle the need.
+
+Choose a pointer policy of `page`, `surface`, or `none` in `dist/pointer-profiles.js`, and explain why it belongs to the interpretation inside its DESIGN.md. A deliberate absence of decorative tracking is valid, especially for quiet, editorial, and information-focused designs. Glassmorphism retains a whole-page reflection; Liquid Glass confines feedback to functional material, with a normal cursor. Tactile materials can react only on the active surface. For an active effect, document concrete geometry, paint, movement, and fallbacks. Reuse `dist/pointer-effects.js` and add a recipe to `dist/pointer-effects.css` only when needed. Page effects continue through margins and section gaps; surface effects stop at the material boundary. Never replace the native cursor, move targets, intercept input, or create an idle animation loop. Verify keyboard use, touch, reduced motion, forced colors, and the saved effects preference.
 
 The build discovers the file automatically. Missing preview themes, invalid metadata, and path mismatches fail the build; empty families never appear as ready. Update the README collection when adding a production family.
 

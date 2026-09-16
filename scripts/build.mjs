@@ -13,7 +13,7 @@ await rm(path.join(root, 'dist/styles'), { recursive: true, force: true });
 for (const family of families) {
   const dir = path.join(root, 'dist/styles', family.slug);
   await mkdir(dir, { recursive: true });
-  const page = (title, description) => shell.replace('<title>Form Atlas — Visual design library</title>', `<title>${escape(title)} — Form Atlas</title>`).replace('Compare original, complete design systems. Choose a family, explore its variants, and use its DESIGN.md.', escape(description));
+  const page = (title, description) => shell.replace('<title>design-style-mds — Visual design library</title>', `<title>${escape(title)} — design-style-mds</title>`).replace('Compare original, complete design systems. Choose a family, explore its variants, and use its DESIGN.md.', escape(description));
   await writeFile(path.join(dir, 'index.html'), page(family.name, family.description));
   for (const variant of family.variants) {
     await mkdir(path.join(dir, variant.slug), { recursive: true });

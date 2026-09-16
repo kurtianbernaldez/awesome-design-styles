@@ -140,6 +140,20 @@ Use 180ms color feedback and an immediate small compression. Keep the resting ob
 
 Animation explains an actual state change. Do not delay readable content behind an entrance animation or invent percentages for unknown-duration work. Honor prefers-reduced-motion with immediate state changes and static progress feedback.
 
+## Pointer Effects
+
+**Pointer policy: surface.** A local soft highlight reveals the rounded material without following the reader.
+
+### Ceramic glaze
+
+A long restrained glaze reflection travels across the ceramic vessel. This is decorative material feedback, not a status indicator.
+
+**Construction.** Paint a broad 240 × 80px elliptical white glaze highlight fading to transparent by 70%. Keep it low-opacity and smooth. Retain the ceramic surface’s existing modeled depth and clay body color. Use this document’s accent and ink tokens; this highlight has no hard outline.
+
+**Movement and coverage.** React on only the active material surface. Track the local horizontal coordinate at 72% of surface height. Measure coordinates relative to that surface, keep the reflection behind its content, and clip it to the material radius. Leave page margins, section gaps, and unrelated reading regions still. The material host, labels, and hit targets never tilt or move.
+
+**Implementation and fallbacks.** Keep the native cursor. Reuse one aria-hidden decorative layer with pointer-events: none; keep it out of layout and the tab order. Coalesce movement into requestAnimationFrame with no idle loop or particle trail. Clear the layer on pointer exit, keyboard input, scroll, resize, blur, dialog close, and variant changes. Enable tracking only for a fine mouse pointer with hover. Disable it for touch, prefers-reduced-motion, forced colors, and a persistent user opt-out; retain static material and ordinary control states. Check text contrast at the brightest reflection, and reduce decorative opacity if necessary.
+
 ## Interaction States
 
 - **Hover:** preserve the control material and use an underline, color, or restrained highlight change. Essential content is never hover-only.

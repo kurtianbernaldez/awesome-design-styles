@@ -1,9 +1,10 @@
 # Design library
 
-**38 families · 114 complete DESIGN.md files.** Every family has at least three independently usable interpretations.
+**39 families · 117 complete DESIGN.md files.** Every family has at least three independently usable interpretations.
 
 | Family | Complete variants |
 |---|---|
+| Liquid Glass | [Clear Lens](liquid-glass/clear-lens/DESIGN.md) · [Frosted Controls](liquid-glass/frosted-controls/DESIGN.md) · [Fluid Dock](liquid-glass/fluid-dock/DESIGN.md) |
 | Minimalism | [Clean Product Minimalism](minimalism/clean-product/DESIGN.md) · [Editorial Minimalism](minimalism/editorial/DESIGN.md) · [Monochrome Minimalism](minimalism/monochrome/DESIGN.md) |
 | Brutalism | [Raw Web Brutalism](brutalism/raw-web/DESIGN.md) · [Editorial Brutalism](brutalism/editorial/DESIGN.md) · [Colorful Brutalism](brutalism/colorful/DESIGN.md) |
 | Glassmorphism | [Dark Glass](glassmorphism/dark-glass/DESIGN.md) · [Light Glass](glassmorphism/light-glass/DESIGN.md) · [Vibrant Glass](glassmorphism/vibrant-glass/DESIGN.md) |

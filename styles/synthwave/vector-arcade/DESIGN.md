@@ -140,6 +140,20 @@ Use immediate key feedback and no flashing score or moving grid.
 
 Animation explains an actual state change. Do not delay readable content behind an entrance animation or invent percentages for unknown-duration work. Honor prefers-reduced-motion with immediate state changes and static progress feedback.
 
+## Pointer Effects
+
+**Pointer policy: page.** A stepped vector target belongs to the arcade interaction language.
+
+### Vector target
+
+A hard cyan vector crosshair jumps between arcade-grid positions. This is optional decorative feedback, not a status indicator.
+
+**Construction.** Intersect two accent rules at their centers, one horizontal and one vertical. Use the specified stroke at 30% opacity; do not rotate a grid-snapped crosshair. Unless a material-specific size above overrides it, use a 72px-wide region, height equal to width / 0.78, and a 1.5px base stroke. Sparse ink geometry defaults to 16% paint opacity; minimalist work uses 12%, brutalist work 20%, Art Deco 28%, and Wabi-Sabi 10%. Explicit recipe opacity takes precedence. Apply a further 70% opacity to the page-level geometry; glass uses its explicit light values. Use this document’s accent and ink tokens.
+
+**Movement and coverage.** Snap both coordinates to a 24px logical grid, then clamp them to the viewport. Use immediate steps with no interpolation or rotation. Position the page-level decoration in a fixed, viewport-sized layer: it follows the mouse through the whole page, including margins, the hero, footer, and the gaps between columns. Never clip this layer to a card or grid column.
+
+**Implementation and fallbacks.** Keep the native cursor and every content/hit-target position unchanged. Mark decoration aria-hidden, use pointer-events: none, and keep it out of layout and the tab order. Use one reusable page layer; coalesce pointer updates into one requestAnimationFrame, with no idle loop, particle spawning, trails, or autoplay. A native dialog needs its page decoration inside the dialog’s top layer. Clear effects on pointer exit, keyboard input, scroll, resize, blur, dialog close, and variant changes. Enable tracking only for a fine mouse pointer with hover. Disable it for touch, prefers-reduced-motion, forced colors, and a persistent user opt-out; retain all static material, focus, hover, and pressed cues. Check text contrast at the brightest reflection and darkest mark. If a local pairing fails, reduce decorative paint opacity; never dim text to compensate.
+
 ## Interaction States
 
 - **Hover:** preserve the control material and use an underline, color, or restrained highlight change. Essential content is never hover-only.

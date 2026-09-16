@@ -9,7 +9,7 @@ const families=await discover(root);
 const designs=families.flatMap(f=>f.variants);
 const expected=['minimalism/clean-product','minimalism/editorial','minimalism/monochrome','brutalism/raw-web','brutalism/editorial','brutalism/colorful','glassmorphism/dark-glass','glassmorphism/light-glass','glassmorphism/vibrant-glass'];
 test('all requested families have complete discoverable variants',()=>{
-  assert.equal(families.length,38);assert.equal(designs.length,114);
+  assert.equal(families.length,39);assert.equal(designs.length,117);
   assert.deepEqual(designs.slice(0,9).map(v=>`${v.family}/${v.slug}`),expected);
   assert(families.some(f=>f.slug==='solarpunk' && f.variants.some(v=>v.slug==='organic')));
   assert(families.every(f=>f.variants.length>=3));
@@ -31,10 +31,10 @@ test('every design covers complete interface behavior with no unresolved placeho
   }
 });
 test('built downloads match source byte-for-byte and deep routes have matching titles',async()=>{
-  for(const f of families){assert((await readFile(path.join(root,'dist/styles',f.slug,'index.html'),'utf8')).includes(`${f.name} — Form Atlas`));}
+  for(const f of families){assert((await readFile(path.join(root,'dist/styles',f.slug,'index.html'),'utf8')).includes(`${f.name} — design-style-mds`));}
   for(const v of designs){
     assert.equal(await readFile(path.join(root,'dist',v.path),'utf8'),v.markdown);
-    assert((await readFile(path.join(root,'dist/styles',v.family,v.slug,'index.html'),'utf8')).includes(`${v.name} — Form Atlas`));
+    assert((await readFile(path.join(root,'dist/styles',v.family,v.slug,'index.html'),'utf8')).includes(`${v.name} — design-style-mds`));
   }
   assert.deepEqual(JSON.parse(await readFile(path.join(root,'dist/catalog.json'),'utf8')),families);
 });

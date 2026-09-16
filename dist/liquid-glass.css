@@ -1,0 +1,281 @@
+/* Liquid Glass: optical control layers above stable, readable content. */
+.liquid-optics { position:absolute; width:0; height:0; overflow:hidden; pointer-events:none; }
+[data-family="liquid-glass"] {
+  --lens-fill:rgb(255 255 255 / .035); --lens-blur:.35px; --lens-saturation:1.05;
+  --lens-rim:#ffffffb3; --lens-shadow:0 18px 36px #061b3540;
+  --lens-highlight:#ffffff70; --lens-selected:#ffffff30;
+  --environment:radial-gradient(ellipse 65% 35% at 95% 14%,#2b616a 0,transparent 75%),radial-gradient(ellipse 50% 26% at 8% 8%,#354f70 0,transparent 75%),linear-gradient(160deg,#142d3b,#133d44 45%,#112b3e);
+}
+[data-family="liquid-glass"] body { position:relative; isolation:isolate; background:var(--environment); background-attachment:fixed; overflow-x:clip; }
+/* Continuous scene contours cross the navigation before continuing into the
+   hero. They belong to the page, so scrolling content is refracted too. */
+[data-family="liquid-glass"] body::before {
+  content:''; position:absolute; z-index:-1; pointer-events:none; inset:0 0 auto; height:840px;
+  background:radial-gradient(ellipse 430px 290px at 77% 22%,transparent 56%,#a5ccdf47 56.5%,#69b7c940 64%,transparent 64.5%),
+    linear-gradient(125deg,transparent 27%,#b6e6d530 27.2% 30%,transparent 30.2% 66%,#bbc5ec28 66.2% 72%,transparent 72.2%);
+  transform:translate(var(--liquid-scene-x,0px),var(--liquid-scene-y,0px));
+  mask-image:linear-gradient(#000 0 65%,transparent 100%);
+}
+[data-family="liquid-glass"] .demo-shell { overflow:visible; }
+[data-family="liquid-glass"] .hero { isolation:isolate; position:relative; }
+[data-family="liquid-glass"] .hero::before {
+  content:''; position:absolute; inset:4% 1% 8% 35%; z-index:-1; pointer-events:none;
+  background:linear-gradient(125deg,transparent 26%,#79d5c040 26% 35%,transparent 35% 50%,#abbbef38 50% 58%,transparent 58%);
+  border-radius:44%; transform:rotate(-10deg);
+}
+[data-family="liquid-glass"] .liquid-surface {
+  position:relative; isolation:isolate; background:var(--surface);
+  border:1px solid var(--lens-rim); border-radius:32px;
+  box-shadow:inset 0 2px 2px -1px var(--lens-highlight),inset 2px 0 3px -2px #fff9,inset -2px -3px 5px -3px #fff8,var(--lens-shadow);
+}
+@supports (backdrop-filter:blur(1px)) {
+  [data-family="liquid-glass"] .liquid-surface { background:var(--lens-fill); backdrop-filter:blur(var(--lens-blur)) saturate(var(--lens-saturation)); -webkit-backdrop-filter:blur(var(--lens-blur)) saturate(var(--lens-saturation)); }
+}
+[data-family="liquid-glass"] .demo-nav { margin:24px 0 0; padding:10px 18px 10px 24px; border-radius:999px; z-index:10; }
+[data-family="liquid-glass"] .demo-nav nav { gap:24px; }
+[data-family="liquid-glass"] .demo-nav nav>a[aria-current] { background:#ffffff20; border-radius:999px; padding:0 16px; text-decoration:none; }
+[data-family="liquid-glass"] .demo-nav>.secondary { background:#ffffff20; border-color:#ffffff66; border-radius:999px; box-shadow:none; }
+[data-family="liquid-glass"] .demo-menu>div { position:absolute; border-radius:24px; padding:8px; background:var(--surface); }
+[data-family="liquid-glass"] .demo-menu a { border-radius:16px; }
+[data-family="liquid-glass"] h1 { letter-spacing:-.055em; font-weight:620; line-height:1.02; }
+[data-family="liquid-glass"] .project-card { border:0; background:none; box-shadow:none; padding:24px 8px 12px 24px; }
+[data-family="liquid-glass"] .project-card h2 { font-size:34px; letter-spacing:-.035em; }
+[data-family="liquid-glass"] .project-rows { margin:24px 0; }
+[data-family="liquid-glass"] .project-rows>div { min-height:56px; border-color:#ffffff30; }
+[data-family="liquid-glass"] .workspace-controls { margin:28px -8px 24px; padding:16px; border-radius:38px; }
+[data-family="liquid-glass"] .control-tools { justify-content:space-between; gap:10px; }
+[data-family="liquid-glass"] .icon-button { width:48px; height:48px; border-radius:50%; background:#ffffff18; border:1px solid #ffffff50; box-shadow:inset 0 1px #fff6; }
+[data-family="liquid-glass"] .icon-button[aria-pressed=true] { background:var(--accent); color:var(--on-accent); border-color:transparent; }
+[data-family="liquid-glass"] .control-slider { margin:18px 4px 2px; }
+[data-family="liquid-glass"] input[type=range] { accent-color:var(--accent); }
+[data-family="liquid-glass"] input[type=range]::-webkit-slider-thumb { background:var(--surface); border:1px solid var(--control-line); box-shadow:inset 0 2px #fff9,0 3px 8px #0003; }
+[data-family="liquid-glass"] .switch-label input { width:52px; background:#ffffff20; border-color:var(--control-line); }
+[data-family="liquid-glass"] .switch-label input:checked { background:var(--accent); }
+[data-family="liquid-glass"] .switch-label input::before { background:var(--surface); box-shadow:inset 0 2px #fff9,0 2px 5px #0003; }
+[data-family="liquid-glass"] .actions>.primary { border-radius:999px; background:var(--accent); color:var(--on-accent); border-color:#ffffff70; box-shadow:inset 0 2px 2px #ffffff65,0 10px 24px #0002; }
+[data-family="liquid-glass"] .badge { border-radius:999px; background:var(--surface); color:var(--ink); border-color:var(--control-line); }
+[data-family="liquid-glass"] .stats { border:0; padding:28px 0; }
+[data-family="liquid-glass"] .stats>div { border-color:var(--line); }
+[data-family="liquid-glass"] .demo-tabs { display:flex; position:relative; isolation:isolate; gap:4px; width:fit-content; max-width:100%; padding:6px; border-radius:999px; overflow:hidden; }
+[data-family="liquid-glass"] .demo-tabs::before { content:''; position:absolute; left:0; top:6px; width:var(--segment-width,120px); height:var(--segment-height,44px); transform:translateX(var(--segment-x,6px)); border-radius:999px; background:var(--lens-selected); border:1px solid var(--lens-rim); box-shadow:inset 0 2px 3px #fff8,0 3px 6px #0002; transition:transform 240ms cubic-bezier(.2,.8,.2,1),width 240ms cubic-bezier(.2,.8,.2,1); pointer-events:none; }
+[data-family="liquid-glass"] .demo-tabs button { position:relative; z-index:1; min-width:0; white-space:normal; border:0; border-radius:999px; background:none; color:var(--ink); padding:12px 20px; }
+[data-family="liquid-glass"] .demo-tabs button[aria-selected=true] { background:none; border:0; color:var(--ink); }
+[data-family="liquid-glass"] .demo-tabs button:focus-visible { outline-offset:-5px; box-shadow:none; }
+[data-family="liquid-glass"] :is(.feature-card,.price-card,.demo-form,.activity) { background:var(--surface); border:1px solid var(--line); border-radius:28px; box-shadow:none; }
+[data-family="liquid-glass"] .feature-index { color:var(--muted); }
+[data-family="liquid-glass"] .price-card.featured { border:2px solid var(--accent); }
+[data-family="liquid-glass"] .testimonial { border:0; }
+[data-family="liquid-glass"] dialog.liquid-surface { position:fixed; padding:32px; border-radius:36px; background:var(--surface); }
+[data-family="liquid-glass"] :is(button,a,summary,input,select):focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
+[data-family="liquid-glass"] :is(.primary,.secondary,.icon-button):active:not(:disabled) { box-shadow:inset 0 2px 8px #0003; transform:none; }
+[data-family="liquid-glass"] .liquid-surface:has(button:active) { border-color:#fff; }
+
+/* Clear Lens: sparse functional lenses over an expansive, dimmed color environment. */
+[data-theme="liquid-glass/clear-lens"] .hero { grid-template-columns:1.2fr 1fr; gap:48px; padding:84px 0 64px; }
+[data-theme="liquid-glass/clear-lens"] .hero-copy .lead { max-width:35ch; }
+[data-theme="liquid-glass/clear-lens"] .hero::before { display:none; }
+[data-theme="liquid-glass/clear-lens"] .card-bottom { border-color:#ffffff30; }
+
+/* Frosted Controls: a centered, bright document with compact diffused control islands. */
+[data-theme="liquid-glass/frosted-controls"] { --lens-fill:rgb(255 255 255 / .58); --lens-blur:18px; --lens-saturation:1.15; --lens-rim:#ffffffed; --lens-highlight:#ffffff; --lens-selected:#ffffffd9; --lens-shadow:0 12px 28px #45647224; --environment:radial-gradient(ellipse 42% 24% at 8% 10%,#c6e2df,transparent 80%),radial-gradient(ellipse 45% 28% at 100% 20%,#d8d5ef,transparent 85%),#f0f4f7; }
+[data-theme="liquid-glass/frosted-controls"] .hero { grid-template-columns:minmax(0,1fr); gap:40px; padding:64px 0 44px; }
+[data-theme="liquid-glass/frosted-controls"] .hero::before { inset:42% 0 0; background:linear-gradient(125deg,transparent 20%,#bdd3e888 20% 30%,transparent 30% 68%,#b9d9d399 68% 80%,transparent 80%); transform:none; border-radius:40px; }
+[data-theme="liquid-glass/frosted-controls"] .hero-copy { text-align:center; max-width:700px; margin:auto; }
+[data-theme="liquid-glass/frosted-controls"] .hero-copy :is(.lead,.caption) { margin-inline:auto; }
+[data-theme="liquid-glass/frosted-controls"] .hero-copy .actions { justify-content:center; }
+[data-theme="liquid-glass/frosted-controls"] .project-card { width:100%; max-width:800px; margin:auto; background:#ffffffeb; padding:32px; border:1px solid #ffffff; border-radius:32px; box-shadow:0 16px 48px #314a6010; }
+[data-theme="liquid-glass/frosted-controls"] .project-card h2 br { display:none; }
+[data-theme="liquid-glass/frosted-controls"] .project-rows { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+[data-theme="liquid-glass/frosted-controls"] .project-rows>div { align-items:start; flex-wrap:wrap; border-top:1px solid var(--line); }
+[data-theme="liquid-glass/frosted-controls"] .project-rows .caption { display:none; }
+[data-theme="liquid-glass/frosted-controls"] .workspace-controls { background-color:#dce9ef90; max-width:620px; margin:24px auto; }
+[data-theme="liquid-glass/frosted-controls"] .demo-nav nav>a[aria-current] { background:#ffffffb3; }
+[data-theme="liquid-glass/frosted-controls"] .demo-nav>.secondary { background:#ffffff9e; border-color:var(--line); }
+[data-theme="liquid-glass/frosted-controls"] .icon-button { background:#ffffff70; border-color:#9dacb7; }
+[data-theme="liquid-glass/frosted-controls"] .icon-button[aria-pressed=true] { background:var(--accent); }
+[data-theme="liquid-glass/frosted-controls"] .feature-card { border:0; border-top:1px solid var(--line); border-radius:0; background:none; padding:28px 12px; }
+
+/* Fluid Dock: compact tool groups and one gliding segment against deep content. */
+[data-theme="liquid-glass/fluid-dock"] { --lens-fill:rgb(27 27 65 / .48); --lens-blur:9px; --lens-saturation:1.45; --lens-selected:#ffffff35; --environment:radial-gradient(ellipse 65% 28% at 85% 12%,#55539a,transparent 75%),radial-gradient(ellipse 50% 24% at 8% 21%,#30646e,transparent 80%),#181d36; }
+[data-theme="liquid-glass/fluid-dock"] .demo-nav { position:sticky; top:16px; margin-inline:auto; width:fit-content; gap:24px; padding:8px 12px 8px 24px; }
+[data-theme="liquid-glass/fluid-dock"] .hero { grid-template-columns:1fr 1.1fr; gap:56px; padding:72px 0 48px; }
+[data-theme="liquid-glass/fluid-dock"] .hero::before { inset:8% 0 3% 25%; background:radial-gradient(ellipse at 75% 50%,transparent 45%,#a9a2e34d 46% 57%,transparent 58%),linear-gradient(145deg,transparent 35%,#7cccc330 35% 44%,transparent 44%); transform:none; }
+[data-theme="liquid-glass/fluid-dock"] .project-card { padding:28px; background:#202741; border:1px solid #69738d; border-radius:36px; }
+[data-theme="liquid-glass/fluid-dock"] .workspace-controls { margin:28px -12px 24px; border-radius:999px; padding:18px 24px; background-color:#46467466; }
+[data-theme="liquid-glass/fluid-dock"] .project-rows>div { min-height:48px; }
+[data-theme="liquid-glass/fluid-dock"] .stats { padding:28px 24px; background:#232b46; border-radius:24px; }
+[data-theme="liquid-glass/fluid-dock"] .demo-tabs { margin:0 auto 32px; }
+[data-theme="liquid-glass/fluid-dock"] .demo-tabs::before { transition-duration:300ms; transition-timing-function:cubic-bezier(.2,.9,.25,1.12); }
+[data-theme="liquid-glass/fluid-dock"] .features { grid-template-columns:minmax(0,1fr); gap:0; }
+[data-theme="liquid-glass/fluid-dock"] .feature-card { display:grid; grid-template-columns:120px 1fr 1.4fr; gap:20px; align-items:start; padding:28px 0; border:0; border-top:1px solid var(--line); border-radius:0; background:none; }
+[data-theme="liquid-glass/fluid-dock"] .feature-card h3 { margin:0; }
+[data-theme="liquid-glass/fluid-dock"] .feature-card a { grid-column:3; }
+
+@media (max-width:760px) {
+  [data-family="liquid-glass"] { --gutter:24px; }
+  [data-family="liquid-glass"] .demo-nav { position:relative; top:auto; width:100%; gap:12px; border-radius:28px; padding:14px; flex-wrap:wrap; }
+  [data-family="liquid-glass"] .demo-nav nav { gap:12px; flex-wrap:wrap; order:3; flex-basis:100%; }
+  [data-family="liquid-glass"] .demo-nav>.secondary { margin-left:auto; }
+  [data-family="liquid-glass"] .hero { grid-template-columns:minmax(0,1fr); gap:36px; padding:48px 0; }
+  [data-family="liquid-glass"] .project-card { width:100%; padding:24px 16px; }
+  [data-family="liquid-glass"] .project-rows { display:block; }
+  [data-family="liquid-glass"] .project-rows>div { flex-wrap:nowrap; }
+  [data-family="liquid-glass"] .workspace-controls { border-radius:30px; padding:14px; margin:24px 0; }
+  [data-family="liquid-glass"] .control-tools { gap:8px; flex-wrap:wrap; }
+  [data-family="liquid-glass"] .demo-tabs { position:relative; top:auto; }
+  [data-family="liquid-glass"] .demo-tabs button { padding:12px 14px; font-size:13px; }
+  [data-family="liquid-glass"] .feature-card { display:flex; padding:24px; }
+  [data-family="liquid-glass"] h1 { font-size:clamp(36px,9vw,56px); }
+  [data-family="liquid-glass"] .hero::before { inset:32% 0 0; transform:none; }
+}
+@media (max-width:480px) { [data-family="liquid-glass"] { --gutter:20px; } }
+@media (prefers-reduced-motion:reduce) {
+  [data-family="liquid-glass"] .demo-tabs::before { transition:none; }
+}
+@media (prefers-reduced-transparency:reduce),(prefers-contrast:more) {
+  [data-family="liquid-glass"] .liquid-surface { background:var(--surface); backdrop-filter:none; -webkit-backdrop-filter:none; border-color:var(--control-line); }
+  [data-family="liquid-glass"] .pointer-effect { display:none; }
+}
+@media (forced-colors:active) {
+  [data-family="liquid-glass"] .liquid-surface { background:Canvas; border:1px solid CanvasText; box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none; }
+  [data-family="liquid-glass"] .demo-tabs::before { background:Highlight; border-color:Highlight; box-shadow:none; }
+  [data-family="liquid-glass"] .demo-tabs button[aria-selected=true] { color:HighlightText; }
+}
+/* Optical bodies flex independently of the host's stable foreground and hit area. */
+[data-theme="liquid-glass/clear-lens"] { --lens-fill:rgb(255 255 255 / .035); --lens-blur:.35px; --lens-saturation:1.05; }
+[data-theme="liquid-glass/frosted-controls"] { --lens-fill:rgb(255 255 255 / .16); --lens-blur:4px; --lens-saturation:1.05; }
+[data-theme="liquid-glass/fluid-dock"] { --lens-fill:rgb(22 22 22 / .12); --lens-blur:.7px; --lens-saturation:1.08; }
+[data-family="liquid-glass"] .liquid-surface.liquid-ready {
+  background:transparent; border-color:transparent; box-shadow:none;
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+}
+[data-family="liquid-glass"] .liquid-body {
+  position:absolute; inset:-1px; z-index:-1; pointer-events:none; user-select:none;
+  background:var(--surface); border:1px solid #ffffff75; border-radius:inherit;
+  box-shadow:inset 0 2px 3px -1px #ffffffbb,inset 2px 0 4px -2px #fff8,
+    inset -2px -3px 6px -3px #bbebffb3,0 12px 30px #00132924;
+  --liquid-energy:0; --liquid-light-x:30%; --liquid-light-y:10%;
+}
+@supports (backdrop-filter:blur(1px)) {
+  [data-family="liquid-glass"] .liquid-body { background:var(--lens-fill); backdrop-filter:blur(var(--lens-blur)) saturate(var(--lens-saturation)); -webkit-backdrop-filter:blur(var(--lens-blur)) saturate(var(--lens-saturation)); }
+  @supports (backdrop-filter:url(#optical-test)) {
+    [data-family="liquid-glass"] .liquid-body { backdrop-filter:var(--liquid-filter); }
+  }
+}
+[data-family="liquid-glass"] .liquid-body::before {
+  content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:radial-gradient(ellipse var(--liquid-spread,180px) calc(var(--liquid-spread,180px) * .6) at var(--liquid-light-x) var(--liquid-light-y),#ffffff70,transparent 75%),linear-gradient(115deg,#ffffff0a,transparent 45%,#ffffff05);
+  opacity:calc(.16 + var(--liquid-energy) * .5);
+}
+[data-family="liquid-glass"] .liquid-body::after {
+  content:''; position:absolute; inset:0; border-radius:inherit; padding:1px; pointer-events:none;
+  background:radial-gradient(var(--liquid-spread,180px) circle at var(--liquid-light-x) var(--liquid-light-y),#fff,transparent 85%),linear-gradient(145deg,#ffffffb0,transparent 30% 65%,#a3eaff90);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); mask-composite:exclude;
+}
+[data-family="liquid-glass"] .actions>.primary .liquid-body { background:color-mix(in srgb,var(--accent) 88%,transparent); }
+[data-family="liquid-glass"] :is(dialog,.demo-menu>div)>.liquid-body { background:var(--surface); }
+[data-family="liquid-glass"] .liquid-ready:active { box-shadow:none; }
+[data-family="liquid-glass"] .demo-tabs { overflow:visible; }
+[data-family="liquid-glass"] .demo-tabs::before { z-index:0; backdrop-filter:blur(1px) saturate(1.2); }
+[data-family="liquid-glass"][data-liquid-motion="off"] .demo-tabs::before { transition:none; }
+
+/* This is the real scene behind the material, so the filter samples its moving edges. */
+[data-family="liquid-glass"] .hero::before {
+  inset:0 -1% 0 18%; border-radius:0; transform:translate(var(--liquid-scene-x,0px),var(--liquid-scene-y,0px));
+  background:radial-gradient(ellipse 72% 60% at 83% 55%,transparent 47%,#91daca30 48%,#62bbae55 53%,#c4f0cb38 57%,transparent 58%),
+    radial-gradient(ellipse 70% 75% at 73% 41%,transparent 45%,#92abde4a 46%,#b2b5e333 57%,transparent 58%),
+    linear-gradient(148deg,transparent 41%,#97d6d526 42% 46%,transparent 47%);
+}
+[data-theme="liquid-glass/frosted-controls"] .hero::before { inset:24% 0 0; opacity:.75; }
+[data-family="liquid-glass"] .workspace-controls::before {
+  content:''; position:absolute; inset:-28px -14px; border-radius:inherit; z-index:-2; pointer-events:none;
+  background:radial-gradient(ellipse at 80% 50%,transparent 25%,#789dc34d 26% 41%,transparent 42%),linear-gradient(122deg,transparent 20%,#8acaad45 21% 29%,transparent 30% 57%,#9597d44a 58% 64%,transparent 65%);
+  transform:translate(var(--liquid-scene-x,0px),var(--liquid-scene-y,0px));
+}
+/* Fade the scene itself before its paint bounds. The lens and its controls
+   remain unclipped, and the contours still pass behind the optical body. */
+[data-family="liquid-glass"] :is(.hero,.workspace-controls)::before {
+  mask-image:linear-gradient(to right,transparent,#000 12% 88%,transparent),linear-gradient(to bottom,transparent,#000 12% 88%,transparent);
+  mask-composite:intersect;
+}
+[data-family="liquid-glass"] .workspace-controls { isolation:isolate; }
+[data-family="liquid-glass"] .pointer-effect:not(.pointer-field) { z-index:0; }
+[data-family="liquid-glass"] .pointer-field { opacity:1; }
+@media (max-width:760px) {
+  [data-family="liquid-glass"] .hero::before { inset:30% 0 0; }
+  [data-family="liquid-glass"] .workspace-controls::before { inset:-16px -8px; }
+}
+@media (prefers-reduced-transparency:reduce),(prefers-contrast:more),(forced-colors:active) {
+  [data-family="liquid-glass"] .liquid-body { background:var(--surface); backdrop-filter:none; -webkit-backdrop-filter:none; border-color:var(--control-line); }
+  [data-family="liquid-glass"] .liquid-body::before,[data-family="liquid-glass"] .liquid-body::after { display:none; }
+}
+@media (forced-colors:active) {
+  [data-family="liquid-glass"] .liquid-body { background:Canvas; border:1px solid CanvasText; box-shadow:none; }
+}
+
+/* Adaptive functional material. These values come from the underlying DOM surfaces. */
+[data-family="liquid-glass"] { --glass-scene-color:rgb(23 53 66); }
+[data-theme="liquid-glass/frosted-controls"] { --glass-scene-color:rgb(228 237 241); }
+[data-theme="liquid-glass/fluid-dock"] { --glass-scene-color:rgb(35 43 70); }
+[data-family="liquid-glass"] .liquid-ready { color:var(--material-ink,var(--ink)); }
+[data-family="liquid-glass"] [data-material-tone="light"] { color-scheme:light; }
+[data-family="liquid-glass"] [data-material-tone="dark"] { color-scheme:dark; }
+[data-family="liquid-glass"] .liquid-body {
+  background:var(--material-solid,var(--surface));
+  border-color:color-mix(in srgb,var(--material-ink,var(--ink)) 32%,transparent);
+  box-shadow:inset 0 2px 3px -1px #ffffffc0,inset 0 -2px 4px -2px #ffffff90,
+    inset 2px 0 3px -2px #ffffffa0,0 12px 30px rgb(4 18 28 / var(--material-shadow,.2));
+  transition:background-color 160ms,box-shadow 180ms;
+}
+@supports (backdrop-filter:blur(1px)) {
+  [data-family="liquid-glass"] .liquid-body,
+  [data-family="liquid-glass"] :is(dialog,.demo-menu>div,.actions>.primary)>.liquid-body { background:color-mix(in srgb,var(--material-fill,var(--lens-fill)) calc(100% - var(--liquid-clarity,0%)),var(--material-contact-fill,var(--lens-fill))); }
+}
+[data-family="liquid-glass"] .liquid-ready :is(a,button,summary,label,output,.eyebrow,.caption,h2,p) { color:inherit; }
+[data-family="liquid-glass"] .demo-menu>div.liquid-ready a:hover { background:color-mix(in srgb,var(--material-ink) 12%,transparent); }
+[data-family="liquid-glass"] .liquid-ready :is(.secondary,.icon-button) {
+  color:inherit; background:color-mix(in srgb,var(--material-ink) 8%,transparent);
+  border-color:color-mix(in srgb,var(--material-ink) 65%,transparent); box-shadow:none;
+}
+[data-family="liquid-glass"] .liquid-ready .icon-button[aria-pressed=true] { color:var(--on-accent); background:var(--accent); border-color:var(--accent); }
+[data-family="liquid-glass"] .liquid-ready :is(input:not([type=checkbox]):not([type=range]),select) { background:var(--material-solid); color:var(--material-ink); border-color:color-mix(in srgb,var(--material-ink) 65%,transparent); }
+[data-family="liquid-glass"] .liquid-ready :is(input,select)::placeholder { color:inherit; opacity:.7; }
+[data-family="liquid-glass"] .liquid-ready :focus-visible { outline-color:var(--material-ink); }
+[data-family="liquid-glass"] .demo-tabs::before { backdrop-filter:none; background:color-mix(in srgb,var(--material-ink,var(--ink)) 12%,transparent); border-color:currentColor; box-shadow:none; }
+[data-family="liquid-glass"] .demo-nav nav>a[aria-current] { background:color-mix(in srgb,var(--material-ink,var(--ink)) 12%,transparent); }
+[data-family="liquid-glass"] .demo-nav { position:sticky; top:12px; z-index:20; }
+[data-family="liquid-glass"] :is(main[id],section[id]) { scroll-margin-top:calc(var(--liquid-nav-height,68px) + 36px); }
+/* Tabs reserve their space above their panel; only primary navigation pins. */
+[data-family="liquid-glass"] .demo-tabs { position:relative; top:auto; z-index:1; margin-bottom:32px; }
+.liquid-scroll-edge { position:fixed; inset:0 0 auto; z-index:9; pointer-events:none; background:linear-gradient(to bottom,var(--scroll-edge-color) 0 45%,transparent 100%); }
+.liquid-scroll-edge[hidden] { display:none; }
+[data-family="liquid-glass"] :is(dialog,.demo-menu>div).liquid-ready { overflow:visible; background:transparent; }
+[data-family="liquid-glass"] .demo-menu>div.liquid-ready { min-width:200px; }
+/* Clear navigation stays over the dim page; reading controls stay opaque. */
+[data-family="liquid-glass"][data-liquid-kind="clear"] .demo-tabs { background:var(--surface); }
+[data-family="liquid-glass"][data-liquid-kind="clear"] :is(dialog,.demo-menu>div) { color:var(--ink); background:var(--surface); }
+/* Contrasting content planes make the regular navigation's adaptation useful. */
+[data-theme="liquid-glass/fluid-dock"] #features {
+  background:#e8f0f2; color:#19313d; --ink:#19313d; --muted:#435d69; --line:#91a6b0; --surface:#f5fafb;
+  padding:48px 32px; border-radius:32px;
+}
+[data-theme="liquid-glass/frosted-controls"] #about {
+  background:#223d49; color:#f3fbff; --ink:#f3fbff; --muted:#cbdee5;
+  padding:56px 40px; border-radius:32px;
+}
+@media (max-width:760px) {
+  [data-theme="liquid-glass/fluid-dock"] #features,[data-theme="liquid-glass/frosted-controls"] #about { padding:28px 18px; }
+  [data-family="liquid-glass"] .demo-nav { position:sticky; top:8px; }
+  [data-family="liquid-glass"] dialog.liquid-ready { max-height:calc(100dvh - 40px); overflow:auto; }
+}
+@media (prefers-reduced-motion:reduce) {
+  [data-family="liquid-glass"] .liquid-body { transition:none; }
+}
+@media (prefers-reduced-transparency:reduce),(prefers-contrast:more) {
+  [data-family="liquid-glass"] .liquid-body { background:var(--material-solid,var(--surface))!important; backdrop-filter:none; -webkit-backdrop-filter:none; }
+}
+@media (forced-colors:active) {
+  [data-family="liquid-glass"] .liquid-ready { color:CanvasText; }
+  [data-family="liquid-glass"] .liquid-body { background:Canvas!important; border:1px solid CanvasText; box-shadow:none; }
+  .liquid-scroll-edge { display:none; }
+}

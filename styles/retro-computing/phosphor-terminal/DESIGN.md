@@ -140,6 +140,14 @@ Use immediate feedback, no typing animation, and no blinking cursor outside a re
 
 Animation explains an actual state change. Do not delay readable content behind an entrance animation or invent percentages for unknown-duration work. Honor prefers-reduced-motion with immediate state changes and static progress feedback.
 
+## Pointer Effects
+
+**Pointer policy: none.** A decorative selection box or terminal cell could be mistaken for an actual application state.
+
+### No decorative tracking
+
+Use the native cursor and the hover, focus-visible, pressed, selected, and disabled states specified below. Do not add a cursor companion, moving margin marker, or pointer-following overlay. Ordinary controls remain fully usable with a mouse, touch, or keyboard; no pointer-tracking script is needed for this interpretation.
+
 ## Interaction States
 
 - **Hover:** preserve the control material and use an underline, color, or restrained highlight change. Essential content is never hover-only.

@@ -140,6 +140,20 @@ Use a smooth 180ms color transition and immediate key depression.
 
 Animation explains an actual state change. Do not delay readable content behind an entrance animation or invent percentages for unknown-duration work. Honor prefers-reduced-motion with immediate state changes and static progress feedback.
 
+## Pointer Effects
+
+**Pointer policy: surface.** A broad local reflection describes the polished space-age surfaces.
+
+### Lounge reflection
+
+A broad oval reflection glides across the warm space-age surface. This is decorative material feedback, not a status indicator.
+
+**Construction.** Draw only the upper and right portions of a thin accent ellipse at 35% opacity. Use slightly unequal radii so the arc feels drawn or crafted rather than like a loading spinner. Use this document’s accent and ink tokens. Unless the material recipe specifies another size, use a 144px-wide region with height equal to width / 1.45 and a 2px base stroke.
+
+**Movement and coverage.** React on only the active material surface. Track the local horizontal coordinate at 72% of surface height. Measure coordinates relative to that surface, keep the reflection behind its content, and clip it to the material radius. Leave page margins, section gaps, and unrelated reading regions still. The material host, labels, and hit targets never tilt or move.
+
+**Implementation and fallbacks.** Keep the native cursor. Reuse one aria-hidden decorative layer with pointer-events: none; keep it out of layout and the tab order. Coalesce movement into requestAnimationFrame with no idle loop or particle trail. Clear the layer on pointer exit, keyboard input, scroll, resize, blur, dialog close, and variant changes. Enable tracking only for a fine mouse pointer with hover. Disable it for touch, prefers-reduced-motion, forced colors, and a persistent user opt-out; retain static material and ordinary control states. Check text contrast at the brightest reflection, and reduce decorative opacity if necessary.
+
 ## Interaction States
 
 - **Hover:** preserve the control material and use an underline, color, or restrained highlight change. Essential content is never hover-only.

@@ -128,15 +128,29 @@ Charts must communicate the same conclusion without relying on hue alone: combin
 
 ## Motion and Animation
 
-Change shadow state immediately on press and use 140ms text-color feedback. Do not animate expensive multi-shadow morphs or make controls drift.
+Change shadow state immediately on press and use 140ms text-color feedback. Keep pointer lighting bounded to one active panel with two shadows; do not run continuous shadow animation or make controls drift.
 
 Animation must explain an actual state change. Do not delay content until an entrance completes. Unknown-duration tasks use written progress rather than fabricated percentages. Honor prefers-reduced-motion with immediate state changes and static loading feedback.
+
+## Pointer Effects
+
+**Pointer policy: surface.** Local opposing light and shade explain raised and recessed surfaces.
+
+### Moving relief light
+
+The active slab receives a small opposing shadow and highlight shift as the light position changes. This is decorative material feedback, not a status indicator.
+
+**Construction.** Use a 200px radial white light with a transparent outer edge. On one active relief panel, keep two opposing 22px-blur shadows: a cool gray shade and a white highlight. Shift their offsets only within 3–9px as the pointer moves; retain the surface color, raised controls, and recessed inputs. Use this document’s accent and ink tokens. Unless the material recipe specifies another size, use a 96px-wide region with height equal to width / 1 and a 1px base stroke.
+
+**Movement and coverage.** React on only the active material surface. Follow both local pointer coordinates with at most 12.5 degrees of angular change. Measure coordinates relative to that surface, keep the reflection behind its content, and clip it to the material radius. Leave page margins, section gaps, and unrelated reading regions still. The material host, labels, and hit targets never tilt or move.
+
+**Implementation and fallbacks.** Keep the native cursor. Reuse one aria-hidden decorative layer with pointer-events: none; keep it out of layout and the tab order. Coalesce movement into requestAnimationFrame with no idle loop or particle trail. Clear the layer on pointer exit, keyboard input, scroll, resize, blur, dialog close, and variant changes. Enable tracking only for a fine mouse pointer with hover. Disable it for touch, prefers-reduced-motion, forced colors, and a persistent user opt-out; retain static material and ordinary control states. Check text contrast at the brightest reflection, and reduce decorative opacity if necessary.
 
 ## Interaction States
 
 - **Hover:** use a small brightness or underline change on interactive controls, with their material intact. Do not reveal essential content only on hover.
 - **Focus-visible:** use a 3px accent or ink outline separated from the surrounding material by 3–5px. Keep it visible over all local surfaces; decorative clipping must not hide it.
-- **Active / pressed:** Change shadow state immediately on press and use 140ms text-color feedback. Do not animate expensive multi-shadow morphs or make controls drift.
+- **Active / pressed:** Change shadow state immediately on press and use 140ms text-color feedback. Keep pointer lighting bounded to one active panel with two shadows; do not run continuous shadow animation or make controls drift.
 - **Selected:** use the variant’s inset, filled, beveled, or ruled state; expose aria-selected, aria-pressed, or aria-current as appropriate.
 - **Disabled:** retain readable muted labels and native disabled semantics; remove interactive shadow travel. Use a written prerequisite or unavailable label where necessary.
 - **Error / success:** use words and a semantic color or icon, preserve user input, and provide a clear next step.

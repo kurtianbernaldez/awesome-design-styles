@@ -1,5 +1,5 @@
 {
-  "name": "form-atlas",
+  "name": "design-style-mds",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -9,7 +9,7 @@
     "build": "node scripts/build.mjs",
     "dev": "node scripts/build.mjs && node scripts/serve.mjs",
     "start": "node scripts/serve.mjs",
-    "test": "node tests/library.test.mjs",
-    "check": "node scripts/build.mjs && node --check dist/app.js && node --check dist/preview.js && node tests/library.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/build.mjs && node --check dist/app.js && node --check dist/preview.js && node --check dist/pointer-effects.js && node --check dist/pointer-kinetics.js && node --check dist/liquid-glass.js && node --check dist/liquid-adaptation.js && node --check dist/liquid-transitions.js && node --test tests/*.test.mjs"
   }
 }

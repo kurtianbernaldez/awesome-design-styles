@@ -134,6 +134,18 @@ Use 140–180ms color feedback and immediate material changes. Do not continuous
 
 Animation must explain an actual state change. Do not delay content until an entrance completes. Unknown-duration tasks use written progress rather than fabricated percentages. Honor prefers-reduced-motion with immediate state changes and static loading feedback.
 
+## Pointer Effects
+
+**Pointer policy: page.** Moving reflections reveal transparency and connect the glass to its environment.
+
+### Prismatic lens
+
+**Construction.** Use a 260 × 180px light pool containing offset cyan and pink illumination. Add a narrow pale curved highlight. On the active pane, use a rounded prismatic reflection with separated cyan and pink edge glints and restrained local blur. Keep the pane itself rigid. Use transparent paint colors, full element opacity, and soft-light blending for the page layer so illumination does not wash out dark foreground text. Keep foreground content opaque and verify contrast against the brightest reflection. Reflections complement the static transparent material and never carry status or essential information.
+
+**Movement and coverage.** Follow the pointer through the whole page, including margins, footer, and gaps between columns, in one fixed viewport layer. Light direction follows measured travel; speed briefly broadens the pool by up to 30% and raises the curved highlight opacity from 40% to 75%. Smooth velocity over about 28ms, cap input at 2400 CSS pixels/second, and normalize against 1800px/second. Decay energy when movement stops and let a damped spring return illumination to rest. Glass stays rigid: preserve pane geometry, backdrop blur, labels, and hit targets. Add at most one local material reflection beneath the active pane's content. Only that local reflection clips to the pane radius.
+
+**Implementation and fallbacks.** Keep the native cursor. Mark decoration aria-hidden and pointer-events: none, outside layout and the tab order. Reuse one page layer and at most one material layer; coalesce input into requestAnimationFrame and stop when light energy settles. Do not spawn particles or add an idle animation loop. Native dialog reflections belong in its top layer. Clear effects on pointer exit, keyboard input, scroll, resize, blur, dialog close, and variant changes. Use any-hover and any-pointer capability detection plus the actual mouse event type so attached mice work on hybrid devices. Disable tracking for touch events, prefers-reduced-motion, forced colors, reduced transparency, increased contrast, and a persistent user opt-out. Retain ordinary focus, hover, pressed, and selected cues. Explain saved or system-disabled effects in the preview control. If reflections compromise text contrast, reduce their paint strength; never dim the text.
+
 ## Interaction States
 
 - **Hover:** use a small brightness or underline change on interactive controls, with their material intact. Do not reveal essential content only on hover.

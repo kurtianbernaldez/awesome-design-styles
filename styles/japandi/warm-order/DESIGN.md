@@ -132,6 +132,14 @@ Use 140–160ms color transitions. Controls remain grounded and still.
 
 Animation must explain an actual state change. Do not delay content until an entrance completes. Unknown-duration tasks use written progress rather than fabricated percentages. Honor prefers-reduced-motion with immediate state changes and static loading feedback.
 
+## Pointer Effects
+
+**Pointer policy: none.** Warm order and restrained material details need no decorative tracking.
+
+### No decorative tracking
+
+Use the native cursor and the hover, focus-visible, pressed, selected, and disabled states specified below. Do not add a cursor companion, moving margin marker, or pointer-following overlay. Ordinary controls remain fully usable with a mouse, touch, or keyboard; no pointer-tracking script is needed for this interpretation.
+
 ## Interaction States
 
 - **Hover:** use a small brightness or underline change on interactive controls, with their material intact. Do not reveal essential content only on hover.

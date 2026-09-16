@@ -62,6 +62,9 @@ Specify durations, easing, properties, entry/exit behavior, loading, and reduced
 ## Interaction States
 Cover hover, focus-visible, active/pressed, selected, disabled, loading, validation, and error recovery. Include touch and keyboard equivalents.
 
+### Pointer Effects
+Choose `page`, `surface`, or `none` and explain why. Quiet, editorial, and information-focused systems often need no decorative tracking; ordinary hover, focus, and pressed feedback still apply. For an active effect, specify geometry, scale, paint, opacity, movement, and its distinction from sibling variants. Page responses cover margins and section gaps; surface responses stay on the active material. Keep the native cursor, content, and hit targets stationary; decorative overlays must ignore input. Disable mouse tracking for touch, reduced motion, forced colors, and a persistent user opt-out. Use event-driven animation frames with no idle loop or essential information hidden behind hover. Include enough construction detail to implement the effect without another document.
+
 ## Responsive Behavior
 Give concrete breakpoints and component changes, mobile typography, stacking order, navigation collapse, tables, dialogs, zoom, and long-content behavior.
 

@@ -1,0 +1,127 @@
+/* Decorative material responses. Content, hit targets, and the native cursor stay put. */
+.pointer-surface { isolation:isolate; }
+.pointer-surface[data-pointer-positioned] { position:relative; }
+.pointer-effect {
+  position:absolute; inset:0; z-index:-1; overflow:clip; border-radius:inherit;
+  pointer-events:none; user-select:none; contain:paint;
+  --fx-color:var(--accent); --fx-second:var(--ink); --fx-opacity:.16;
+}
+.pointer-effect::before,.pointer-effect::after {
+  content:''; position:absolute; left:var(--px); top:var(--py);
+  width:var(--fx-size); height:calc(var(--fx-size) / var(--fx-stretch));
+  transform:translate(-50%,-50%) rotate(var(--angle));
+  box-sizing:border-box; opacity:var(--fx-opacity); pointer-events:none;
+}
+.pointer-effect::after { content:none; }
+.pointer-effect.pointer-field { position:fixed; z-index:100; border-radius:0; contain:strict; opacity:.7; }
+.pointer-effect.pointer-field:is([data-recipe="glass-dark"],[data-recipe="glass-light"],[data-recipe="glass-prism"]) { opacity:1; background:none; }
+.pointer-effect[data-motion="snap"]::before,.pointer-effect[data-motion="snap"]::after { transform:translate(-50%,-50%); }
+.pointer-effect[data-recipe="edge"]::before { height:2px; background:var(--fx-color); opacity:.55; }
+.pointer-effect[data-recipe="rule"]::before { width:24px; height:var(--fx-weight); background:var(--ink); opacity:.65; }
+.pointer-effect[data-recipe="rule"][data-motion="horizontal"]::before { width:var(--fx-size); height:4px; }
+.pointer-effect[data-recipe="aperture"]::before { border:var(--fx-weight) solid var(--ink); clip-path:polygon(0 0,90% 0,90% 10%,100% 10%,100% 100%,0 100%); }
+.pointer-effect[data-recipe="crosshair"]::before { background:linear-gradient(var(--fx-color),var(--fx-color)) center/100% var(--fx-weight) no-repeat,linear-gradient(var(--fx-color),var(--fx-color)) center/var(--fx-weight) 100% no-repeat; opacity:.3; }
+.pointer-effect[data-recipe="registration"]::before { border:calc(var(--fx-weight) * 2) solid var(--fx-color); mask:conic-gradient(#000 0 25%,transparent 0 50%,#000 0 75%,transparent 0) center/70% 70%; opacity:.35; }
+.pointer-effect[data-recipe="blocks"]::before { background:linear-gradient(90deg,var(--fx-color) 0 30%,transparent 30% 40%,var(--ink) 40% 70%,transparent 70% 80%,var(--fx-color) 80%); height:calc(var(--fx-size) * .4); }
+
+/* Glass reflects the environment across the entire pane, with a moving edge glint. */
+.pointer-effect:is([data-recipe="glass-dark"],[data-recipe="glass-light"],[data-recipe="glass-prism"])::after {
+  content:''; inset:0; width:auto; height:auto; transform:none; border-radius:inherit; padding:1px; opacity:.85;
+  background:radial-gradient(200px circle at var(--px) var(--py),#fff 0,transparent 100%);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); mask-composite:exclude;
+}
+.pointer-effect[data-recipe="glass-dark"] { background:radial-gradient(220px circle at var(--px) var(--py),#bedfff0d,transparent 85%); }
+.pointer-effect[data-recipe="glass-dark"]::before {
+  opacity:1; width:220px; height:220%;
+  background:linear-gradient(100deg,transparent 15%,#b6e1ff05 35%,#d7edff12 48%,#fff2 49%,#d7edff09 51%,transparent 75%);
+}
+.pointer-effect[data-recipe="glass-light"] { background:radial-gradient(320px ellipse at var(--px) var(--py),#fff4,transparent 80%); }
+.pointer-effect[data-recipe="glass-light"]::before { opacity:.65; height:220%; background:linear-gradient(105deg,transparent 25%,#fff2 42%,#fffb 49%,transparent 50%); }
+.pointer-effect[data-recipe="glass-prism"] { background:radial-gradient(170px circle at var(--px) var(--py),#97e9ed0a,transparent 80%); }
+.pointer-effect[data-recipe="glass-prism"]::before { opacity:.8; border-radius:50%; border:1px solid #d8faff55; box-shadow:inset 8px 2px 16px -10px #88fffc, inset -8px -2px 16px -10px #ffa0e4, -4px 0 0 -3px #91f8ff,4px 0 0 -3px #ffb3de; background:linear-gradient(calc(125deg + var(--angle)),#afffff0c,transparent 45%,#ffbded08); backdrop-filter:blur(3px) saturate(1.2); }
+
+.pointer-effect[data-recipe="ornament"]::before { border:4px double var(--fx-color); border-radius:50%; outline:1px dotted var(--fx-color); outline-offset:8px; }
+.pointer-effect[data-recipe="stripes"]::before { background:repeating-linear-gradient(125deg,var(--fx-color) 0 5px,transparent 5px 12px); clip-path:polygon(12% 0,100% 0,88% 100%,0 100%); }
+.pointer-effect[data-recipe="lens"]::before { border:3px double var(--fx-color); border-radius:50%; background:radial-gradient(circle at 30% 20%,#fff9,transparent 55%); opacity:.3; }
+.pointer-effect[data-recipe="sticker"]::before { border:3px solid var(--ink); border-radius:var(--control-radius); box-shadow:6px 6px 0 var(--fx-color); }
+.pointer-effect[data-recipe="metal"]::before { height:180%; background:linear-gradient(100deg,transparent 25%,#fff7 45%,#fff 49%,#0002 50%,transparent 56%); opacity:.22; }
+.pointer-effect[data-recipe="stitch"]::before { width:4px; border-left:2px dashed var(--fx-color); opacity:.45; }
+.pointer-effect[data-recipe="paper"]::before { height:24px; border-top:1px solid var(--fx-color); box-shadow:0 -3px 0 #fff9; opacity:.4; }
+.pointer-effect:is([data-recipe="relief"],[data-recipe="recess"],[data-recipe="porcelain"],[data-recipe="clay"])::before { border-radius:50%; background:radial-gradient(ellipse at 30% 20%,#fff9,transparent 60%); opacity:.35; }
+.pointer-effect[data-recipe="relief"]::before { width:200px; height:200px; background:radial-gradient(circle,#fff7,transparent 70%); }
+.pointer-effect[data-recipe="recess"]::before { box-shadow:inset 8px 8px 18px #8190a060,inset -8px -8px 18px #fff9; background:none; }
+.pointer-effect[data-recipe="porcelain"]::before { width:240px; height:80px; background:radial-gradient(ellipse,#fffd,transparent 70%); }
+.pointer-effect[data-recipe="clay"]::before { box-shadow:inset 10px 10px 20px #9b6c9024,inset -10px -10px 20px #fffa; }
+[data-family="neumorphism"] .panel.pointer-surface { box-shadow:var(--shade-x,6px) var(--shade-y,6px) 22px #8995aa50,var(--light-x,-6px) var(--light-y,-6px) 22px #ffffffb0; }
+[data-family="neumorphism"] .panel.pointer-surface[data-pointer-material="recess"] { box-shadow:inset var(--shade-x,6px) var(--shade-y,6px) 18px #8995aa50,inset var(--light-x,-6px) var(--light-y,-6px) 18px #ffffffb0; }
+.pointer-effect[data-recipe="bauhaus"]::before { border-radius:50%; background:var(--fx-color); width:calc(var(--fx-size) * .55); height:calc(var(--fx-size) * .55); box-shadow:36px 16px 0 -12px var(--ink); }
+.pointer-effect[data-recipe="bauhaus"]::after { content:''; width:var(--fx-size); height:8px; background:var(--fx-color); transform:translate(-20%,-50%) rotate(90deg); }
+.pointer-effect[data-recipe="fan"]::before { border-radius:50%; background:repeating-conic-gradient(from -45deg at 50% 100%,var(--fx-color) 0deg 1deg,transparent 1deg 15deg); clip-path:polygon(0 0,100% 0,50% 100%); opacity:.27; }
+.pointer-effect[data-recipe="speedlines"]::before { height:28px; background:linear-gradient(var(--fx-color),var(--fx-color)) 0 0/100% 2px no-repeat,linear-gradient(var(--fx-color),var(--fx-color)) 25% 50%/70% 2px no-repeat,linear-gradient(var(--fx-color),var(--fx-color)) 50% 100%/40% 2px no-repeat; opacity:.3; }
+.pointer-effect[data-recipe="deco"]::before { border:4px double var(--fx-color); clip-path:polygon(20% 0,80% 0,80% 12%,100% 12%,100% 88%,80% 88%,80% 100%,20% 100%,20% 88%,0 88%,0 12%,20% 12%); }
+.pointer-effect[data-recipe="ribbons"]::before { border:calc(var(--fx-weight) * 3) solid var(--fx-color); border-radius:68% 32% 70% 30% / 35% 70% 30% 65%; box-shadow:12px -8px 0 -7px var(--ink); }
+.pointer-effect[data-recipe="arc"]::before { border:2px solid transparent; border-top-color:var(--fx-color); border-right-color:var(--fx-color); border-radius:50% 45%; opacity:.35; }
+.pointer-effect[data-recipe="tiles"]::before { background:conic-gradient(var(--fx-color) 25%,transparent 0 50%,var(--fx-color) 0 75%,transparent 0) 0 0/24px 24px; }
+.pointer-effect[data-recipe="planes"]::before { background:linear-gradient(90deg,transparent 48%,var(--ink) 48% 51%,transparent 51%),linear-gradient(transparent 48%,var(--ink) 48% 51%,transparent 51%); border-left:12px solid var(--fx-color); }
+.pointer-effect[data-recipe="diagonal"]::before { height:8px; background:var(--fx-color); transform:translate(-50%,-50%) rotate(-35deg); opacity:.4; }
+.pointer-effect[data-recipe="wedge"]::before { background:var(--fx-color); clip-path:polygon(0 0,100% 50%,0 100%,20% 50%); }
+.pointer-effect[data-recipe="ticks"]::before { width:18px; background:repeating-linear-gradient(transparent 0 7px,var(--fx-color) 7px 8px); border-left:1px solid var(--fx-color); opacity:.4; }
+.pointer-effect[data-recipe="memphis"]::before { border:5px dotted var(--fx-color); border-radius:50%; background:repeating-linear-gradient(45deg,transparent 0 15px,var(--ink) 15px 18px,transparent 18px 28px); clip-path:polygon(0 0,90% 15%,100% 100%,10% 80%); }
+.pointer-effect[data-recipe="reticle"]::before { border:var(--fx-weight) solid var(--fx-color); clip-path:polygon(0 0,30% 0,30% 10%,70% 10%,70% 0,100% 0,100% 30%,90% 30%,90% 70%,100% 70%,100% 100%,70% 100%,70% 90%,30% 90%,30% 100%,0 100%,0 70%,10% 70%,10% 30%,0 30%); opacity:.5; }
+.pointer-effect[data-recipe="orbit"]::before { border:1px solid var(--fx-color); border-radius:50%; box-shadow:0 0 0 8px color-mix(in srgb,var(--fx-color) 20%,transparent); transform:translate(-50%,-50%) rotate(calc(-25deg + var(--angle))) scaleY(.6); opacity:.35; }
+.pointer-effect[data-recipe="radar"]::before { border-radius:50%; background:repeating-radial-gradient(circle,transparent 0 15px,var(--fx-color) 15px 16px,transparent 16px 24px); }
+.pointer-effect[data-recipe="grain"]::before { background:radial-gradient(ellipse at 30% 20%,var(--fx-color) 0 1px,transparent 2px) 0 0/7px 5px,radial-gradient(ellipse,var(--ink) 0 1px,transparent 1px) 2px 3px/11px 9px; mask:radial-gradient(ellipse,#000,transparent 70%); opacity:.45; }
+.pointer-effect[data-recipe="chrome"]::before { border-radius:50%; background:conic-gradient(from var(--angle),transparent,#fff,transparent 20%,#fff8 40%,transparent 50%,#fff 65%,transparent 80%); opacity:.25; transform:translate(-50%,-50%) scaleY(.4); }
+.pointer-effect[data-recipe="bubble"]::before { border-radius:50%; box-shadow:inset 3px 5px 9px #fffd,inset -2px -3px 6px var(--fx-color); background:radial-gradient(circle at 30% 20%,#fff9,transparent 35%); opacity:.28; }
+.pointer-effect[data-recipe="caustic"]::before { border-radius:37% 63% 57% 43%; box-shadow:inset 4px 6px 5px #fff,3px 4px 6px #fff8; transform:translate(-50%,-50%) rotate(var(--angle)) scaleX(1.6); opacity:.26; }
+.pointer-effect[data-recipe="bloom"]::before { border-radius:60% 40% 70% 30%; width:calc(var(--fx-size) * 2); height:var(--fx-size); background:radial-gradient(ellipse,var(--fx-color),transparent 70%); }
+.pointer-effect[data-recipe="metro"]::before { border:12px solid var(--fx-color); border-radius:50%; box-shadow:24px 20px 0 -18px var(--ink); }
+.pointer-effect[data-recipe="scan"]::before { height:2px; width:220%; background:linear-gradient(90deg,transparent,var(--fx-color),transparent); box-shadow:0 2px 8px var(--fx-color); opacity:.4; }
+.pointer-effect[data-recipe="glitch"]::before { height:32px; background:linear-gradient(var(--fx-color) 0 4px,transparent 4px 16px,var(--ink) 16px 20px,transparent 20px 28px,var(--fx-color) 28px); clip-path:polygon(15% 0,100% 0,85% 100%,0 100%); }
+.pointer-effect[data-recipe="dapple"]::before { width:calc(var(--fx-size) * 2); background:radial-gradient(ellipse at 20% 40%,var(--fx-color),transparent 35%),radial-gradient(ellipse at 70% 70%,var(--fx-color),transparent 25%),radial-gradient(ellipse at 65% 10%,var(--fx-color),transparent 28%); opacity:.12; }
+.pointer-effect[data-recipe="echo"]::before { border:3px solid var(--fx-color); border-radius:50%; box-shadow:12px 0 0 -2px var(--fx-second); }
+.pointer-effect[data-recipe="marquee"]::before { border:1px dashed var(--ink); opacity:.4; }
+.pointer-effect[data-recipe="terminal"]::before { width:16px; height:24px; background:var(--fx-color); opacity:.22; }
+.pointer-effect[data-recipe="dither"]::before { background:conic-gradient(var(--ink) 25%,transparent 0 50%,var(--ink) 0 75%,transparent 0) 0 0/4px 4px; opacity:.2; }
+.pointer-effect[data-recipe="caret"]::before { width:20px; height:28px; background:var(--fx-color); clip-path:polygon(0 0,40% 0,40% 15%,70% 15%,70% 35%,100% 35%,100% 65%,70% 65%,70% 85%,40% 85%,40% 100%,0 100%); opacity:.4; }
+.pointer-effect[data-recipe="gloss"]::before { height:40px; border-radius:50%; background:linear-gradient(#fff,transparent); opacity:.4; }
+.pointer-effect[data-recipe="pixels"]::before { background:linear-gradient(var(--fx-color),var(--fx-color)) 0 0/8px 8px no-repeat,linear-gradient(var(--fx-color),var(--fx-color)) 100% 0/8px 8px no-repeat,linear-gradient(var(--fx-color),var(--fx-color)) 0 100%/8px 8px no-repeat,linear-gradient(var(--fx-color),var(--fx-color)) 100% 100%/8px 8px no-repeat; opacity:.5; }
+.pointer-effect[data-recipe="optical"]::before { border-radius:50%; background:repeating-linear-gradient(80deg,var(--ink) 0 3px,transparent 3px 8px); opacity:.12; }
+.pointer-effect[data-recipe="halftone"]::before { border-radius:50%; background:radial-gradient(circle,var(--fx-color) 2px,transparent 2.5px) 0 0/8px 8px; opacity:.3; }
+
+/* Family accents refine shared geometric building blocks. */
+[data-family="minimalism"] .pointer-effect { --fx-opacity:.12; }
+[data-family="brutalism"] .pointer-effect { --fx-opacity:.2; }
+[data-family="art-deco"] .pointer-effect { --fx-opacity:.28; }
+[data-family="psychedelic"] .pointer-effect[data-recipe="ribbons"] { --fx-weight:5px; }
+[data-family="claymorphism"] .pointer-effect[data-recipe="sticker"]::before { border-radius:24px; border-color:#fff; box-shadow:5px 5px 8px var(--fx-color); }
+[data-family="swiss"] .pointer-effect[data-recipe="edge"]::before { height:4px; }
+[data-family="wabi-sabi"] .pointer-effect { --fx-opacity:.1; }
+.pointer-preferences { display:flex; align-items:center; flex-wrap:wrap; gap:8px 16px; padding:12px var(--gutter,24px); border-bottom:1px solid var(--line); background:var(--canvas); color:var(--muted); font:12px/1.5 system-ui,sans-serif; }
+.pointer-preferences #pointer-toggle { min-height:36px; padding:6px 12px; border:1px solid var(--control-line); border-radius:6px; box-shadow:none; background:var(--surface); color:var(--ink); font:600 12px/1.5 system-ui,sans-serif; text-transform:none; letter-spacing:normal; transform:none; }
+.pointer-preferences #pointer-toggle:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }
+.pointer-preferences #pointer-toggle:disabled { opacity:.7; cursor:default; }
+@media (prefers-reduced-motion:reduce),(forced-colors:active),(any-hover:none) {
+  .pointer-effect { display:none; }
+  [data-family="neumorphism"] .panel.pointer-surface { box-shadow:var(--shadow); }
+}
+.pointer-field { --speed:0; --flow-stretch:1; }
+/* Rigid glass gets moving illumination, distinct from the elastic liquid lens. */
+[data-family="glassmorphism"] .pointer-field { mix-blend-mode:soft-light; }
+[data-family="glassmorphism"] .pointer-field::before {
+  width:260px; height:180px; opacity:1; border:0; border-radius:50%; box-shadow:none;
+  transform:translate(-50%,-50%) rotate(var(--angle)) scale(calc(1 + var(--speed) * .3));
+  background:radial-gradient(ellipse,#c7eaff42,transparent 70%); backdrop-filter:none;
+}
+[data-theme="glassmorphism/light-glass"] .pointer-field::before { background:radial-gradient(ellipse,#ffffffb0,#78b3c926 36%,transparent 70%); }
+[data-theme="glassmorphism/vibrant-glass"] .pointer-field::before { background:radial-gradient(ellipse at 36% 45%,#bfffff4d,transparent 57%),radial-gradient(ellipse at 68% 55%,#ffb3df38,transparent 65%); }
+[data-family="glassmorphism"] .pointer-field::after {
+  content:''; inset:auto; left:var(--px); top:var(--py); width:180px; height:70px; border-radius:50%; padding:0; mask:none;
+  opacity:calc(.4 + var(--speed) * .35); transform:translate(-50%,-50%) rotate(calc(var(--angle) - 30deg));
+  border-top:1px solid #f2ffffaa; background:radial-gradient(ellipse at 50% 0,#ffffff40,transparent 55%);
+}
+[data-theme="glassmorphism/light-glass"] .pointer-field::after { border-top-color:#527d9680; }
+[data-family="glassmorphism"] .pointer-effect:not(.pointer-field)::after { opacity:1; background:radial-gradient(260px circle at var(--px) var(--py),#fff 0,#deffffd0 30%,transparent 100%); }
+@media (prefers-reduced-transparency:reduce),(prefers-contrast:more) {
+  :is([data-family="glassmorphism"],[data-family="liquid-glass"]) .pointer-effect { display:none; }
+}

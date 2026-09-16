@@ -140,6 +140,20 @@ Use 160ms color changes and no oscillating equalizer decoration.
 
 Animation explains an actual state change. Do not delay readable content behind an entrance animation or invent percentages for unknown-duration work. Honor prefers-reduced-motion with immediate state changes and static progress feedback.
 
+## Pointer Effects
+
+**Pointer policy: surface.** Reflections stay on the radio housing and tuning surface.
+
+### Tuning reflection
+
+Three warm reflection lines slide along the radio’s tuning axis. This is decorative material feedback, not a status indicator.
+
+**Construction.** Stack three 2px accent rules in a 28px-high strip, with lengths of 100%, 70%, and 40%. Keep 30% opacity and sharp parallel alignment. Use this document’s accent and ink tokens. Unless the material recipe specifies another size, use a 144px-wide region with height equal to width / 1.45 and a 2px base stroke.
+
+**Movement and coverage.** React on only the active material surface. Track the local horizontal coordinate at 72% of surface height. Measure coordinates relative to that surface, keep the reflection behind its content, and clip it to the material radius. Leave page margins, section gaps, and unrelated reading regions still. The material host, labels, and hit targets never tilt or move.
+
+**Implementation and fallbacks.** Keep the native cursor. Reuse one aria-hidden decorative layer with pointer-events: none; keep it out of layout and the tab order. Coalesce movement into requestAnimationFrame with no idle loop or particle trail. Clear the layer on pointer exit, keyboard input, scroll, resize, blur, dialog close, and variant changes. Enable tracking only for a fine mouse pointer with hover. Disable it for touch, prefers-reduced-motion, forced colors, and a persistent user opt-out; retain static material and ordinary control states. Check text contrast at the brightest reflection, and reduce decorative opacity if necessary.
+
 ## Interaction States
 
 - **Hover:** preserve the control material and use an underline, color, or restrained highlight change. Essential content is never hover-only.

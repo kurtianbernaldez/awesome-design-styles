@@ -74,6 +74,59 @@ The local browser audit captures each variant at 1100px, 390px, and 320px, check
 - Material checks retain glass blur and neumorphic relief at every reviewed width.
 - Final glass and font refinements received focused repeat checks.
 - Source, path, instruction clipboard copies, preserved input on variant switching, and browser history passed in local Chromium.
-- `npm run check`: 10 tests passed, including complete discovery, byte-identical downloads, routes, token contrast, actual glass composites, and real thumbnail assets.
+- `npm run check`: the full test suite passes, including complete discovery, byte-identical downloads, routes, token contrast, actual glass composites, and real thumbnail assets.
 
 No full screen-reader, cross-browser, or accessibility certification is claimed.
+
+## Liquid Glass addition
+
+Liquid Glass adds three complete interpretations: Clear Lens, Frosted Controls, and Fluid Dock. Their control islands share real backdrop sampling while differing in density, diffusion, composition, and selection behavior. Material reference: [Apple’s design overview](https://developer.apple.com/videos/play/wwdc2025/219/). Optical mechanism: [SVG displacement mapping](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feDisplacementMap).
+
+The material lives in a separate decorative child so its silhouette can flex while text and targets stay fixed. Each body has a rounded displacement map generated at resize. A bounded spring changes edge refraction, highlight, and shape after input; the real colored environment shifts gently behind it. Filters use explicit pixel dimensions. A bounded cache of immutable optical strengths works around Chromium caching without cloning graph nodes or regenerating maps during animation.
+
+Verification in local Chromium includes:
+
+- All three variants at 1100px, 390px, and 320px, plus comparison switching, preserved input, source paths, clipboard controls, dialogs, and tabs.
+- A high-contrast stripe probe beneath each material, comparing rendered pixels with displacement enabled and zeroed. The curved edges visibly bend the actual backdrop.
+- Mouse movement, press deformation, damped settling, stationary text and hit targets, reduced motion, persistent effects-off, and phone layout.
+- Unit checks for curved displacement geometry, bounded maps, spring stability at 60/120Hz, and long-frame recovery.
+
+`node scripts/liquid-audit.mjs` runs the optical checks against local Chrome on port 9223 and writes diagnostic captures to `/tmp/form-atlas-liquid/`. Start that Chrome with `--blink-settings=primaryPointerType=4,availablePointerTypes=4,primaryHoverType=2,availableHoverTypes=2` for a desktop pointer. This remains a browser approximation; SVG backdrop support varies, so ordinary blur and opaque accessibility fallbacks remain part of every design.
+
+## Pointer motion and curation
+
+The library declares 19 page effects, 20 surface effects, and 78 variants without decorative tracking. Glassmorphism retains moving reflections; Liquid Glass keeps a normal cursor and responds on functional control surfaces. No floating droplet or water trail is rendered. Hybrid mouse input, touch presses, saved preferences, and system accessibility settings have separate behavior.
+
+`node scripts/pointer-audit.mjs` checks all 117 policies and exercises Glassmorphism reflections, ordinary surface responses, keyboard/touch preferences, and comparison switching. The dedicated Liquid Glass audit verifies optical controls.
+
+## Adaptive Liquid Glass review
+
+Based on [Apple's material principles](https://developer.apple.com/videos/play/wwdc2025/219/), the browser implementation uses Clear material for sticky navigation and workspace controls over the dimmed page and uses Regular material for adaptive controls in Frosted Controls and Fluid Dock. Reading cards remain stable. A light feature plane in Fluid Dock and a dark testimonial in Frosted Controls expose meaningful changes in the content beneath navigation.
+
+Small controls adapt fill, ink, ambient rim, and shadow using nine DOM samples and authored gradient estimates. Larger menus/dialogs retain their opening context and tone, with denser fill, more blur, and deeper refraction as they expand. Bodies reveal from their triggers while labels fade without scaling. Pinned Regular navigation has an adaptive scroll-edge fade. Motion opt-out does not disable static contrast adaptation.
+
+This estimates known DOM backgrounds; it does not sample arbitrary media pixels or implement Apple's native renderer. Unbounded imagery needs a scrim or opaque backing. Real optical displacement still comes from the browser's backdrop filter. Accessibility preferences select static or opaque material, and forced colors uses system surfaces.
+
+The local Liquid Glass audit passed actual displacement, press/settle, stable filter caches and targets, adaptive foreground polarity, scroll-edge visibility, growing menus/dialogs, rapid reopen, Escape and focus restoration, reduced motion/transparency, and 320/390px layouts. Captures are in `/tmp/form-atlas-liquid/`. Pure tests cover geometry, springs, velocity, adaptive hysteresis, and sampled text contrast. Cross-browser and assistive-technology certification remain outside this review.
+
+The supplied interaction sequences also informed the optical profile: a broad convex shoulder bends background detail through the body, while a press swells the material and reduces diffusion before it settles. Small Regular surfaces begin more transparent, increasing backing only for sampled contrast or busy content. Press transparency is bounded by the same contrast check; dense dialogs remain stable. The screenshot reference assets are not included in the repository.
+
+Final validation: `npm run check` passed 32 tests. The pointer audit passed all 117 policies and Glassmorphism input/settling checks; the Liquid Glass audit passed all three revised materials, including clearer press states and expanded-surface behavior.
+
+
+## Liquid Glass refraction and sticky-header repair
+
+Clear Lens uses a neutral 3.5% reflection, 0.35px scattering before displacement, and continuous scene contours behind the navigation. Its header stays at 12px on desktop and 8px on phones. No opaque scroll-edge layer covers the backdrop of this clear header. The invalid radial highlight was repaired; pointer light now follows a spring, presses stretch and compress the material, and scrolling energizes the pinned lens. Neutral Regular fills remain adaptive in the other variants.
+
+Displacement maps preserve detail up to 1024 × 512 pixels and limit bending by lens thickness so the short header cannot reverse backdrop pixels. Thirteen cached strengths cover resting scale through +24. Labels and hit areas stay stationary.
+
+Validation: `npm run check` passed all five test files. The Chrome liquid audit passed all three variants, sticky positioning at 1100px, 390px and 320px, valid highlight painting, visible displacement through the unmodified navigation, press/settle, fixed labels, native menus/dialogs, and reduced motion/transparency. The finished-nav comparison detected 1540 changed pixels in Clear Lens, 134 in Frosted Controls, and 1190 in Fluid Dock above a 9-channel-value threshold, comparing actual refraction with the same material at zero displacement.
+
+
+## Liquid Glass embedded layout repair
+
+The tab strip now remains in document flow with 32px before its panel. A navigation offset previously moved relatively positioned Frosted Controls tabs over feature headings and activity content; secondary Fluid Dock tabs now also scroll with their panels. Labels can wrap in the narrowest embedded preview instead of overflowing the content area. Primary navigation keeps its sticky behavior.
+
+Hero and workspace background contours fade at all four paint boundaries, removing the sharp rectangular cutoffs without clipping the optical bodies or controls.
+
+`node scripts/liquid-layout-audit.mjs` passed 108 embedded layouts across outer widths 1440, 1100, 1000, 900, 801, 800, 657, 390 and 320px, all three Liquid Glass variants, Fit width/Mobile modes, and Overview/Recent activity. Checks cover panel separation before and after scrolling, horizontal content bounds, complete iframe containment, and sticky primary navigation. Focused images are saved in `/tmp/form-atlas-liquid-layout/`. The smallest outer width exposes an inner preview under 280px, covering the tab-label overflow missed by standalone 320px checks.

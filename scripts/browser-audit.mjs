@@ -6,7 +6,8 @@ const mode=process.argv[2]||'after';
 const origin=process.env.PREVIEW_ORIGIN||'http://127.0.0.1:4173';
 const catalog=JSON.parse(await readFile(new URL('../dist/catalog.json',import.meta.url)));
 const list=catalog.flatMap(f=>f.variants).filter(v=>!process.argv[3] || process.argv[3].split(",").some(prefix=>`${v.family}/${v.slug}`.startsWith(prefix)));
-const {webSocketDebuggerUrl}=await (await fetch('http://127.0.0.1:9222/json/new?about:blank',{method:'PUT'})).json();
+const debugOrigin=process.env.CHROME_DEBUG_ORIGIN||'http://127.0.0.1:9222';
+const {webSocketDebuggerUrl}=await (await fetch(`${debugOrigin}/json/new?about:blank`,{method:'PUT'})).json();
 const socket=new WebSocket(webSocketDebuggerUrl);await new Promise(r=>socket.addEventListener('open',r,{once:true}));
 let id=0;const pending=new Map(),errors=[];
 socket.addEventListener('message',e=>{const m=JSON.parse(e.data);if(m.id){const p=pending.get(m.id);pending.delete(m.id);m.error?p.reject(m.error):p.resolve(m.result);}if(m.method==='Runtime.exceptionThrown') errors.push(m.params.exceptionDetails.text);if(m.method==='Network.responseReceived' && m.params.response.status>=400 && !m.params.response.url.endsWith('/favicon.ico')) errors.push(m.params.response.status+' '+m.params.response.url);});
@@ -50,7 +51,7 @@ for(const v of list){const theme=`${v.family}/${v.slug}`;
    const material=await evaluate(`(()=>{const p=getComputedStyle(document.querySelector('.project-card'));const b=getComputedStyle(document.querySelector('.icon-button'));return {blur:p.backdropFilter,shadow:p.boxShadow,border:p.borderTopWidth,buttonShadow:b.boxShadow,fonts:[...document.fonts].map(f=>({name:f.family,status:f.status}))}})()`);
    if(v.family==='glassmorphism')assert.notEqual(material.blur,'none',theme+' must keep glass on mobile');
    if(v.family==='neumorphism'){assert.equal(material.border,'0px');assert.notEqual(material.buttonShadow,'none');}
-   const result=await evaluate(`(()=>{document.querySelector('[data-open]').click();const open=document.querySelector('dialog').open;document.querySelector('#cancel-dialog').click();document.querySelector('#activity-tab').click();return {open,closed:!document.querySelector('dialog').open,activity:!document.querySelector('#activity').hidden}})()`);assert.deepEqual(result,{open:true,closed:true,activity:true});
+   const result=await evaluate(`(async()=>{document.querySelector('[data-open]').click();const open=document.querySelector('dialog').open;document.querySelector('#cancel-dialog').click();await new Promise(r=>setTimeout(r,350));document.querySelector('#activity-tab').click();return {open,closed:!document.querySelector('dialog').open,activity:!document.querySelector('#activity').hidden}})()`);assert.deepEqual(result,{open:true,closed:true,activity:true});
   }
  }
  console.log(theme);
@@ -88,7 +89,7 @@ if(mode==='after'){
  const familyShot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});await writeFile(out+'family-page.png',Buffer.from(familyShot.data,'base64'));
  await navigate(origin+'/');await new Promise(r=>setTimeout(r,250));
  const homeShot=await send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});await writeFile(out+'landing-page.png',Buffer.from(homeShot.data,'base64'));
- assert.equal(await evaluate("document.querySelectorAll('.family-card').length"),38);
+ assert.equal(await evaluate("document.querySelectorAll('.family-card').length"),catalog.length);
  // A real thumbnail must exist for every card, including below-the-fold lazy images.
  for(const image of await evaluate("[...document.querySelectorAll('.family-preview')].map(i=>i.src)")){assert.equal((await fetch(image)).status,200,image);}
 }

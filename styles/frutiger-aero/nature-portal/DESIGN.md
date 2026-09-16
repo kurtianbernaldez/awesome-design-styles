@@ -140,6 +140,20 @@ Use 200ms overlay fades and no animated background landscape.
 
 Animation explains an actual state change. Do not delay readable content behind an entrance animation or invent percentages for unknown-duration work. Honor prefers-reduced-motion with immediate state changes and static progress feedback.
 
+## Pointer Effects
+
+**Pointer policy: page.** Moving water and daylight reflections belong to this glossy digital environment.
+
+### Daylight bloom
+
+A broad soft daylight reflection travels across the bright portal panels. This is optional decorative feedback, not a status indicator.
+
+**Construction.** Use a broad, asymmetric accent-colored radial pool, twice the nominal width, fading to transparent by 70%. Keep the color tied to the design’s palette rather than introducing unrelated neon. Unless a material-specific size above overrides it, use a 72px-wide region, height equal to width / 0.78, and a 1.5px base stroke. Sparse ink geometry defaults to 16% paint opacity; minimalist work uses 12%, brutalist work 20%, Art Deco 28%, and Wabi-Sabi 10%. Explicit recipe opacity takes precedence. Apply a further 70% opacity to the page-level geometry; glass uses its explicit light values. Use this document’s accent and ink tokens.
+
+**Movement and coverage.** Follow both pointer coordinates across the viewport. A small angle may vary by at most ±12.5 degrees with horizontal position; do not add trailing inertia. Position the page-level decoration in a fixed, viewport-sized layer: it follows the mouse through the whole page, including margins, the hero, footer, and the gaps between columns. Never clip this layer to a card or grid column. Add one extra response behind the content of the material region under the pointer (navigation, hero, card, form, statistics, or open dialog). For that local reflection, follow x and hold y at 72% of the region height. Clip only this local decoration to the surface radius; the page-level effect continues through section gaps.
+
+**Implementation and fallbacks.** Keep the native cursor and every content/hit-target position unchanged. Mark decoration aria-hidden, use pointer-events: none, and keep it out of layout and the tab order. Use one reusable page layer and at most one extra material layer; coalesce pointer updates into one requestAnimationFrame, with no idle loop, particle spawning, trails, or autoplay. A native dialog needs its page decoration inside the dialog’s top layer. Clear effects on pointer exit, keyboard input, scroll, resize, blur, dialog close, and variant changes. Enable tracking only for a fine mouse pointer with hover. Disable it for touch, prefers-reduced-motion, forced colors, and a persistent user opt-out; retain all static material, focus, hover, and pressed cues. Check text contrast at the brightest reflection and darkest mark. If a local pairing fails, reduce decorative paint opacity; never dim text to compensate.
+
 ## Interaction States
 
 - **Hover:** preserve the control material and use an underline, color, or restrained highlight change. Essential content is never hover-only.

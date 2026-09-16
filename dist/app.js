@@ -2,7 +2,17 @@ const main = document.querySelector('#main');
 const feedback = document.querySelector('#feedback');
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const label = slug => slug.split('-').map(s=>s[0].toUpperCase()+s.slice(1)).join(' ');
-let families = [], current, currentFamily, feedbackTimer;
+let families = [], current, currentFamily, feedbackTimer, sortOrder = 'featured';
+const familyCollator = new Intl.Collator(undefined,{sensitivity:'base',numeric:true});
+function sortedFamilies() {
+  const items = [...families];
+  if (sortOrder === 'name-asc') items.sort((a,b)=>familyCollator.compare(a.name,b.name));
+  if (sortOrder === 'name-desc') items.sort((a,b)=>familyCollator.compare(b.name,a.name));
+  return items;
+}
+function familyCards(items) {
+  return items.map((f,i)=>`<a class="family-card" href="/styles/${esc(f.slug)}" data-route><div class="family-art" data-card-theme="${esc(f.slug)}/${esc(f.variants[0].slug)}"><img class="family-preview" src="/assets/previews/${esc(f.slug)}--${esc(f.variants[0].slug)}.webp" alt="" width="1100" height="850" loading="${i < 3 ? 'eager' : 'lazy'}" decoding="async"></div><div class="family-info"><div class="family-title"><h3>${esc(f.name)}</h3><span>${f.variants.length} ${f.variants.length === 1 ? 'variant' : 'variants'}</span></div><p>${esc(f.description)}</p><div class="variant-names">${f.variants.map(v=>`<span>${esc(label(v.slug))}</span>`).join('')}</div><div class="explore-link">Explore ${esc(f.name)} <span aria-hidden="true">↗</span></div></div></a>`).join('');
+}
 const announce = message => { clearTimeout(feedbackTimer); feedback.textContent = message; feedback.classList.add('visible'); feedbackTimer = setTimeout(()=>feedback.classList.remove('visible'),5000); };
 function navigate(url) { history.pushState({},'',url); render(); }
 document.addEventListener('click', event => {
@@ -12,10 +22,17 @@ document.addEventListener('click', event => {
 window.addEventListener('popstate', render);
 function home() {
   currentFamily = null;
-  document.title = 'Form Atlas — Visual design library';
+  document.title = 'design-style-mds — Visual design library';
   main.innerHTML = `<section class="intro"><p class="eyebrow">THE OPEN DESIGN COLLECTION <span>${families.length} FAMILIES / ${families.flatMap(f=>f.variants).length} SYSTEMS</span></p><div class="intro-row"><h1>Find your<br>visual language<span class="accent-dot">.</span></h1><div class="intro-note"><span class="small-rule"></span><p>A style is a starting point.<br>Find the interpretation that feels right.</p><p class="subtle">Compare the same interface. Choose a complete design system. Make it yours.</p></div></div></section>
-  <section class="collection" aria-labelledby="collection-title"><div class="section-label"><h2 id="collection-title">Explore the families</h2><span>${String(families.length).padStart(2,'0')} collections</span></div><div class="family-grid">${families.map((f,i)=>`<a class="family-card" href="/styles/${esc(f.slug)}" data-route><div class="family-art" data-card-theme="${esc(f.slug)}/${esc(f.variants[0].slug)}"><img class="family-preview" src="/assets/previews/${esc(f.slug)}--${esc(f.variants[0].slug)}.webp" alt="" width="1100" height="850" loading="${i < 3 ? 'eager' : 'lazy'}" decoding="async"></div><div class="family-info"><div class="family-title"><h3>${esc(f.name)}</h3><span>${f.variants.length} ${f.variants.length === 1 ? 'variant' : 'variants'}</span></div><p>${esc(f.description)}</p><div class="variant-names">${f.variants.map(v=>`<span>${esc(label(v.slug))}</span>`).join('')}</div><div class="explore-link">Explore ${esc(f.name)} <span aria-hidden="true">↗</span></div></div></a>`).join('')}</div></section>
+  <section class="collection" aria-labelledby="collection-title"><div class="section-label"><h2 id="collection-title">Explore the families</h2><div class="collection-tools"><span>${String(families.length).padStart(2,'0')} collections</span><label class="sort-control"><span>Sort</span><select id="family-sort"><option value="featured">Featured</option><option value="name-asc">Name A–Z</option><option value="name-desc">Name Z–A</option></select></label></div></div><div class="family-grid">${familyCards(sortedFamilies())}</div></section>
   <section id="how-to-use" class="how-to"><div><p class="eyebrow">FROM AN IDEA TO AN INTERFACE</p><h2>A whole system.<br>One Markdown file.</h2><p>Every variant includes typography, color, layout, components, interactions, and accessibility. Take it into your next project.</p></div><ol><li><span>01</span><div><h3>Compare the interpretations</h3><p>Switch variants in one preview. The content stays the same, so the differences are easy to see.</p></div></li><li><span>02</span><div><h3>Choose your direction</h3><p>Read the complete DESIGN.md, then copy or download it.</p></div></li><li><span>03</span><div><h3>Give your agent the system</h3><p>Use the ready-to-copy instruction. Combine systems manually by naming a specific region and its design.</p></div></li></ol></section>`;
+  const sort = document.querySelector('#family-sort');
+  sort.value = sortOrder;
+  sort.addEventListener('change',()=>{
+    sortOrder = sort.value;
+    document.querySelector('.family-grid').innerHTML = familyCards(sortedFamilies());
+    announce(sort.options[sort.selectedIndex].text+' order applied');
+  });
 }
 function familyPage(family, variant) {
   const sameFamily = currentFamily === family.slug && document.querySelector('#showcase');
@@ -46,7 +63,7 @@ function familyPage(family, variant) {
     document.querySelector('#copy-long').onclick = ()=>copy(longInstruction(),'Detailed instruction copied');
   }
   current = variant;
-  document.title = `${variant.name} — Form Atlas`;
+  document.title = `${variant.name} — design-style-mds`;
   document.querySelector('#variant-name').textContent = variant.name;
   document.querySelector('#variant-description').textContent = variant.description;
   document.querySelector('#tags').innerHTML = variant.tags.map(t=>`<span>${esc(t)}</span>`).join('');
@@ -91,7 +108,7 @@ function render() {
   if (!parts.length) { home(); if(location.hash === '#how-to-use') requestAnimationFrame(()=>document.querySelector('#how-to-use')?.scrollIntoView()); return; }
   const family = families.find(f=>f.slug===parts[1]);
   const variant = family && (parts[2] ? family.variants.find(v=>v.slug===parts[2]) : family.variants[0]);
-  if(parts[0]!=='styles' || parts.length>3 || !family || !variant) { currentFamily=null; document.title='Design not found — Form Atlas'; main.innerHTML='<section class="not-found"><p class="eyebrow">404 / NOT IN THE ATLAS</p><h1>That design isn’t here.</h1><a class="button primary" href="/" data-route>Explore available styles</a></section>'; return; }
+  if(parts[0]!=='styles' || parts.length>3 || !family || !variant) { currentFamily=null; document.title='Design not found — design-style-mds'; main.innerHTML='<section class="not-found"><p class="eyebrow">404 / DESIGN NOT FOUND</p><h1>That design isn’t here.</h1><a class="button primary" href="/" data-route>Explore available styles</a></section>'; return; }
   familyPage(family,variant);
 }
 async function load() {
