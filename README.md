@@ -142,7 +142,7 @@ npm start       # serve an already built dist directory
 - `scripts/browser-audit.mjs` captures the actual showcase into `dist/assets/previews/`; `scripts/thumbnails.mjs` generates the landing-image layout.
 - A variant without a matching preview theme fails the build. Empty family directories are excluded. Unknown routes return a useful 404.
 
-Deploy the built `dist/` directory to any static host supporting directory index pages. No database, backend, or external font service is required. Run the build before deployment; deep routes are real generated HTML entrypoints. `.openai/hosting.json` configures the optional Sites deployment. Root-relative asset URLs assume the site is hosted at an origin root, not a repository subpath.
+Deploy the built `dist/` directory to any static host supporting directory index pages. No database, backend, or external font service is required. Run the build before deployment; deep routes are real generated HTML entrypoints. Root-relative asset URLs assume the site is hosted at an origin root, not a repository subpath.
 
 ## Contribute
 
@@ -163,10 +163,10 @@ All 117 variants have distinct composition and material rules, documented in the
 For local visual maintenance, start the app with `npm run dev`, then start a separate local Chrome instance:
 
 ```sh
-google-chrome --headless --no-sandbox --disable-gpu --remote-debugging-port=9222 --user-data-dir=/tmp/form-atlas-audit about:blank
+google-chrome --headless --no-sandbox --disable-gpu --remote-debugging-port=9222 --user-data-dir=/tmp/design-style-mds-audit about:blank
 node scripts/browser-audit.mjs after
 node scripts/browser-audit.mjs thumbnails
 npm run check
 ```
 
-The audit writes review captures to `/tmp/form-atlas-after/`; thumbnail mode updates `dist/assets/previews/`. Chrome is a development-only tool, not an application dependency. No hosting account or backend is required.
+The audit writes review captures to `/tmp/design-style-mds-after/`; thumbnail mode updates `dist/assets/previews/`. Chrome is a development-only tool, not an application dependency. No hosting account or backend is required.
