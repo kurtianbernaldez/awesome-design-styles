@@ -1,5 +1,9 @@
 # design-style-mds
 
+[![design-style-mds social preview](docs/social-preview.svg)](https://styles.kurtian.dev/)
+
+**[Browse the live design library →](https://styles.kurtian.dev/)**
+
 An original visual design library of complete, reusable **DESIGN.md** files for general design languages and aesthetics.
 
 **Style → variants → visual comparison → select → copy/use DESIGN.md**
@@ -88,7 +92,7 @@ The local path must exist in the agent's workspace. For an agent without the rep
 
 ## Compare variants
 
-Run the browser and open `/styles/minimalism`. Switch between Clean Product, Editorial, and Monochrome in the **same preview area**. The same fictional workspace contains navigation, hero, heading hierarchy, prose, buttons, cards, features, statistics, form controls, badges, tabs, menus, a dialog, testimonial, pricing, and footer.
+Open the [live library](https://styles.kurtian.dev/) or run the site locally, then open `/styles/minimalism`. Switch between Clean Product, Editorial, and Monochrome in the **same preview area**. The same fictional workspace contains navigation, hero, heading hierarchy, prose, buttons, cards, features, statistics, form controls, badges, tabs, menus, a dialog, testimonial, pricing, and footer.
 
 All 39 families appear on the landing page with a representative thumbnail, description, and accurate variant count. The content stays the same; typography, composition, density, surfaces, and component treatments change. The preview is a representative implementation, while DESIGN.md is the complete specification.
 
