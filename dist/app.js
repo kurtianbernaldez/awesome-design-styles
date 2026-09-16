@@ -58,7 +58,10 @@ function familyPage(family, variant) {
     }));
     document.querySelector('#showcase').addEventListener('load',sendTheme);
     document.querySelector('#copy-design').onclick = ()=>copy(current.markdown,'DESIGN.md copied');
-    document.querySelector('#copy-path').onclick = ()=>copy(current.path,'Repository path copied');
+    document.querySelector('#copy-path').onclick = ()=>copy(current.path,'Local repository path copied');
+    const pathBox = document.querySelector('.path-box'); pathBox.querySelector('span').textContent='Local repository path'; pathBox.querySelector('#copy-path').textContent='Copy local path ⧉';
+    const publicBox = document.createElement('div'); publicBox.className='path-box'; publicBox.innerHTML='<span>Public reference</span><a id="github-link" class="instruction" target="_blank" rel="noopener noreferrer"></a><button class="text-button" id="copy-github">Copy GitHub link ↗</button>';
+    pathBox.after(publicBox); document.querySelector('#copy-github').onclick = ()=>copy(githubUrl(),'GitHub reference copied');
     document.querySelector('#copy-instruction').onclick = ()=>copy(instruction(),'Agent instruction copied');
     document.querySelector('#copy-long').onclick = ()=>copy(longInstruction(),'Detailed instruction copied');
   }
@@ -70,6 +73,7 @@ function familyPage(family, variant) {
   document.querySelector('#instruction').textContent = instruction();
   document.querySelector('#long-instruction').textContent = longInstruction();
   document.querySelector('#repo-path').textContent = variant.path;
+  const github = document.querySelector('#github-link'); github.href = githubUrl(); github.textContent = githubUrl();
   document.querySelector('#design-source').textContent = variant.markdown;
   const download = document.querySelector('#download'); download.href = '/'+variant.path; download.download = `${variant.family}-${variant.slug}-DESIGN.md`;
   document.querySelector('#variant-panel').setAttribute('aria-labelledby','tab-'+variant.slug);
@@ -85,6 +89,7 @@ function selectVariant(family, slug) {
   const variant = family.variants.find(v=>v.slug===slug); if (!variant || variant===current) return;
   history.pushState({},'',`/styles/${family.slug}/${slug}`); familyPage(family,variant); announce(`${variant.name} selected`);
 }
+function githubUrl() { return `https://github.com/kurtianbernaldez/awesome-design-styles/blob/main/${current.path}`; }
 function instruction() { return `Use \`${current.path}\` as the visual design system for this project.`; }
 function longInstruction() { return `Build this interface using ${current.name} as defined in \`${current.path}\`. Follow its typography, spacing, layout, surface, component, interaction, motion, responsive, and accessibility rules.`; }
 async function copy(value, message) {
