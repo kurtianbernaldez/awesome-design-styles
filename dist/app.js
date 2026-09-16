@@ -90,8 +90,8 @@ function selectVariant(family, slug) {
   history.pushState({},'',`/styles/${family.slug}/${slug}`); familyPage(family,variant); announce(`${variant.name} selected`);
 }
 function githubUrl() { return `https://github.com/kurtianbernaldez/awesome-design-styles/blob/main/${current.path}`; }
-function instruction() { return `Use \`${current.path}\` as the visual design system for this project.`; }
-function longInstruction() { return `Build this interface using ${current.name} as defined in \`${current.path}\`. Follow its typography, spacing, layout, surface, component, interaction, motion, responsive, and accessibility rules.`; }
+function instruction() { return `Use the design system documented at ${githubUrl()} as the visual design system for this project. If your environment cannot open links, ask for the DESIGN.md contents.`; }
+function longInstruction() { return `Build this interface using ${current.name} as defined at ${githubUrl()}. Follow its typography, spacing, layout, surface, component, interaction, motion, responsive, and accessibility rules. If your environment cannot open links, ask for the DESIGN.md contents.`; }
 async function copy(value, message) {
   const copyOpener = document.activeElement;
   try { await navigator.clipboard.writeText(value); announce(message); }

@@ -84,7 +84,7 @@ Or be more explicit:
 
 > Build this interface using Editorial Minimalism as defined in `styles/minimalism/editorial/DESIGN.md`. Follow its typography, spacing, layout, surface, component, interaction, motion, responsive, and accessibility rules.
 
-The path must exist in the agent's workspace. Copy the file into your project, provide its contents, or make this repository available to the agent. If you rename the file, update the instruction accordingly.
+The local path must exist in the agent's workspace. For an agent without the repository, use the public GitHub reference copied from the site, or provide the file contents directly if it cannot open links.
 
 ## Compare variants
 
@@ -96,7 +96,7 @@ Pointer behavior is intentional: Glassmorphism and selected expressive digital s
 
 The [Liquid Glass family](styles/liquid-glass/README.md) adds Clear Lens, Frosted Controls, and Fluid Dock. The native cursor stays normal; moving or pressing a functional glass control energizes its light, shape, and refraction. Regular material adapts its labels, tint, shadow, and scroll-edge fade to the showcase's DOM surfaces; larger menus and dialogs grow from their triggers and retain a stable reading tone. Clear material stays over the dimmed hero environment, with opaque content controls. **Material motion: On/Off** saves your preference without disabling contrast adaptation. These are browser approximations with blur and opaque fallbacks; each complete DESIGN.md includes the behavior and its limits.
 
-Select **DESIGN.md** to read the full source. Copy the file, download it, copy its repository path, or copy either agent instruction. Direct links such as `/styles/minimalism/editorial` restore the selected variant. Desktop and Mobile controls change the width of the same embedded showcase. Sample forms and pricing controls operate locally; they create no accounts, purchases, or network submissions.
+Select **DESIGN.md** to read the full source. Copy the file, download it, copy the local repository path, or copy an agent instruction containing the public GitHub reference. Direct links such as `/styles/minimalism/editorial` restore the selected variant. Desktop and Mobile controls change the width of the same embedded showcase. Sample forms and pricing controls operate locally; they create no accounts, purchases, or network submissions.
 
 ## Mix styles
 
